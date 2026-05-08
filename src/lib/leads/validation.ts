@@ -1,4 +1,21 @@
-import type { NewsletterSignupSource } from "./types";
+import type {
+  ContactInterestType,
+  ContactPreferredMethod,
+  NewsletterSignupSource,
+} from "./types";
+
+const CONTACT_INTEREST: readonly ContactInterestType[] = [
+  "private_session",
+  "yoga_after_birth",
+  "pregnancy_yoga",
+  "baby_massage",
+  "nlp",
+  "workshop",
+  "retreat",
+  "not_sure",
+] as const;
+
+const CONTACT_METHOD: readonly ContactPreferredMethod[] = ["whatsapp", "phone", "email"] as const;
 
 const EMAIL_RE =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -89,4 +106,22 @@ export function validateReference(raw: string): { ok: true; reference: string } 
   const reference = raw.trim().toUpperCase();
   if (!/^MZ-[0-9A-Z]{4,12}$/.test(reference)) return { ok: false, message: "Invalid booking reference." };
   return { ok: true, reference };
+}
+
+export function validateContactInterestType(
+  raw: string,
+): { ok: true; value: ContactInterestType } | { ok: false; message: string } {
+  if (CONTACT_INTEREST.includes(raw as ContactInterestType)) {
+    return { ok: true, value: raw as ContactInterestType };
+  }
+  return { ok: false, message: "Invalid interest selection." };
+}
+
+export function validateContactPreferredMethod(
+  raw: string,
+): { ok: true; value: ContactPreferredMethod } | { ok: false; message: string } {
+  if (CONTACT_METHOD.includes(raw as ContactPreferredMethod)) {
+    return { ok: true, value: raw as ContactPreferredMethod };
+  }
+  return { ok: false, message: "Invalid contact preference." };
 }

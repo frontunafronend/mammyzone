@@ -40,7 +40,9 @@ function rowSummary(r: Row): string {
     return `${b.offeringSnapshot.titleEn} · ${b.localDateIso} · ${b.name}`;
   }
   if (r.kind === "newsletter") return r.row.email;
-  return `${r.row.name} — ${r.row.email}`;
+  const c = r.row;
+  const tail = c.email?.trim() ? c.email : c.phone;
+  return `${c.name} — ${tail}`;
 }
 
 function rowDetail(r: Row): string {
@@ -59,7 +61,16 @@ function rowDetail(r: Row): string {
   if (r.kind === "newsletter") {
     return `Source: ${r.row.source}\nLang: ${r.row.language}`;
   }
-  return [`Phone: ${r.row.phone || "—"}`, `Message:\n${r.row.message}`].join("\n");
+  const c = r.row;
+  const lines = [
+    `Source: ${c.source ?? "—"}`,
+    c.interestType ? `Interest: ${c.interestType}` : "",
+    c.preferredMethod ? `Reply via: ${c.preferredMethod}` : "",
+    `Phone: ${c.phone || "—"}`,
+    c.email?.trim() ? `Email: ${c.email}` : "",
+    `Message:\n${c.message?.trim() ? c.message : "—"}`,
+  ];
+  return lines.filter(Boolean).join("\n");
 }
 
 export function AdminLeadsClient({ bookings, newsletters, contacts }: Props) {

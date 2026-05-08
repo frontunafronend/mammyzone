@@ -38,6 +38,19 @@ export type NewsletterLeadRecord = {
   language: "he" | "en";
 };
 
+/** Interest line on `/contact` form (M042). */
+export type ContactInterestType =
+  | "private_session"
+  | "yoga_after_birth"
+  | "pregnancy_yoga"
+  | "baby_massage"
+  | "nlp"
+  | "workshop"
+  | "retreat"
+  | "not_sure";
+
+export type ContactPreferredMethod = "whatsapp" | "phone" | "email";
+
 export type ContactLeadRecord = {
   id: string;
   type: "contact";
@@ -48,8 +61,11 @@ export type ContactLeadRecord = {
   phone: string;
   message: string;
   language: "he" | "en";
-  /** e.g. homepage, footer, future /contact */
+  /** e.g. `/contact`, homepage */
   source?: string;
+  /** Present for M042+ submissions; older rows may omit. */
+  interestType?: ContactInterestType;
+  preferredMethod?: ContactPreferredMethod;
 };
 
 export type StoredLead = BookingLeadRecord | NewsletterLeadRecord | ContactLeadRecord;

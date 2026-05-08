@@ -6,6 +6,7 @@ import type {
   Testimonial,
 } from "@/types";
 import { socialGalleryStock } from "@/lib/media/sources";
+import { siteContact } from "@/lib/contact";
 
 export const siteMeta = {
   title: {
@@ -18,14 +19,7 @@ export const siteMeta = {
   },
 } as const;
 
-/** Primary contact — CTA, footer, WhatsApp deep links */
-export const siteContact = {
-  phoneDisplay: "054-425-6903",
-  phoneTel: "tel:+972544256903",
-  whatsappUrl: "https://wa.me/972544256903",
-  email: "ortitul@gmail.com",
-  mailto: "mailto:ortitul@gmail.com",
-} as const;
+export { siteContact };
 
 export const nav = {
   trust: { he: "אמון", en: "Trust" },
@@ -38,6 +32,8 @@ export const nav = {
   journal: { he: "מגזין", en: "Journal" },
   /** Primary booking route — `/book` */
   book: { he: "קביעה", en: "Book" },
+  /** `/contact` — soft conversion */
+  contact: { he: "קשר", en: "Contact" },
   cta: { he: "הזמיני שיעור", en: "Book a session" },
   langToggle: { he: "EN / עב", en: "HE / EN" },
   /** Mobile menu — text control, not icon-first chrome */
@@ -87,9 +83,10 @@ export const layoutShell = {
   },
   footerContactLabel: { he: "קשר ישיר", en: "Direct line" },
   floatingWhatsapp: { he: "וואטסאפ", en: "WhatsApp" },
+  floatingContact: { he: "לדף קשר", en: "Contact page" },
   floatingBook: { he: "הזמנה", en: "Book" },
   floatingNewsletter: { he: "ניוזלטר", en: "Newsletter" },
-  floatingWorkshop: { he: "סדנה / ריטריט", en: "Workshop / retreat" },
+  floatingWorkshop: { he: "לא בטוחה מה מתאים?", en: "Not sure what fits?" },
   floatingExpand: { he: "עוד פעולות", en: "More actions" },
   floatingCollapse: { he: "סגור תפריט צף", en: "Close floating menu" },
 } as const;
@@ -232,6 +229,11 @@ export const servicesSection = {
   label: { he: "הזמנה עדינה", en: "A gentle invitation" },
   titleLine1: { he: "מרחב שמכבד", en: "Space that honors" },
   titleEm: { he: "את הדרך שלך", en: "your own rhythm" },
+  unsureHint: {
+    he: "לא בטוחה מה נכון לך עכשיו?",
+    en: "Not sure what feels right for you right now?",
+  },
+  unsureCta: { he: "דף קשר רך", en: "Visit the gentle contact page" },
 } as const;
 
 export const services: ServiceCard[] = [
@@ -566,28 +568,38 @@ export const footer = {
       { he: "הבלוג", en: "Blog", href: "/blog" },
       { he: "מעגל הנשים", en: "Women's circle", href: "#" },
       { he: "Marketplace", en: "Marketplace", href: "#marketplace" },
-      { he: "כתבי לנו", en: "Write for us", href: "#" },
+      { he: "לא בטוחה מה מתאים?", en: "Not sure what fits?", href: "/contact" },
     ],
     contact: [
       {
-        he: "054-425-6903 · וואטסאפ",
-        en: "054-425-6903 · WhatsApp",
-        href: "tel:+972544256903",
+        he: "דף קשר עדין",
+        en: "Gentle contact page",
+        href: "/contact",
+      },
+      {
+        he: "054-425-6903 · שיחה",
+        en: "054-425-6903 · Call",
+        href: siteContact.phoneTel,
+      },
+      {
+        he: "וואטסאפ",
+        en: "WhatsApp",
+        href: siteContact.whatsappUrl,
       },
       {
         he: "ortitul@gmail.com",
         en: "ortitul@gmail.com",
-        href: "mailto:ortitul@gmail.com",
+        href: siteContact.mailto,
       },
       { he: "לוח שיעורים", en: "Class calendar", href: "/book" },
-      { he: "הרשמה לניוזלטר", en: "Newsletter signup", href: "#" },
+      { he: "הרשמה לניוזלטר", en: "Newsletter signup", href: "#newsletter" },
     ],
   },
   social: [
     { label: "Instagram", abbr: "ig", href: "#" },
     { label: "Facebook", abbr: "fb", href: "#" },
     { label: "TikTok", abbr: "tk", href: "#" },
-    { label: "WhatsApp", abbr: "wa", href: "https://wa.me/972544256903" },
+    { label: "WhatsApp", abbr: "wa", href: siteContact.whatsappUrl },
   ],
   bottomLeft: { he: "© 2026 MammyZone · אורטל חזן", en: "© 2026 MammyZone · Ortal Hazan" },
   bottomRight: {

@@ -1,7 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  type SyntheticEvent,
+} from "react";
 import { MEDIA_FALLBACK_PATH } from "@/lib/media/unsplash";
 
 type SafeImageProps = {
@@ -68,8 +74,9 @@ export function SafeImage({
     advance();
   }, [advance]);
 
-  const onLoadingComplete = useCallback(
-    (img: HTMLImageElement) => {
+  const onLoad = useCallback(
+    (e: SyntheticEvent<HTMLImageElement>) => {
+      const img = e.currentTarget;
       if (safeIndex >= chain.length - 1) return;
       if (img.naturalWidth === 0 || img.naturalHeight === 0) advance();
     },
@@ -82,7 +89,7 @@ export function SafeImage({
     src,
     className: mergedClassName,
     onError,
-    onLoadingComplete,
+    onLoad,
     sizes,
     priority,
     unoptimized: isLocal,

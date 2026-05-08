@@ -108,6 +108,16 @@ export function getPostsByCategory(category: string): BlogPostMeta[] {
   return getAllPostMetas().filter((p) => p.category === category);
 }
 
+/** Prefer posts in `categories`, then fill from newest until `limit` (M044 related reads). */
+export function getPostMetasForCategories(categories: BlogCategory[], limit = 3): BlogPostMeta[] {
+  const want = new Set(categories);
+  const all = getAllPostMetas();
+  const primary = all.filter((p) => want.has(p.category));
+  const seen = new Set(primary.map((p) => p.slug));
+  const filler = all.filter((p) => !seen.has(p.slug));
+  return [...primary, ...filler].slice(0, limit);
+}
+
 export function getRelatedPostMetas(
   slug: string,
   category: BlogCategory,

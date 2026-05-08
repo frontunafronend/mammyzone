@@ -1,9 +1,13 @@
+import { OrganicTextureBackground } from "@/components/backgrounds/OrganicTextureBackground";
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { trustSection } from "@/lib/i18n";
 
 export function TrustSection() {
   return (
     <section className="trust-strip" id="trust" aria-labelledby="trust-heading">
-      <div className="container">
+      <SoftWellnessBackground />
+      <OrganicTextureBackground />
+      <div className="container relative z-[1]">
         <header className="trust-strip__head">
           <div className="section-label">
             <span className="he">{trustSection.label.he}</span>

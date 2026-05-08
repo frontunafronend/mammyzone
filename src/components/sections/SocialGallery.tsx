@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { socialGalleryImages, socialGallerySection } from "@/lib/i18n";
 
 export function SocialGallery() {
   return (
     <section className="social-gallery" id="social" aria-labelledby="social-heading">
-      <div className="container">
+      <SoftWellnessBackground showBotanical={false} />
+      <div className="container relative z-[1]">
         <header className="social-gallery__head">
           <div className="section-label">
             <span className="he">{socialGallerySection.label.he}</span>

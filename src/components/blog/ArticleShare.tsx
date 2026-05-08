@@ -2,6 +2,7 @@
 
 import { useCallback, useState } from "react";
 import { blogArticleUi } from "@/lib/blog/ui-strings";
+import { buildWhatsAppMeUrl } from "@/lib/contact";
 import { useLanguage } from "@/lib/i18n";
 
 type ArticleShareProps = {
@@ -17,6 +18,7 @@ export function ArticleShare({ url, titleHe, titleEn }: ArticleShareProps) {
 
   const encoded = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
+  const whatsappShareHref = buildWhatsAppMeUrl(`${title} ${url}`);
 
   const onCopy = useCallback(async () => {
     try {
@@ -50,7 +52,7 @@ export function ArticleShare({ url, titleHe, titleEn }: ArticleShareProps) {
       </button>
       <a
         className="blog-share__btn"
-        href={`https://wa.me/?text=${encodedTitle}%20${encoded}`}
+        href={whatsappShareHref}
         target="_blank"
         rel="noopener noreferrer"
       >

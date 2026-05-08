@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { OrganicTextureBackground } from "@/components/backgrounds/OrganicTextureBackground";
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { aboutOrtal } from "@/lib/i18n";
 import { aboutPortraitSources } from "@/lib/media/sources";
@@ -6,7 +8,9 @@ import { aboutPortraitSources } from "@/lib/media/sources";
 export function AboutOrtal() {
   return (
     <section className="ortal-section ortal-section--editorial" id="about">
-      <div className="container">
+      <SoftWellnessBackground />
+      <OrganicTextureBackground />
+      <div className="container relative z-[1]">
         <div className="ortal-inner ortal-inner--story">
           <div className="ortal-image-wrap">
             <div className="ortal-image-frame">

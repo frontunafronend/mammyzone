@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { serviceCardImageSources } from "@/lib/media/sources";
 import { services, servicesSection } from "@/lib/i18n";
@@ -6,7 +7,8 @@ import { services, servicesSection } from "@/lib/i18n";
 export function Services() {
   return (
     <section className="services" id="services">
-      <div className="container">
+      <SoftWellnessBackground showBotanical={false} />
+      <div className="container relative z-[1]">
         <div className="services-header">
           <div className="section-label">
             <span className="he">{servicesSection.label.he}</span>
@@ -69,6 +71,14 @@ export function Services() {
             </Link>
           ))}
         </div>
+        <p className="services-unsure">
+          <span className="he">{servicesSection.unsureHint.he}</span>
+          <span className="en">{servicesSection.unsureHint.en}</span>{" "}
+          <Link href="/contact" className="services-unsure__link">
+            <span className="he">{servicesSection.unsureCta.he}</span>
+            <span className="en">{servicesSection.unsureCta.en}</span>
+          </Link>
+        </p>
       </div>
     </section>
   );

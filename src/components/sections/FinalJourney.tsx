@@ -1,11 +1,14 @@
 import Link from "next/link";
+import { OrganicTextureBackground } from "@/components/backgrounds/OrganicTextureBackground";
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { calendarSection, finalJourneySection, siteContact } from "@/lib/i18n";
 
 export function FinalJourney() {
   return (
     <section className="final-journey" id="journey" aria-labelledby="journey-hero">
-      <div className="final-journey__emotion">
-        <div className="container">
+      <div className="final-journey__emotion relative overflow-hidden">
+        <SoftWellnessBackground tone="dark" showBotanical={false} />
+        <div className="container relative z-[1]">
           <p id="journey-hero" className="final-journey__hero">
             <span className="he">{finalJourneySection.heroLine.he}</span>
             <span className="en">{finalJourneySection.heroLine.en}</span>
@@ -21,8 +24,10 @@ export function FinalJourney() {
         </div>
       </div>
 
-      <div className="final-journey__planner">
-        <div className="container">
+      <div className="final-journey__planner relative overflow-hidden">
+        <SoftWellnessBackground showBotanical={false} />
+        <OrganicTextureBackground />
+        <div className="container relative z-[1]">
           <div className="final-journey__grid">
             <div>
               <div className="section-label final-journey__label">
@@ -102,15 +107,10 @@ export function FinalJourney() {
                 <span className="he">{calendarSection.bookOnline.he}</span>
                 <span className="en">{calendarSection.bookOnline.en}</span>
               </Link>
-              <Link
-                href={siteContact.whatsappUrl}
-                className="btn-white"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={siteContact.whatsappUrl} className="btn-white" target="_blank" rel="noopener noreferrer">
                 <span className="he">{calendarSection.whatsapp.he}</span>
                 <span className="en">{calendarSection.whatsapp.en}</span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

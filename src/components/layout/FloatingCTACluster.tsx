@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { layoutShell, siteContact, useLanguage } from "@/lib/i18n";
+import { siteContact } from "@/lib/contact";
+import { layoutShell, useLanguage } from "@/lib/i18n";
 
 const ACTIONS = [
   {
@@ -11,6 +12,13 @@ const ACTIONS = [
     external: true,
     labelKey: "floatingWhatsapp" as const,
     style: "floating-cta__btn--wa",
+  },
+  {
+    key: "contact",
+    href: "/contact",
+    external: false,
+    labelKey: "floatingContact" as const,
+    style: "floating-cta__btn--contact",
   },
   {
     key: "book",
@@ -28,7 +36,7 @@ const ACTIONS = [
   },
   {
     key: "workshop",
-    href: "#services",
+    href: "/contact",
     external: false,
     labelKey: "floatingWorkshop" as const,
     style: "floating-cta__btn--work",

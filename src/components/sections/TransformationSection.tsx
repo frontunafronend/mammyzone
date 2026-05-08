@@ -1,3 +1,4 @@
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { transformationSection } from "@/lib/i18n";
 
 export function TransformationSection() {
@@ -7,7 +8,8 @@ export function TransformationSection() {
       id="transformation"
       aria-labelledby="transform-heading"
     >
-      <div className="container">
+      <SoftWellnessBackground tone="dark" showBotanical={false} />
+      <div className="container relative z-[1]">
         <header className="transform-section__head">
           <div className="section-label">
             <span className="he">{transformationSection.label.he}</span>

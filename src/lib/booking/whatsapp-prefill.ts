@@ -1,4 +1,4 @@
-import { siteContact } from "@/lib/i18n";
+import { siteContact } from "@/lib/contact";
 import type { BookingRequestPayload } from "./types";
 import { formatLongDate } from "./availability";
 

@@ -44,6 +44,7 @@ const NAV_ITEMS: NavItem[] = [
   { kind: "hash", href: "/#articles", id: "articles", labelKey: "articles" },
   { kind: "route", href: "/blog", id: "journal", labelKey: "journal" },
   { kind: "route", href: "/book", id: "book", labelKey: "book" },
+  { kind: "route", href: "/contact", id: "contact", labelKey: "contact" },
   { kind: "hash", href: "/#journey", id: "journey", labelKey: "journey" },
 ];
 
@@ -61,12 +62,14 @@ export function Nav() {
 
   const journalActive = pathname.startsWith("/blog");
   const bookActive = pathname.startsWith("/book");
-  const offHomeSections = journalActive || bookActive;
+  const contactActive = pathname.startsWith("/contact");
+  const offHomeSections = journalActive || bookActive || contactActive;
 
   useEffect(() => {
     if (bookActive) setActiveId("book");
     else if (journalActive) setActiveId("journal");
-  }, [bookActive, journalActive]);
+    else if (contactActive) setActiveId("contact");
+  }, [bookActive, journalActive, contactActive]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -76,7 +79,8 @@ export function Nav() {
   }, []);
 
   useEffect(() => {
-    if (pathname.startsWith("/blog") || pathname.startsWith("/book")) return;
+    if (pathname.startsWith("/blog") || pathname.startsWith("/book") || pathname.startsWith("/contact"))
+      return;
     const hash = typeof window !== "undefined" ? window.location.hash.slice(1) : "";
     if (hash && NAV_ITEMS.some((l) => l.kind === "hash" && l.id === hash)) {
       setActiveId(hash);
@@ -188,6 +192,7 @@ export function Nav() {
     if (item.kind === "route") {
       if (item.id === "journal") return journalActive;
       if (item.id === "book") return bookActive;
+      if (item.id === "contact") return contactActive;
       return false;
     }
     if (offHomeSections) return false;

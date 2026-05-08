@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { OrganicTextureBackground } from "@/components/backgrounds/OrganicTextureBackground";
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { articlesSection } from "@/lib/i18n";
 import { blogCategoryLabels } from "@/lib/blog/categories";
@@ -10,7 +12,9 @@ export async function FeaturedArticles() {
 
   return (
     <section className="articles-section" id="articles" aria-labelledby="articles-heading">
-      <div className="container">
+      <SoftWellnessBackground showBotanical={false} />
+      <OrganicTextureBackground />
+      <div className="container relative z-[1]">
         <header className="articles-section__head">
           <div className="section-label">
             <span className="he">{articlesSection.label.he}</span>

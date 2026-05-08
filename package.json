@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "clean": "node -e \"const fs=require('fs');const rm=(p)=>{try{fs.rmSync(p,{recursive:true,force:true})}catch(e){}};rm('.next');rm('node_modules/.cache');\"",
-    "dev": "npm run clean && next dev",
-    "dev:fast": "next dev",
+    "dev": "next dev",
     "dev:reset": "npm run clean && next dev",
     "build": "next build",
     "start": "next start",

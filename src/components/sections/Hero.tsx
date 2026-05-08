@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { hero } from "@/lib/i18n";
 import { heroImageSources } from "@/lib/media/sources";
@@ -7,13 +8,14 @@ import { Pill } from "@/components/ui/Pill";
 export function Hero() {
   return (
     <section className="hero hero-cinematic" id="home">
+      <SoftWellnessBackground variant="quiet" showBotanical={false} />
       <div className="hero-cinematic__grain" aria-hidden />
       <div className="hero-cinematic__wash" aria-hidden />
       <div className="hero-cinematic__vignette" aria-hidden />
       <div className="hero-dot-grid" aria-hidden />
       <div className="hero-circle hero-cinematic__orb" aria-hidden />
 
-      <div className="hero-text">
+      <div className="hero-text relative z-[2]">
         <div className="hero-eyebrow">
           <span className="he">{hero.eyebrow.he}</span>
           <span className="en">{hero.eyebrow.en}</span>

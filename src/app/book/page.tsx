@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { BookingWizard } from "@/components/booking/BookingWizard";
+import { OrganicTextureBackground } from "@/components/backgrounds/OrganicTextureBackground";
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { PageShell } from "@/components/layout/PageShell";
 import { bookingCopy } from "@/lib/booking/copy";
 import { absoluteUrl } from "@/lib/site-url";
@@ -29,8 +31,10 @@ export function generateMetadata(): Metadata {
 export default function BookPage() {
   return (
     <main className="page-root page-root--book">
-      <header className="book-hero">
-        <PageShell withNavOffset className="book-hero__inner">
+      <header className="book-hero relative overflow-hidden">
+        <SoftWellnessBackground showBotanical={false} />
+        <OrganicTextureBackground />
+        <PageShell withNavOffset className="book-hero__inner relative z-[1]">
           <p className="book-hero__eyebrow">
             <span className="he">{bookingCopy.heroEyebrow.he}</span>
             <span className="en">{bookingCopy.heroEyebrow.en}</span>

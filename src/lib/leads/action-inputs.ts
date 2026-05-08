@@ -1,5 +1,9 @@
 import type { SelectedSlot } from "@/lib/booking/types";
-import type { NewsletterSignupSource } from "./types";
+import type {
+  ContactInterestType,
+  ContactPreferredMethod,
+  NewsletterSignupSource,
+} from "./types";
 
 /** Serializable booking payload from the client wizard (M040). */
 export type SubmitBookingRequestInput = {
@@ -28,9 +32,11 @@ export type SubmitContactInterestInput = {
   email: string;
   phone: string;
   message: string;
+  interestType: ContactInterestType;
+  preferredMethod: ContactPreferredMethod;
   honeypot?: string | null;
   language: "he" | "en";
-  /** Origin label for admin triage, e.g. `homepage`, `contact-page` */
+  /** Origin label for admin triage, e.g. `/contact` */
   source?: string;
 };
 

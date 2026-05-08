@@ -18,6 +18,9 @@ const P = {
   circle: "photo-1529156069898-49953e39b3ac",
 } as const;
 
+/** Same vetted Unsplash ids as `P` — for service landings and other stacks. */
+export const unsplashCuratedPhotoIds = P;
+
 export const heroImageSources = dedupeSources([
   unsplashPhoto(P.heroYoga, 1200),
   unsplashPhoto(P.yogaWindow, 1200),

@@ -1,9 +1,13 @@
+import { OrganicTextureBackground } from "@/components/backgrounds/OrganicTextureBackground";
+import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
 import { testimonials, testimonialsSection } from "@/lib/i18n";
 
 export function Testimonials() {
   return (
     <section className="testimonials testimonials--lux" id="testimonials">
-      <div className="container">
+      <SoftWellnessBackground />
+      <OrganicTextureBackground />
+      <div className="container relative z-[1]">
         <header className="testimonials__head">
           <div className="section-label">
             <span className="he">{testimonialsSection.label.he}</span>

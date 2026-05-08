@@ -15,14 +15,14 @@ import { getLeadStorage } from "@/lib/leads/get-lead-storage";
 import type { LeadWorkflowStatus } from "@/lib/leads/types";
 import {
   isHoneypotTriggered,
+  validateContactInterestType,
+  validateContactPreferredMethod,
   validateEmail,
   validateLanguage,
   validateName,
-  validateMessage,
   validateNewsletterSource,
   validateNotes,
   validateOptionalEmail,
-  validateOptionalPhone,
   validatePhone,
   validateReference,
 } from "@/lib/leads/validation";
@@ -140,23 +140,31 @@ export async function submitContactInterest(input: SubmitContactInterestInput): 
   const name = validateName(input.name);
   if (!name.ok) return { ok: false, error: name.message };
 
-  const email = validateEmail(input.email);
+  const email = validateOptionalEmail(input.email || "");
   if (!email.ok) return { ok: false, error: email.message };
 
-  const phone = validateOptionalPhone(input.phone || "");
+  const phone = validatePhone(input.phone || "");
   if (!phone.ok) return { ok: false, error: phone.message };
 
-  const msg = validateMessage(input.message);
-  if (!msg.ok) return { ok: false, error: msg.error };
+  const interest = validateContactInterestType(input.interestType);
+  if (!interest.ok) return { ok: false, error: interest.message };
+
+  const method = validateContactPreferredMethod(input.preferredMethod);
+  if (!method.ok) return { ok: false, error: method.message };
+
+  const msg = validateNotes(input.message || "");
+  if (!msg.ok) return { ok: false, error: msg.message };
 
   try {
     await getLeadStorage().appendContact({
       name: name.name,
       email: email.email,
       phone: phone.phone,
-      message: msg.text,
+      message: msg.notes,
       language: lang.language,
-      source: input.source?.slice(0, 120),
+      source: input.source?.slice(0, 120) ?? "/contact",
+      interestType: interest.value,
+      preferredMethod: method.value,
     });
   } catch (e) {
     console.error("submitContactInterest persistence error", e);
