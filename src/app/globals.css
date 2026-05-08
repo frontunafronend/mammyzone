@@ -2,31 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Design tokens — canonical :root + keyframes: docs/mammyzone-homepage.html
+   (hex casing and values match the saved reference export). next/font on <html>
+   supplies --font-cormorant, --font-heebo, --font-dm-sans prepended in stacks below. */
 :root {
-  --rose: #b85070;
-  --rose-light: #e8c4cf;
-  --rose-pale: #f7eef1;
-  --rose-deep: #7a2d45;
-  --sage: #7a9e8e;
-  --sage-light: #c4deda;
-  --sage-pale: #eef6f4;
-  --sand: #e8ddd0;
-  --sand-deep: #c4a882;
-  --cream: #faf7f2;
-  --cream-warm: #f3ede4;
-  --ink: #2a1f1a;
-  --ink-soft: #5c4a40;
-  --ink-muted: #9a8a80;
-  --white: #fffcf8;
-  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia,
-    "Times New Roman", Times, serif;
-  --font-body-en: var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui,
-    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-body-he: var(--font-heebo), "Heebo", "Segoe UI Hebrew", "Arial Hebrew",
-    "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --rose: #B85070;
+  --rose-light: #E8C4CF;
+  --rose-pale: #F7EEF1;
+  --rose-deep: #7A2D45;
+  --sage: #7A9E8E;
+  --sage-light: #C4DEDA;
+  --sage-pale: #EEF6F4;
+  --sand: #E8DDD0;
+  --sand-deep: #C4A882;
+  --cream: #FAF7F2;
+  --cream-warm: #F3EDE4;
+  --ink: #2A1F1A;
+  --ink-soft: #5C4A40;
+  --ink-muted: #9A8A80;
+  --white: #FFFCF8;
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-body-en: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
+  --font-body-he: var(--font-heebo), "Heebo", system-ui, sans-serif;
   --nav-h: 72px;
   --max-w: 1340px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-title,
+.section-title,
+.retreat-title,
+.service-title {
+  text-rendering: optimizeLegibility;
 }
 
 *,
@@ -72,20 +79,20 @@ button {
   font-family: var(--font-body-en);
 }
 
-html.lang-en .he {
+body.lang-en .he {
   display: none;
 }
 
-html.lang-en .en {
+body.lang-en .en {
   display: block;
 }
 
-html.lang-en {
+body.lang-en {
   font-family: var(--font-body-en);
   direction: ltr;
 }
 
-html.lang-en [dir="rtl"] {
+body.lang-en [dir="rtl"] {
   direction: ltr;
 }
 
@@ -93,11 +100,11 @@ span.en {
   display: none;
 }
 
-html.lang-en span.en {
+body.lang-en span.en {
   display: inline;
 }
 
-html.lang-en span.he {
+body.lang-en span.he {
   display: none;
 }
 
@@ -114,98 +121,48 @@ html.lang-en span.he {
   border-radius: 4px;
 }
 
-nav {
+/* Main nav: styled in src/components/layout/Nav.tsx (Tailwind). */
+
+/* Always in the DOM (search for class "scroll-top"); .scroll-top--visible after scroll */
+.scroll-top {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  height: var(--nav-h);
+  inset-inline-end: 1.25rem;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  z-index: 99999;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 clamp(1.5rem, 5vw, 4rem);
-  background: transparent;
-  transition:
-    background 0.5s var(--ease-out),
-    box-shadow 0.5s;
-}
-
-nav.scrolled {
-  background: rgba(250, 247, 242, 0.92);
-  backdrop-filter: blur(20px);
-  box-shadow: rgba(42, 31, 26, 0.08) 0 1px 0;
-}
-
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: var(--ink);
-}
-
-.nav-logo span {
-  color: var(--rose);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.82rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  color: var(--ink-soft);
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--rose);
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.lang-btn {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: var(--ink-muted);
-  padding: 4px 10px;
-  border: 0.5px solid var(--sand-deep);
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid rgba(42, 31, 26, 0.22);
   border-radius: 999px;
-  transition: 0.2s;
-}
-
-.lang-btn:hover {
-  color: var(--rose);
-  border-color: var(--rose);
-}
-
-.nav-cta {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  padding: 10px 22px;
-  background: var(--rose);
-  color: var(--white);
-  border-radius: 999px;
+  background: #f2d24a;
+  color: #2a1f1a;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: rgba(42, 31, 26, 0.18) 0 3px 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
   transition:
-    background 0.2s,
-    transform 0.15s;
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease,
+    background 0.15s;
 }
 
-.nav-cta:hover {
-  background: var(--rose-deep);
-  transform: translateY(-1px);
+.scroll-top.scroll-top--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top.scroll-top--visible:hover {
+  background: #e8c830;
+  transform: translateY(-2px);
 }
 
 .hero {
@@ -300,7 +257,7 @@ nav.scrolled {
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.04em;
-  padding: 14px 28px;
+  padding: 14px 32px;
   background: var(--rose);
   color: var(--white);
   border-radius: 999px;
@@ -308,7 +265,7 @@ nav.scrolled {
     background 0.2s,
     transform 0.15s,
     box-shadow 0.2s;
-  box-shadow: rgba(184, 80, 112, 0.2) 0 4px 20px;
+  box-shadow: rgba(184, 80, 112, 0.25) 0 4px 20px;
 }
 
 .btn-primary:hover {
@@ -654,7 +611,7 @@ section {
     transform 0.3s;
 }
 
-html.lang-en .service-arrow {
+body.lang-en .service-arrow {
   left: auto;
   right: 2rem;
 }
@@ -664,7 +621,7 @@ html.lang-en .service-arrow {
   transform: translateX(-4px);
 }
 
-html.lang-en .service-card:hover .service-arrow {
+body.lang-en .service-card:hover .service-arrow {
   transform: translateX(4px);
 }
 
@@ -708,7 +665,7 @@ html.lang-en .service-card:hover .service-arrow {
   transform: translateX(-4px);
 }
 
-html.lang-en .service-card.featured:hover .service-arrow {
+body.lang-en .service-card.featured:hover .service-arrow {
   transform: translateX(4px);
 }
 
@@ -1345,7 +1302,7 @@ html.lang-en .service-card.featured:hover .service-arrow {
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0px);
   }
 }
 
@@ -1362,36 +1319,48 @@ html.lang-en .service-card.featured:hover .service-arrow {
 
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(0px);
   }
   100% {
     transform: translateX(-50%);
   }
 }
 
+/* CSS-only reveal: no IntersectionObserver — avoids sections stuck at opacity: 0 */
 .reveal {
   opacity: 0;
   transform: translateY(36px);
-  transition:
-    opacity 0.75s var(--ease-out),
-    transform 0.75s var(--ease-out);
+  animation: reveal-in 0.8s var(--ease-out) forwards;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.reveal.reveal-delay-1 {
+  animation-delay: 0.1s;
 }
 
-.reveal-delay-1 {
-  transition-delay: 0.1s;
+.reveal.reveal-delay-2 {
+  animation-delay: 0.2s;
 }
 
-.reveal-delay-2 {
-  transition-delay: 0.2s;
+.reveal.reveal-delay-3 {
+  animation-delay: 0.3s;
 }
 
-.reveal-delay-3 {
-  transition-delay: 0.3s;
+@keyframes reveal-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.reveal-delay-1,
+  .reveal.reveal-delay-2,
+  .reveal.reveal-delay-3 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1439,13 +1408,6 @@ html.lang-en .service-card.featured:hover .service-arrow {
     grid-template-columns: 1fr 1fr;
   }
 
-  nav {
-    padding: 0 1.5rem;
-  }
-
-  .nav-links {
-    display: none;
-  }
 }
 
 @media (max-width: 600px) {

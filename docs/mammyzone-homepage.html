@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MammyZone — homepage design reference (source of truth)</title>
+  <!--
+    Saved reference: design tokens and motion primitives for the MammyZone homepage.
+    The Next.js app mirrors these values in src/app/globals.css (with --font-* extended
+    on <html> via next/font: --font-cormorant, --font-heebo, --font-dm-sans).
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Heebo:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --rose: #B85070;
+      --rose-light: #E8C4CF;
+      --rose-pale: #F7EEF1;
+      --rose-deep: #7A2D45;
+      --sage: #7A9E8E;
+      --sage-light: #C4DEDA;
+      --sage-pale: #EEF6F4;
+      --sand: #E8DDD0;
+      --sand-deep: #C4A882;
+      --cream: #FAF7F2;
+      --cream-warm: #F3EDE4;
+      --ink: #2A1F1A;
+      --ink-soft: #5C4A40;
+      --ink-muted: #9A8A80;
+      --white: #FFFCF8;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body-en: "DM Sans", system-ui, sans-serif;
+      --font-body-he: "Heebo", system-ui, sans-serif;
+      --nav-h: 72px;
+      --max-w: 1340px;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes imgReveal {
+      0% {
+        opacity: 0;
+        transform: scale(1.04);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+<body style="margin: 2rem; font-family: var(--font-body-he); background: var(--cream); color: var(--ink); line-height: 1.6;">
+  <p style="max-width: 52ch; font-size: 0.95rem;">
+    This file defines the canonical <strong>:root</strong> palette, layout rhythm variables
+    (<code>--nav-h</code>, <code>--max-w</code>), easing <code>--ease-out</code>, and the three motion primitives
+    <strong>fadeUp</strong>, <strong>imgReveal</strong>, and <strong>marquee</strong>. Full layout and section rules
+    live in <code>src/app/globals.css</code> and must stay aligned with these tokens.
+  </p>
+</body>
+</html>

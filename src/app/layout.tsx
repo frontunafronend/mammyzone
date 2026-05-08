@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans, Heebo } from "next/font/google";
-import { LocaleProvider } from "@/components/layout/LocaleProvider";
+import { LanguageProvider } from "@/lib/i18n";
 import { Nav } from "@/components/layout/Nav";
-import { RevealObserver } from "@/components/layout/RevealObserver";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { siteMeta } from "@/lib/i18n";
 import "./globals.css";
 
@@ -71,11 +71,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="antialiased">
-        <LocaleProvider>
-          <RevealObserver />
+        <LanguageProvider>
           <Nav />
           {children}
-        </LocaleProvider>
+          <ScrollToTop />
+        </LanguageProvider>
       </body>
     </html>
   );

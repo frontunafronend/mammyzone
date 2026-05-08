@@ -9,40 +9,92 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        rose: { DEFAULT: "#B85070", light: "#E8C4CF", pale: "#F7EEF1", deep: "#7A2D45" },
-        sage: { DEFAULT: "#7A9E8E", light: "#C4DEDA", pale: "#EEF6F4" },
-        sand: { DEFAULT: "#E8DDD0", deep: "#C4A882" },
-        cream: { DEFAULT: "#FAF7F2", warm: "#F3EDE4" },
-        ink: { DEFAULT: "#2A1F1A", soft: "#5C4A40", muted: "#9A8A80" },
-        paper: "#FFFCF8",
+        rose: {
+          DEFAULT: "var(--rose)",
+          light: "var(--rose-light)",
+          pale: "var(--rose-pale)",
+          deep: "var(--rose-deep)",
+        },
+        sage: {
+          DEFAULT: "var(--sage)",
+          light: "var(--sage-light)",
+          pale: "var(--sage-pale)",
+        },
+        sand: {
+          DEFAULT: "var(--sand)",
+          deep: "var(--sand-deep)",
+        },
+        cream: {
+          DEFAULT: "var(--cream)",
+          warm: "var(--cream-warm)",
+        },
+        ink: {
+          DEFAULT: "var(--ink)",
+          soft: "var(--ink-soft)",
+          muted: "var(--ink-muted)",
+        },
+        paper: "var(--white)",
       },
       fontFamily: {
         display: [
-          "var(--font-cormorant)",
+          "var(--font-display)",
           "Cormorant Garamond",
           "Georgia",
-          "Times New Roman",
           "serif",
         ],
-        sanshe: [
-          "var(--font-heebo)",
+        bodyHe: [
+          "var(--font-body-he)",
           "Heebo",
-          "Segoe UI Hebrew",
-          "Arial Hebrew",
-          "Segoe UI",
+          "system-ui",
           "sans-serif",
         ],
-        sansen: [
-          "var(--font-dm-sans)",
+        bodyEn: [
+          "var(--font-body-en)",
           "DM Sans",
-          "ui-sans-serif",
           "system-ui",
-          "Segoe UI",
           "sans-serif",
         ],
       },
-      maxWidth: { site: "1340px" },
-      spacing: { nav: "72px" },
+      maxWidth: {
+        site: "var(--max-w)",
+      },
+      spacing: {
+        nav: "var(--nav-h)",
+      },
+      borderRadius: {
+        /** Design radii from homepage CSS */
+        xs: "4px",
+        ui: "12px",
+        soft: "14px",
+        chip: "16px",
+        card: "20px",
+        cardLg: "24px",
+        frame: "28px",
+        pill: "999px",
+      },
+      transitionTimingFunction: {
+        out: "var(--ease-out)",
+      },
+      keyframes: {
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(28px)" },
+          "100%": { opacity: "1", transform: "translateY(0px)" },
+        },
+        imgReveal: {
+          "0%": { opacity: "0", transform: "scale(1.04)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0px)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        fadeUp: "fadeUp 0.8s var(--ease-out) forwards",
+        "fadeUp-slow": "fadeUp 0.9s var(--ease-out) forwards",
+        imgReveal: "imgReveal 1.2s var(--ease-out) forwards",
+        marquee: "marquee 30s linear infinite",
+      },
     },
   },
   plugins: [],

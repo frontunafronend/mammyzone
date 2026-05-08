@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { calendarSection } from "@/lib/i18n";
-
-const WHATSAPP = "https://wa.me/972000000000";
+import { calendarSection, siteContact } from "@/lib/i18n";
 
 export function CalendarCTA() {
   return (
@@ -60,7 +58,33 @@ export function CalendarCTA() {
               <span className="he">{calendarSection.ctaSub.he}</span>
               <span className="en">{calendarSection.ctaSub.en}</span>
             </p>
-            <Link href={WHATSAPP} className="btn-white" target="_blank" rel="noopener noreferrer">
+            <p className="mb-1 text-center text-[0.72rem] font-medium uppercase tracking-[0.12em] text-[rgba(255,252,248,0.75)]">
+              <span className="he">{calendarSection.ctaPhoneEyebrow.he}</span>
+              <span className="en">{calendarSection.ctaPhoneEyebrow.en}</span>
+            </p>
+            <p className="mb-1 text-center font-display text-[1.45rem] font-normal leading-tight tracking-[0.02em] text-paper">
+              <a href={siteContact.phoneTel} className="underline decoration-[rgba(255,252,248,0.45)] underline-offset-[5px] transition-opacity hover:opacity-90">
+                {siteContact.phoneDisplay}
+              </a>
+            </p>
+            <p className="mb-5 text-center text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[rgba(255,252,248,0.65)]">
+              <span className="he">{calendarSection.ctaEmailEyebrow.he}</span>
+              <span className="en">{calendarSection.ctaEmailEyebrow.en}</span>
+            </p>
+            <p className="mb-5 text-center text-[0.88rem] font-normal text-[rgba(255,252,248,0.92)]">
+              <a
+                href={siteContact.mailto}
+                className="underline decoration-[rgba(255,252,248,0.4)] underline-offset-4 transition-opacity hover:opacity-90"
+              >
+                {siteContact.email}
+              </a>
+            </p>
+            <Link
+              href={siteContact.whatsappUrl}
+              className="btn-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="he">{calendarSection.whatsapp.he}</span>
               <span className="en">{calendarSection.whatsapp.en}</span>
             </Link>

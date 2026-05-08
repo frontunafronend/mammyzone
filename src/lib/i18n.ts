@@ -17,6 +17,15 @@ export const siteMeta = {
   },
 } as const;
 
+/** Primary contact — CTA, footer, WhatsApp deep links */
+export const siteContact = {
+  phoneDisplay: "054-425-6903",
+  phoneTel: "tel:+972544256903",
+  whatsappUrl: "https://wa.me/972544256903",
+  email: "ortitul@gmail.com",
+  mailto: "mailto:ortitul@gmail.com",
+} as const;
+
 export const nav = {
   services: { he: "שירותים", en: "Services" },
   about: { he: "אודות", en: "About" },
@@ -25,7 +34,23 @@ export const nav = {
   marketplace: { he: "Marketplace", en: "Marketplace" },
   cta: { he: "הזמיני שיעור", en: "Book a session" },
   langToggle: { he: "EN / עב", en: "HE / EN" },
+  /** Mobile menu — text control, not icon-first chrome */
+  menu: { he: "תפריט", en: "Menu" },
+  menuClose: { he: "סגור", en: "Close" },
+  drawerTitle: { he: "ניווט", en: "Navigation" },
+  ariaMenuOpen: { he: "פתיחת תפריט ניווט", en: "Open navigation menu" },
+  ariaMenuClose: { he: "סגירת תפריט ניווט", en: "Close navigation menu" },
+  ariaDrawer: { he: "קישורי ניווט באתר", en: "Site navigation links" },
+  ariaSwitchToEnglish: { he: "החלפת שפת האתר לאנגלית", en: "Switch site language to English" },
+  ariaSwitchToHebrew: { he: "החלפת שפת האתר לעברית", en: "Switch site language to Hebrew" },
 } as const satisfies Record<string, Bilingual>;
+
+export const scrollChrome = {
+  toTopAria: {
+    he: "חזרה לראש הדף",
+    en: "Scroll to top",
+  },
+} as const;
 
 export const hero = {
   eyebrow: { he: "מרחב מקודש לאמהות", en: "A sacred space for mothers" },
@@ -177,8 +202,8 @@ export const retreat = {
   titleLine1: { he: "יום שלם רק", en: "A whole day" },
   titleEm: { he: "בשבילך", en: "just for you" },
   sub: {
-    he: "ריטריט יום מיוחד לאמהות עובדות — שילוב של יוגה, מדיטציה, ארוחה משותפת, מעגל שיתוף ואמצאות לחיזוק האישה. כמה שעות באמצע היום שישנו הכל.",
-    en: "A special day retreat for working moms — yoga, meditation, shared lunch, women's circle and tools to strengthen inner power. A few midday hours that will change everything.",
+    he: "ריטריט יום מיוחד לאמהות עובדות — שילוב של יוגה, מדיטציה, ארוחת שף, מעגל שיתוף ואמצאות לחיזוק האישה — הכל ביום אחד מיוחד.",
+    en: "A special day retreat for working moms — yoga, meditation, chef's lunch, women's circle and tools to strengthen inner power — all in one special day.",
   },
   items: [
     {
@@ -321,6 +346,11 @@ export const calendarSection = {
     he: "השיעור הראשון הוא תמיד הצעד הכי קשה. ביחד, נעשה אותו פשוט.",
     en: "The first session is always the hardest step. Together, we make it simple.",
   },
+  ctaPhoneEyebrow: {
+    he: "ליצירת קשר ישירות עם אורטל",
+    en: "Reach Ortal directly",
+  },
+  ctaEmailEyebrow: { he: "אימייל", en: "Email" },
   whatsapp: { he: "שלחי הודעה בוואטסאפ →", en: "Message on WhatsApp →" },
 } as const;
 
@@ -396,8 +426,16 @@ export const footer = {
       { he: "כתבי לנו", en: "Write for us", href: "#" },
     ],
     contact: [
-      { he: "טלפון / WhatsApp", en: "Phone / WhatsApp", href: "tel:+972000000000" },
-      { he: "ortal@mammyzone.co.il", en: "ortal@mammyzone.co.il", href: "mailto:ortal@mammyzone.co.il" },
+      {
+        he: "054-425-6903 · וואטסאפ",
+        en: "054-425-6903 · WhatsApp",
+        href: "tel:+972544256903",
+      },
+      {
+        he: "ortitul@gmail.com",
+        en: "ortitul@gmail.com",
+        href: "mailto:ortitul@gmail.com",
+      },
       { he: "לוח שיעורים", en: "Class calendar", href: "#calendar" },
       { he: "הרשמה לניוזלטר", en: "Newsletter signup", href: "#" },
     ],
@@ -406,7 +444,7 @@ export const footer = {
     { label: "Instagram", abbr: "ig", href: "#" },
     { label: "Facebook", abbr: "fb", href: "#" },
     { label: "TikTok", abbr: "tk", href: "#" },
-    { label: "WhatsApp", abbr: "wa", href: "https://wa.me/972000000000" },
+    { label: "WhatsApp", abbr: "wa", href: "https://wa.me/972544256903" },
   ],
   bottomLeft: { he: "© 2026 MammyZone · אורטל חזן", en: "© 2026 MammyZone · Ortal Hazan" },
   bottomRight: {
@@ -414,3 +452,29 @@ export const footer = {
     en: "Design & Development · mammyzone.co.il",
   },
 } as const;
+
+/** Single object with every on-page string as `{ he, en }` (same shape as the section exports). */
+export const translations = {
+  siteMeta,
+  siteContact,
+  nav,
+  scrollChrome,
+  hero,
+  marqueeItems,
+  servicesSection,
+  services,
+  aboutOrtal,
+  retreat,
+  testimonialsSection,
+  testimonials,
+  calendarSection,
+  marketplaceSection,
+  footer,
+} as const;
+
+export {
+  LanguageContext,
+  LanguageProvider,
+  useLanguage,
+} from "./i18n-context";
+export type { Language } from "./i18n-context";
