@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# M040 — local lead store (file adapter)
+.data/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

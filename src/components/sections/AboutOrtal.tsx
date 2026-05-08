@@ -1,23 +1,22 @@
-import Image from "next/image";
 import Link from "next/link";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { aboutOrtal } from "@/lib/i18n";
-
-const PORTRAIT =
-  "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80";
+import { aboutPortraitSources } from "@/lib/media/sources";
 
 export function AboutOrtal() {
   return (
-    <section className="ortal-section" id="about">
+    <section className="ortal-section ortal-section--editorial" id="about">
       <div className="container">
-        <div className="ortal-inner">
-          <div className="ortal-image-wrap reveal">
+        <div className="ortal-inner ortal-inner--story">
+          <div className="ortal-image-wrap">
             <div className="ortal-image-frame">
-              <Image
-                src={PORTRAIT}
-                alt={`${aboutOrtal.titleBeforeEm.he}${aboutOrtal.titleEm.he}`}
+              <SafeImage
+                sources={aboutPortraitSources}
+                alt={`${aboutOrtal.titleBeforeEm.he}${aboutOrtal.titleEm.he} / ${aboutOrtal.titleBeforeEm.en}${aboutOrtal.titleEm.en}`}
                 width={720}
                 height={900}
                 sizes="(max-width: 900px) 100vw, 50vw"
+                loading="lazy"
               />
             </div>
             <div className="ortal-quote-badge">
@@ -28,11 +27,15 @@ export function AboutOrtal() {
             </div>
           </div>
 
-          <div className="ortal-text reveal reveal-delay-2">
+          <div className="ortal-text ortal-text--editorial">
             <div className="section-label">
               <span className="he">{aboutOrtal.label.he}</span>
               <span className="en">{aboutOrtal.label.en}</span>
             </div>
+            <p className="ortal-story-kicker">
+              <span className="he">{aboutOrtal.storyLabel.he}</span>
+              <span className="en">{aboutOrtal.storyLabel.en}</span>
+            </p>
             <h2 className="section-title">
               <span className="he">
                 {aboutOrtal.titleBeforeEm.he}
@@ -43,9 +46,17 @@ export function AboutOrtal() {
                 <em>{aboutOrtal.titleEm.en}</em>
               </span>
             </h2>
-            <p className="ortal-bio">
+            <p className="ortal-bio ortal-bio--lead">
               <span className="he">{aboutOrtal.bio.he}</span>
               <span className="en">{aboutOrtal.bio.en}</span>
+            </p>
+            <p className="ortal-bio">
+              <span className="he">{aboutOrtal.story2.he}</span>
+              <span className="en">{aboutOrtal.story2.en}</span>
+            </p>
+            <p className="ortal-bio">
+              <span className="he">{aboutOrtal.story3.he}</span>
+              <span className="en">{aboutOrtal.story3.en}</span>
             </p>
             <div className="ortal-creds">
               {aboutOrtal.creds.map((c) => (
@@ -59,7 +70,7 @@ export function AboutOrtal() {
               ))}
             </div>
             <Link
-              href="#calendar"
+              href="/book"
               className="btn-primary"
               style={{ display: "inline-flex", width: "fit-content" }}
             >

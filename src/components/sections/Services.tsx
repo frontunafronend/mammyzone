@@ -1,10 +1,13 @@
+import Link from "next/link";
+import { SafeImage } from "@/components/ui/SafeImage";
+import { serviceCardImageSources } from "@/lib/media/sources";
 import { services, servicesSection } from "@/lib/i18n";
 
 export function Services() {
   return (
     <section className="services" id="services">
       <div className="container">
-        <div className="services-header reveal">
+        <div className="services-header">
           <div className="section-label">
             <span className="he">{servicesSection.label.he}</span>
             <span className="en">{servicesSection.label.en}</span>
@@ -23,12 +26,25 @@ export function Services() {
           </h2>
         </div>
 
-        <div className="services-grid reveal">
+        <div className="services-grid">
           {services.map((card) => (
-            <article
+            <Link
               key={card.num}
-              className={`service-card${card.featured ? " featured" : ""}`}
+              href="/book"
+              className={`service-card service-card--link${card.featured ? " featured" : ""}`}
             >
+              {(card.num === "01" || card.num === "02") && (
+                <div className="service-card__visual">
+                  <SafeImage
+                    sources={serviceCardImageSources[card.num]}
+                    alt={`${card.title.he} / ${card.title.en}`}
+                    fill
+                    className="service-card__img object-cover"
+                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    loading="lazy"
+                  />
+                </div>
+              )}
               <div className="service-num">{card.num}</div>
               <div className="service-icon" aria-hidden>
                 {card.icon}
@@ -50,7 +66,7 @@ export function Services() {
               <span className="service-arrow" aria-hidden>
                 ←
               </span>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

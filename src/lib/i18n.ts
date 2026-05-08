@@ -5,6 +5,7 @@ import type {
   ServiceCard,
   Testimonial,
 } from "@/types";
+import { socialGalleryStock } from "@/lib/media/sources";
 
 export const siteMeta = {
   title: {
@@ -27,11 +28,16 @@ export const siteContact = {
 } as const;
 
 export const nav = {
-  services: { he: "שירותים", en: "Services" },
-  about: { he: "אודות", en: "About" },
-  retreat: { he: "ריטריט", en: "Retreat" },
-  calendar: { he: "לוח שיעורים", en: "Calendar" },
-  marketplace: { he: "Marketplace", en: "Marketplace" },
+  trust: { he: "אמון", en: "Trust" },
+  services: { he: "המסע", en: "Offerings" },
+  about: { he: "הסיפור", en: "Story" },
+  transformation: { he: "לפני ואחרי", en: "Shift" },
+  testimonials: { he: "קולות", en: "Voices" },
+  articles: { he: "קריאה", en: "Journal" },
+  journey: { he: "התחילי כאן", en: "Begin" },
+  journal: { he: "מגזין", en: "Journal" },
+  /** Primary booking route — `/book` */
+  book: { he: "קביעה", en: "Book" },
   cta: { he: "הזמיני שיעור", en: "Book a session" },
   langToggle: { he: "EN / עב", en: "HE / EN" },
   /** Mobile menu — text control, not icon-first chrome */
@@ -44,6 +50,49 @@ export const nav = {
   ariaSwitchToEnglish: { he: "החלפת שפת האתר לאנגלית", en: "Switch site language to English" },
   ariaSwitchToHebrew: { he: "החלפת שפת האתר לעברית", en: "Switch site language to Hebrew" },
 } as const satisfies Record<string, Bilingual>;
+
+/** Global chrome — footer newsletter, floating actions, scroll UI */
+export const layoutShell = {
+  scrollProgressAria: {
+    he: "התקדמות קריאה בדף",
+    en: "Page read progress",
+  },
+  newsletterTitle: { he: "ניוזלטר עדין", en: "A gentle newsletter" },
+  newsletterSub: {
+    he: "מכתבים נדירים — תאריכים, מעגלים, והשראה. בלי רעש.",
+    en: "Rare letters — dates, circles, inspiration. No noise.",
+  },
+  newsletterPlaceholder: {
+    he: "האימייל שלך",
+    en: "Your email",
+  },
+  newsletterSubmit: { he: "הצטרפי", en: "Join" },
+  newsletterSuccess: {
+    he: "תודה — נתראה בדוא״ל.",
+    en: "Thank you — see you in your inbox.",
+  },
+  newsletterPrivacy: {
+    he: "לא מעבירים לצד שלישי. ניתן לבטל בכל עת.",
+    en: "Never shared. Unsubscribe anytime.",
+  },
+  newsletterModalClose: { he: "סגור", en: "Close" },
+  newsletterModalLater: { he: "אחר כך", en: "Remind me later" },
+  newsletterModalInstagramHint: {
+    he: "רוצה רק רגעים מהשטיח? עקבי גם באינסטגרם.",
+    en: "Want moments from the mat? Follow on Instagram too.",
+  },
+  footerClosing: {
+    he: "בואי כמו שאת — המרחב כבר מחכה.",
+    en: "Come as you are — the space is already waiting.",
+  },
+  footerContactLabel: { he: "קשר ישיר", en: "Direct line" },
+  floatingWhatsapp: { he: "וואטסאפ", en: "WhatsApp" },
+  floatingBook: { he: "הזמנה", en: "Book" },
+  floatingNewsletter: { he: "ניוזלטר", en: "Newsletter" },
+  floatingWorkshop: { he: "סדנה / ריטריט", en: "Workshop / retreat" },
+  floatingExpand: { he: "עוד פעולות", en: "More actions" },
+  floatingCollapse: { he: "סגור תפריט צף", en: "Close floating menu" },
+} as const;
 
 export const scrollChrome = {
   toTopAria: {
@@ -89,81 +138,165 @@ export const marqueeItems: Bilingual[] = [
   { he: "עיצוב אנרגטי", en: "Energy Design" },
 ];
 
+export const trustSection = {
+  label: { he: "למה לסמוך", en: "Why women trust this space" },
+  titleLine1: { he: "ניסיון שמורגש", en: "Experience you can feel" },
+  titleEm: { he: "בגוף", en: "in the body" },
+  reassurance: {
+    he: "כל מפגש נבנה סביב הקצב שלך — בלי ביצועים, בלי השוואות. רק נוכחות מקצועית וחמה.",
+    en: "Every encounter is built around your pace — no performance, no comparison. Just warm, skilled presence.",
+  },
+  stats: [
+    {
+      value: "15+",
+      label: { he: "שנות ליווי נשים", en: "Years guiding women" },
+    },
+    {
+      value: "4",
+      label: { he: "התמחויות מרכזיות", en: "Core disciplines" },
+    },
+    {
+      value: "∞",
+      label: { he: "מעגלים של הקשבה", en: "Circles of listening" },
+    },
+  ] as const,
+  credentials: [
+    { he: "מדריכת יוגה ואשטנגה מוסמכת", en: "Certified yoga & Ashtanga teacher" },
+    { he: "מומחית עיסוי תינוקות", en: "Baby massage specialist" },
+    { he: "מאמנת NLP מוסמכת", en: "Certified NLP coach" },
+    { he: "מעצבת פנים ומרחבי אנרגיה", en: "Interior & energetic space design" },
+  ] as const satisfies readonly Bilingual[],
+} as const;
+
+export const transformationSection = {
+  label: { he: "המעבר", en: "The shift" },
+  titleLine1: { he: "ממקום של עומס", en: "From a place of load" },
+  titleEm: { he: "אל נחות", en: "toward rest" },
+  sub: {
+    he: "הגוף והנפש מדברים באותה שפה — כשמקשיבים, משהו מתרכך.",
+    en: "Body and mind share one language — when we listen, something softens.",
+  },
+  beforeTitle: { he: "לפני", en: "Before" },
+  afterTitle: { he: "אחרי", en: "After" },
+  beforeItems: [
+    { he: "עייפות שאין לה שם", en: "Fatigue with no name" },
+    { he: "הצפה ורעש פנימי", en: "Overwhelm and inner noise" },
+    { he: "תחושת ניתוק מעצמך", en: "A sense of disconnect from yourself" },
+  ] as const satisfies readonly Bilingual[],
+  afterItems: [
+    { he: "נשימה עמוקה יותר", en: "A deeper breath" },
+    { he: "ביטחון עדין בגוף", en: "Quiet confidence in your body" },
+    { he: "איזון רגשי אמיתי", en: "Real emotional balance" },
+  ] as const satisfies readonly Bilingual[],
+} as const;
+
+export const articlesSection = {
+  label: { he: "מהזין את הנשמה", en: "For the soul & SEO" },
+  titleLine1: { he: "מגזין", en: "Editorial" },
+  titleEm: { he: "קצר ועמוק", en: "short & deep" },
+  readMore: { he: "קראי עוד →", en: "Read more →" },
+} as const;
+
+export const socialGallerySection = {
+  label: { he: "מהאינסטגרם", en: "From Instagram" },
+  titleLine1: { he: "רגעים", en: "Moments" },
+  titleEm: { he: "חיים מהשטיח", en: "off the mat" },
+  sub: {
+    he: "תמונות מהשיעורים, הריטריטים והמעגלים — מוזמנות להצטרף לקהילה.",
+    en: "Scenes from classes, retreats, and circles — you’re welcome in this community.",
+  },
+  followCta: { he: "עקבי אחריי באינסטגרם", en: "Follow on Instagram" },
+  /** Placeholder — replace with real @ handle when live */
+  followHref: "https://www.instagram.com/",
+} as const;
+
+/** Unsplash-backed gallery tiles — see `src/lib/media/sources.ts` */
+export const socialGalleryImages = socialGalleryStock;
+
+export const finalJourneySection = {
+  heroLine: {
+    he: "את לא צריכה להוכיח כלום כדי להשתייך כאן.",
+    en: "You don’t have to prove anything to belong here.",
+  },
+  supporting: {
+    he: "צעד אחד קטן — הודעה או שיחה — מספיק כדי שנתחיל ביחד.",
+    en: "One small step — a message or a call — is enough for us to begin together.",
+  },
+  promise: {
+    he: "נשימה שמרגיעה, גבול ברור, וליווי שמכבד את מה שאת עוברת.",
+    en: "Breath that steadies you, clear boundaries, and guidance that honors what you’re moving through.",
+  },
+} as const;
+
 export const servicesSection = {
-  label: { he: "השירותים שלי", en: "What I offer" },
-  titleLine1: { he: "כל מה שאת צריכה,", en: "Everything you need," },
-  titleEm: { he: "במקום אחד", en: "in one place" },
+  label: { he: "הזמנה עדינה", en: "A gentle invitation" },
+  titleLine1: { he: "מרחב שמכבד", en: "Space that honors" },
+  titleEm: { he: "את הדרך שלך", en: "your own rhythm" },
 } as const;
 
 export const services: ServiceCard[] = [
   {
     num: "01",
     icon: "🧘",
-    title: { he: "יוגה לאחר לידה", en: "Postnatal Yoga" },
+    title: { he: "יוגה לאחר לידה", en: "Postnatal yoga" },
     description: {
-      he: "שיעורים אישיים וקבוצתיים לחיזוק הגוף והנפש אחרי הלידה. מחזקים את כוח האישה מבפנים.",
-      en: "Private and group sessions to restore strength and inner power after birth.",
+      he: "נשימה, עמוד שדרה וכוח עדין — שיעורים שמחזירים גבולות לגוף אחרי לידה, בלי למהר.",
+      en: "Breath, spine, and gentle strength — sessions that help your body find its edges again after birth, without rushing.",
     },
-    tag: { he: "1:1 + קבוצה", en: "1:1 + group" },
+    tag: { he: "קבוצה · פרטי", en: "Group · private" },
   },
   {
     num: "02",
     icon: "🤰",
-    title: { he: "יוגה בהריון", en: "Pregnancy Yoga" },
+    title: { he: "יוגה בהריון", en: "Pregnancy yoga" },
     description: {
-      he: "יוגת אשטנגה עדינה ומותאמת לכל שלבי ההריון. תמיכה בגוף ובנפש לאורך כל הדרך.",
-      en: "Gentle Ashtanga yoga adapted for every trimester, supporting body and spirit.",
+      he: "אשטנגה רכה לפי שלב — תמיכה בגב, באגן ובלב שמתרחב.",
+      en: "Soft Ashtanga by trimester — support for your back, pelvis, and the heart that is growing room.",
     },
-    tag: { he: "כל השלבים", en: "All trimesters" },
+    tag: { he: "כל ההריון", en: "All trimesters" },
   },
   {
     num: "03",
-    icon: "🌿",
-    title: {
-      he: "ריטריט יום לאמהות עובדות",
-      en: "Working Mom Retreat Day",
-    },
+    icon: "🧠",
+    title: { he: "אימון NLP אישי", en: "NLP coaching" },
     description: {
-      he: "יוגה, מדיטציה, ארוחת שף, מעגל שיתוף ואמצאות לחיזוק האישה — הכל ביום אחד מיוחד.",
-      en: "Yoga, meditation, shared lunch, women's circle and tools for inner strength — all in one day.",
+      he: "מפגשים שמנקים רעש פנימי, בונים ביטחון ומחברים מחדש לבחירות שמשרתות אותך.",
+      en: "Sessions that quiet inner noise, rebuild confidence, and reconnect you with choices that truly serve you.",
     },
-    tag: { he: "ריטריט יום שלם", en: "Full day retreat" },
-    featured: true,
+    tag: { he: "מוסמכת NLP", en: "NLP certified" },
+    tagVariant: "sage",
   },
   {
     num: "04",
     icon: "👶",
-    title: {
-      he: "יוגה ועיסוי לתינוקות",
-      en: "Baby Yoga & Massage",
-    },
+    title: { he: "עיסוי ויוגה לתינוקות", en: "Baby massage & yoga" },
     description: {
-      he: "סדנאות ביתיות לסיוע בגזים, פיתוח מוטורי וחיזוק הקשר בין אמא לתינוק.",
-      en: "Home workshops for gas relief, motor development and deepening the mother-baby bond.",
+      he: "מגע מסודר לשחרור, שינה וקשר — כלים פשוטים שאת לוקחת הביתה.",
+      en: "Structured touch for ease, sleep, and bonding — simple tools you take home with you.",
     },
-    tag: { he: "ביקור בית", en: "Home visits" },
+    tag: { he: "בית או מרחב קבוצתי", en: "Home or small group" },
   },
   {
     num: "05",
-    icon: "🧠",
-    title: { he: "אימון NLP אישי", en: "Personal NLP Coaching" },
+    icon: "✨",
+    title: { he: "סדנאות ומעגלים", en: "Workshops & circles" },
     description: {
-      he: "מפגשים אישיים לחיזוק הכוח הפנימי, שינוי דפוסים ובניית חיים מלאים. מוסמכת NLP.",
-      en: "Personal sessions to strengthen inner power, shift patterns and build a full life. NLP certified.",
+      he: "מפגשים קצרים ועמוקים — נשים, נשימה, וכלים ליומיום המורכב של אמאות.",
+      en: "Short, deep gatherings — women, breath, and tools for the layered everyday of motherhood.",
     },
-    tag: { he: "מפגשים אישיים", en: "Private sessions" },
+    tag: { he: "תאריכים בניוזלטר", en: "Dates in the newsletter" },
     tagVariant: "sage",
   },
   {
     num: "06",
-    icon: "🏡",
-    title: { he: "עיצוב בית אנרגטי", en: "Energy-Space Design" },
+    icon: "🌿",
+    title: { he: "ריטריטים", en: "Retreats" },
     description: {
-      he: "ייעוץ עיצוב פנים שמחבר אנרגיה וצמיחה. הבית שלך כמרחב שמזין ומחזק אותך.",
-      en: "Interior design consulting that connects energy and growth. Your home as a space that nourishes you.",
+      he: "יום שלם של הזנה: יוגה, מדיטציה, ארוחה ומעגל — מקומות מצומצמים, אווירה אינטימית.",
+      en: "A full day of nourishment: yoga, meditation, meal, and circle — small groups, intimate air.",
     },
-    tag: { he: "פנים + אנרגיה", en: "Design + energy" },
-    tagVariant: "sage",
+    tag: { he: "הרשמה מוקדמת", en: "Early registration" },
+    featured: true,
   },
 ];
 
@@ -172,12 +305,21 @@ export const aboutOrtal = {
     he: '"מאמינה שכל אמא היא כוח טבע"',
     en: '"Every mother is a force of nature"',
   },
-  label: { he: "אודות אורטל", en: "About Ortal" },
+  label: { he: "הסיפור שלי", en: "Founder story" },
+  storyLabel: { he: "במילים שלי", en: "In my words" },
   titleBeforeEm: { he: "אורטל חזן — ", en: "Ortal Hazan — " },
   titleEm: { he: "המדריכה שלך", en: "your guide" },
   bio: {
     he: "אורטל חזן היא מדריכת יוגה ואשטנגה, מומחית עיסוי תינוקות, מאמנת NLP מוסמכת ומעצבת פנים. היא מאמינה שכל אמא היא כוח טבע — ושהמרחב הנכון, בגוף ובבית, יכול לשחרר אותו.",
     en: "Ortal Hazan is a yoga and Ashtanga instructor, baby massage specialist, certified NLP coach and interior designer. She believes every mother is a force of nature — and that the right space, in body and home, can release it.",
+  },
+  story2: {
+    he: "הגעתי לשילוב הזה לא מתוך קורס אחד — אלא מתוך חיים: לידות, עייפות, רגעים של התרחבות ושל צמצום. לכן אני יודעת שאין \"נכון\" אחד לכולן — יש קצב שמתאים לך.",
+    en: "I arrived at this blend not from a single course — but from life: births, fatigue, moments of expansion and of pulling inward. That’s why I know there isn’t one “right” for everyone — there is a pace that fits you.",
+  },
+  story3: {
+    he: "השיעורים והריטריטים שלי נשענים על הקשבה, על דיוק מקצועי, ועל אווירה שמרשה לך להיות בדיוק איפה שאת.",
+    en: "My classes and retreats lean on listening, professional precision, and an atmosphere that lets you be exactly where you are.",
   },
   creds: [
     {
@@ -194,7 +336,7 @@ export const aboutOrtal = {
       en: "Interior & Energy Space Designer",
     },
   ] as const satisfies readonly Bilingual[],
-  cta: { he: "קבעי שיעור ראשון →", en: "Book your first session →" },
+  cta: { he: "בואי נדבר →", en: "Let’s talk →" },
 } as const;
 
 export const retreat = {
@@ -264,9 +406,9 @@ export const retreat = {
 } as const;
 
 export const testimonialsSection = {
-  label: { he: "אמרו עליי", en: "What they say" },
-  titleBeforeEm: { he: "נשים שעברו ", en: "Women who walked " },
-  titleEm: { he: "את הדרך", en: "the path" },
+  label: { he: "קולות אמיתיות", en: "True voices" },
+  titleBeforeEm: { he: "מילים שנשארות ", en: "Words that stay " },
+  titleEm: { he: "בגוף", en: "in the body" },
 } as const;
 
 export const testimonials: Testimonial[] = [
@@ -352,6 +494,7 @@ export const calendarSection = {
   },
   ctaEmailEyebrow: { he: "אימייל", en: "Email" },
   whatsapp: { he: "שלחי הודעה בוואטסאפ →", en: "Message on WhatsApp →" },
+  bookOnline: { he: "קביעה עדינה באתר →", en: "Book gently online →" },
 } as const;
 
 export const marketplaceSection = {
@@ -416,11 +559,11 @@ export const footer = {
       { he: "יוגה לאחר לידה", en: "Postnatal Yoga", href: "#services" },
       { he: "יוגה בהריון", en: "Pregnancy Yoga", href: "#services" },
       { he: "עיסוי תינוקות", en: "Baby Massage", href: "#services" },
-      { he: "ריטריט יום", en: "Day Retreat", href: "#retreat" },
+      { he: "ריטריט יום", en: "Day Retreat", href: "#services" },
       { he: "NLP אימון", en: "NLP Coaching", href: "#services" },
     ],
     community: [
-      { he: "הבלוג", en: "Blog", href: "#" },
+      { he: "הבלוג", en: "Blog", href: "/blog" },
       { he: "מעגל הנשים", en: "Women's circle", href: "#" },
       { he: "Marketplace", en: "Marketplace", href: "#marketplace" },
       { he: "כתבי לנו", en: "Write for us", href: "#" },
@@ -436,7 +579,7 @@ export const footer = {
         en: "ortitul@gmail.com",
         href: "mailto:ortitul@gmail.com",
       },
-      { he: "לוח שיעורים", en: "Class calendar", href: "#calendar" },
+      { he: "לוח שיעורים", en: "Class calendar", href: "/book" },
       { he: "הרשמה לניוזלטר", en: "Newsletter signup", href: "#" },
     ],
   },
@@ -461,6 +604,12 @@ export const translations = {
   scrollChrome,
   hero,
   marqueeItems,
+  trustSection,
+  transformationSection,
+  articlesSection,
+  socialGallerySection,
+  socialGalleryImages,
+  finalJourneySection,
   servicesSection,
   services,
   aboutOrtal,
@@ -470,6 +619,7 @@ export const translations = {
   calendarSection,
   marketplaceSection,
   footer,
+  layoutShell,
 } as const;
 
 export {

@@ -80,6 +80,13 @@ export function CalendarCTA() {
               </a>
             </p>
             <Link
+              href="/book"
+              className="mb-4 inline-flex w-full min-h-[48px] items-center justify-center rounded-pill border border-[rgba(255,252,248,0.55)] bg-transparent px-5 py-2.5 text-center text-[0.78rem] font-medium tracking-[0.08em] text-paper transition-[background-color,border-color] duration-300 hover:bg-[rgba(255,252,248,0.08)]"
+            >
+              <span className="he">{calendarSection.bookOnline.he}</span>
+              <span className="en">{calendarSection.bookOnline.en}</span>
+            </Link>
+            <Link
               href={siteContact.whatsappUrl}
               className="btn-white"
               target="_blank"

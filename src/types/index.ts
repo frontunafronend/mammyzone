@@ -35,3 +35,9 @@ export type MarketplaceCard = {
   sub: Bilingual;
   discount: Bilingual;
 };
+
+export type SocialGalleryImage = {
+  alt: Bilingual;
+  /** Primary URL first, then alternates; `SafeImage` appends a local SVG fallback. */
+  sources: readonly string[];
+};

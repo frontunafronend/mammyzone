@@ -1,16 +1,17 @@
-import Image from "next/image";
 import Link from "next/link";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { hero } from "@/lib/i18n";
+import { heroImageSources } from "@/lib/media/sources";
 import { Pill } from "@/components/ui/Pill";
-
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80";
 
 export function Hero() {
   return (
-    <section className="hero" id="home">
+    <section className="hero hero-cinematic" id="home">
+      <div className="hero-cinematic__grain" aria-hidden />
+      <div className="hero-cinematic__wash" aria-hidden />
+      <div className="hero-cinematic__vignette" aria-hidden />
       <div className="hero-dot-grid" aria-hidden />
-      <div className="hero-circle" aria-hidden />
+      <div className="hero-circle hero-cinematic__orb" aria-hidden />
 
       <div className="hero-text">
         <div className="hero-eyebrow">
@@ -37,7 +38,7 @@ export function Hero() {
         </p>
 
         <div className="hero-actions">
-          <Link href="#calendar" className="btn-primary">
+          <Link href="/book" className="btn-primary hero-cta-primary">
             <span className="he">{hero.primaryCta.he}</span>
             <span className="en">{hero.primaryCta.en}</span>
           </Link>
@@ -58,16 +59,19 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-image-wrap">
-        <Image
-          className="hero-photo"
-          src={HERO_IMAGE}
-          alt={`${hero.imageAlt.he} / ${hero.imageAlt.en}`}
-          width={900}
-          height={1200}
-          priority
-          sizes="(max-width: 900px) 100vw, 50vw"
-        />
+      <div className="hero-image-wrap hero-cinematic__visual">
+        <div className="hero-image-parallax" aria-hidden>
+          <SafeImage
+            className="hero-photo hero-photo--layer"
+            sources={heroImageSources}
+            alt={`${hero.imageAlt.he} / ${hero.imageAlt.en}`}
+            width={900}
+            height={1200}
+            priority
+            sizes="(max-width: 900px) 100vw, 50vw"
+          />
+        </div>
+        <div className="hero-cinematic__frame" aria-hidden />
         <div className="hero-credential">
           <div className="hero-credential-name">
             <span className="he">{hero.credentialName.he}</span>
