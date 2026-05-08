@@ -12,8 +12,6 @@ import {
 } from "react";
 import { nav, useLanguage } from "@/lib/i18n";
 
-const SCROLL_THRESHOLD_PX = 40;
-
 const NAV_LINKS = [
   { href: "#services", labelKey: "services" as const },
   { href: "#about", labelKey: "about" as const },
@@ -24,20 +22,12 @@ const NAV_LINKS = [
 
 export function Nav() {
   const { language, toggleLanguage } = useLanguage();
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLElement>(null);
   const drawerTitleId = useId();
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD_PX);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -110,10 +100,6 @@ export function Nav() {
 
   const bodyFont = language === "he" ? "font-bodyHe" : "font-bodyEn";
 
-  const bar = scrolled
-    ? "bg-[rgba(250,247,242,0.92)] shadow-[0_1px_0_rgba(42,31,26,0.08)] backdrop-blur-[20px]"
-    : "bg-transparent shadow-none backdrop-blur-0";
-
   const linkClass = `text-[0.82rem] font-normal tracking-[0.06em] text-ink-soft transition-colors duration-200 hover:text-rose ${bodyFont}`;
 
   const ctaClass = `inline-flex min-h-[44px] w-full items-center justify-center rounded-pill bg-rose px-[22px] py-2.5 text-[0.8rem] font-medium tracking-[0.05em] text-paper transition-[background-color,transform] duration-200 hover:-translate-y-px hover:bg-rose-deep ${bodyFont}`;
@@ -127,11 +113,11 @@ export function Nav() {
     <>
       <nav
         id="nav"
-        className={`fixed inset-x-0 top-0 z-[100] flex h-nav items-center justify-between px-6 transition-[background-color,backdrop-filter,box-shadow] duration-500 ease-out min-[901px]:px-[clamp(1.5rem,5vw,4rem)] ${bar}`}
+        className="fixed inset-x-0 top-0 z-[100] flex h-nav items-center justify-between bg-[rgba(250,247,242,0.92)] px-6 shadow-[0_1px_0_rgba(42,31,26,0.08)] backdrop-blur-[20px] min-[901px]:px-[clamp(1.5rem,5vw,4rem)]"
       >
         <Link
           href="#home"
-          className="font-display text-[1.6rem] font-normal leading-none tracking-[0.02em] text-ink"
+          className="font-display text-[1.6rem] font-medium leading-none tracking-[0.02em] text-ink"
           onClick={closeMobile}
         >
           mammy<span className="text-rose">zone</span>
@@ -200,7 +186,7 @@ export function Nav() {
         <div className="flex shrink-0 items-center justify-between gap-3 border-b border-[rgba(42,31,26,0.08)] px-5 py-4">
           <p
             id={drawerTitleId}
-            className="font-display text-[1.15rem] font-normal tracking-[0.02em] text-ink"
+            className="font-display text-[1.15rem] font-medium tracking-[0.02em] text-ink"
           >
             {nav.drawerTitle[language]}
           </p>

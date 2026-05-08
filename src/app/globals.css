@@ -4,7 +4,7 @@
 
 /* Design tokens — canonical :root + keyframes: docs/mammyzone-homepage.html
    (hex casing and values match the saved reference export). next/font on <html>
-   supplies --font-cormorant, --font-heebo, --font-dm-sans prepended in stacks below. */
+   sets --font-heebo / --font-dm-sans. Display = same geometric sans as body per language. */
 :root {
   --rose: #B85070;
   --rose-light: #E8C4CF;
@@ -21,9 +21,9 @@
   --ink-soft: #5C4A40;
   --ink-muted: #9A8A80;
   --white: #FFFCF8;
-  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  --font-body-en: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
-  --font-body-he: var(--font-heebo), "Heebo", system-ui, sans-serif;
+  --font-body-en: var(--font-dm-sans);
+  --font-body-he: var(--font-heebo);
+  --font-display: var(--font-body-he);
   --nav-h: 72px;
   --max-w: 1340px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -55,6 +55,7 @@ body {
   font-weight: 300;
   line-height: 1.7;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 img {
@@ -90,6 +91,7 @@ body.lang-en .en {
 body.lang-en {
   font-family: var(--font-body-en);
   direction: ltr;
+  --font-display: var(--font-body-en);
 }
 
 body.lang-en [dir="rtl"] {
@@ -207,7 +209,7 @@ body.lang-en span.he {
 .hero-title {
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 6.5vw, 7rem);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -219,14 +221,14 @@ body.lang-en span.he {
 .hero-title em {
   font-style: italic;
   color: var(--rose);
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .hero-title .line-accent {
   display: block;
   font-size: clamp(2.4rem, 4.5vw, 5rem);
   color: var(--ink-soft);
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .hero-sub {
@@ -446,7 +448,7 @@ section {
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 4vw, 4.2rem);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.1;
   color: var(--ink);
   margin-bottom: 1.2rem;
@@ -485,7 +487,7 @@ section {
   gap: 0.7rem;
   font-family: var(--font-display);
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   color: rgba(255, 252, 248, 0.9);
   letter-spacing: 0.01em;
@@ -548,7 +550,7 @@ section {
 .service-num {
   font-family: var(--font-display);
   font-size: 3.5rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--rose-light);
   line-height: 1;
   margin-bottom: 1rem;
@@ -567,7 +569,7 @@ section {
 .service-title {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--ink);
   margin-bottom: 0.7rem;
   line-height: 1.2;
@@ -735,7 +737,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: rgba(255, 252, 248, 0.9);
 }
@@ -809,7 +811,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 .retreat-title {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 4.5vw, 4.5rem);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.1;
   color: var(--white);
   margin-bottom: 1.4rem;
@@ -900,7 +902,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 .retreat-card-title {
   font-family: var(--font-display);
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--white);
 }
 
@@ -926,7 +928,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 .retreat-price {
   font-family: var(--font-display);
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--rose-light);
 }
 
@@ -989,7 +991,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.65;
   color: var(--ink-soft);
   margin-bottom: 1.4rem;
@@ -1095,7 +1097,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 .cta-box-title {
   font-family: var(--font-display);
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--white);
   margin-bottom: 0.6rem;
   line-height: 1.2;
@@ -1214,7 +1216,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 .footer-logo {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--white);
   margin-bottom: 1rem;
 }

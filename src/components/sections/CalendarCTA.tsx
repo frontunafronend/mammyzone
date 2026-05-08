@@ -62,7 +62,7 @@ export function CalendarCTA() {
               <span className="he">{calendarSection.ctaPhoneEyebrow.he}</span>
               <span className="en">{calendarSection.ctaPhoneEyebrow.en}</span>
             </p>
-            <p className="mb-1 text-center font-display text-[1.45rem] font-normal leading-tight tracking-[0.02em] text-paper">
+            <p className="mb-1 text-center font-display text-[1.45rem] font-medium leading-tight tracking-[0.02em] text-paper">
               <a href={siteContact.phoneTel} className="underline decoration-[rgba(255,252,248,0.45)] underline-offset-[5px] transition-opacity hover:opacity-90">
                 {siteContact.phoneDisplay}
               </a>

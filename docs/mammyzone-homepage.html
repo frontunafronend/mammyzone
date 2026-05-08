@@ -6,12 +6,12 @@
   <title>MammyZone — homepage design reference (source of truth)</title>
   <!--
     Saved reference: design tokens and motion primitives for the MammyZone homepage.
-    The Next.js app mirrors these values in src/app/globals.css (with --font-* extended
-    on <html> via next/font: --font-cormorant, --font-heebo, --font-dm-sans).
+    The Next.js app mirrors these values in src/app/globals.css (with --font-* on
+    the html root via next/font: --font-heebo, --font-dm-sans; display uses the same sans as body).
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Heebo:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     :root {
       --rose: #B85070;
@@ -29,9 +29,9 @@
       --ink-soft: #5C4A40;
       --ink-muted: #9A8A80;
       --white: #FFFCF8;
-      --font-display: "Cormorant Garamond", Georgia, serif;
       --font-body-en: "DM Sans", system-ui, sans-serif;
       --font-body-he: "Heebo", system-ui, sans-serif;
+      --font-display: var(--font-body-he);
       --nav-h: 72px;
       --max-w: 1340px;
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

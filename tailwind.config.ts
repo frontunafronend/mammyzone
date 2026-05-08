@@ -36,24 +36,9 @@ const config: Config = {
         paper: "var(--white)",
       },
       fontFamily: {
-        display: [
-          "var(--font-display)",
-          "Cormorant Garamond",
-          "Georgia",
-          "serif",
-        ],
-        bodyHe: [
-          "var(--font-body-he)",
-          "Heebo",
-          "system-ui",
-          "sans-serif",
-        ],
-        bodyEn: [
-          "var(--font-body-en)",
-          "DM Sans",
-          "system-ui",
-          "sans-serif",
-        ],
+        display: ["var(--font-display)"],
+        bodyHe: ["var(--font-body-he)"],
+        bodyEn: ["var(--font-body-en)"],
       },
       maxWidth: {
         site: "var(--max-w)",
