@@ -2,16 +2,18 @@
 
 import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
-import { createAdminSessionToken, ADMIN_SESSION_COOKIE, verifyAdminSessionToken } from "@/lib/admin/session";
+import { ADMIN_SESSION_COOKIE } from "@/server/auth/session";
+import { getAdminUsernameFromCookies, isAdminAuthenticated } from "@/server/auth/admin-session";
+import { performAdminLogin } from "@/server/services/admin-login.service";
 import { getOfferingById } from "@/lib/booking/catalog";
-import { validateBookingSelection } from "@/lib/booking/server/validate-submission";
+import { validateBookingSelection } from "@/server/validators/booking-submission";
 import type {
   SubmitBookingRequestInput,
   SubscribeNewsletterInput,
   SubmitContactInterestInput,
   LeadActionResult,
 } from "@/lib/leads/action-inputs";
-import { getLeadStorage } from "@/lib/leads/get-lead-storage";
+import { getLeadStorage } from "@/server/adapters/lead-storage.factory";
 import type { LeadWorkflowStatus } from "@/lib/leads/types";
 import {
   isHoneypotTriggered,
@@ -25,19 +27,19 @@ import {
   validateOptionalEmail,
   validatePhone,
   validateReference,
-} from "@/lib/leads/validation";
+} from "@/server/validators/leads";
+import { writeAuditLog } from "@/server/services/audit-log.service";
 
-function readAdminSecret(): string | null {
-  const k = process.env.ADMIN_ACCESS_KEY?.trim();
-  return k && k.length > 0 ? k : null;
-}
-
-function isAdminAuthenticated(): boolean {
-  const secret = readAdminSecret();
-  if (!secret) return false;
-  const tok = cookies().get(ADMIN_SESSION_COOKIE)?.value;
-  if (!tok) return false;
-  return verifyAdminSessionToken(tok, secret);
+function revalidateAdmin() {
+  const paths = [
+    "/admin",
+    "/admin/leads",
+    "/admin/bookings",
+    "/admin/newsletter",
+    "/admin/audit",
+    "/admin/system",
+  ];
+  for (const p of paths) revalidatePath(p);
 }
 
 export async function submitBookingRequest(input: SubmitBookingRequestInput): Promise<LeadActionResult> {
@@ -97,7 +99,7 @@ export async function submitBookingRequest(input: SubmitBookingRequestInput): Pr
     };
   }
 
-  revalidatePath("/admin/leads");
+  revalidateAdmin();
   return { ok: true };
 }
 
@@ -124,13 +126,10 @@ export async function subscribeNewsletter(input: SubscribeNewsletterInput): Prom
     return { ok: false, error: "We could not subscribe you right now. Please try again later." };
   }
 
-  revalidatePath("/admin/leads");
+  revalidateAdmin();
   return { ok: true };
 }
 
-/**
- * Contact / interest form (M042 will add `/contact` UI). Callable from any future server component or route.
- */
 export async function submitContactInterest(input: SubmitContactInterestInput): Promise<LeadActionResult> {
   if (isHoneypotTriggered(input.honeypot)) return { ok: true };
 
@@ -171,7 +170,7 @@ export async function submitContactInterest(input: SubmitContactInterestInput): 
     return { ok: false, error: "We could not send your message. Please try again later." };
   }
 
-  revalidatePath("/admin/leads");
+  revalidateAdmin();
   return { ok: true };
 }
 
@@ -182,9 +181,9 @@ export type UpdateLeadStatusInput = {
 };
 
 export async function updateLeadStatus(input: UpdateLeadStatusInput): Promise<LeadActionResult> {
-  if (!isAdminAuthenticated()) return { ok: false, error: "Unauthorized." };
+  if (!(await isAdminAuthenticated())) return { ok: false, error: "Unauthorized." };
 
-  const allowed: LeadWorkflowStatus[] = ["new", "contacted", "booked", "closed"];
+  const allowed: LeadWorkflowStatus[] = ["new", "contacted", "booked", "closed", "archived"];
   if (!allowed.includes(input.status)) return { ok: false, error: "Invalid status." };
 
   try {
@@ -197,32 +196,26 @@ export async function updateLeadStatus(input: UpdateLeadStatusInput): Promise<Le
     return { ok: false, error: "Could not update status." };
   }
 
-  revalidatePath("/admin/leads");
+  await writeAuditLog({
+    action: "lead.status_update",
+    entityType: input.kind,
+    entityId: input.id,
+    after: { status: input.status },
+    actor: await getAdminUsernameFromCookies(),
+  });
+
+  revalidateAdmin();
   return { ok: true };
 }
 
-export async function loginAdmin(password: string): Promise<LeadActionResult> {
-  const secret = readAdminSecret();
-  if (!secret) return { ok: false, error: "Admin access is not configured (missing ADMIN_ACCESS_KEY)." };
-
-  const trimmed = password.trim();
-  if (trimmed !== secret) return { ok: false, error: "Invalid password." };
-
-  const token = createAdminSessionToken(secret);
-  cookies().set(ADMIN_SESSION_COOKIE, token, {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
-    path: "/",
-    maxAge: 7 * 24 * 60 * 60,
-  });
-
-  revalidatePath("/admin/leads");
-  return { ok: true };
+export async function loginAdmin(username: string, password: string): Promise<LeadActionResult> {
+  const result = await performAdminLogin(username, password);
+  if (result.ok) revalidateAdmin();
+  return result;
 }
 
 export async function logoutAdmin(): Promise<LeadActionResult> {
   cookies().delete(ADMIN_SESSION_COOKIE);
-  revalidatePath("/admin/leads");
+  revalidateAdmin();
   return { ok: true };
 }

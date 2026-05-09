@@ -1,19 +1,21 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { ADMIN_SESSION_COOKIE, verifyAdminSessionToken } from "@/lib/admin/session";
-import { buildLeadsCsv } from "@/lib/leads/csv";
-import { getLeadStorage } from "@/lib/leads/get-lead-storage";
+import { ADMIN_SESSION_COOKIE, parseAdminSessionToken } from "@/server/auth/session";
+import { getAdminSessionSecret } from "@/server/auth/auth-config";
+import { buildLeadsCsv } from "@/server/services/leads-csv.service";
+import { getLeadStorage } from "@/server/adapters/lead-storage.factory";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const secret = process.env.ADMIN_ACCESS_KEY?.trim();
+  const secret = getAdminSessionSecret();
   if (!secret) {
     return NextResponse.json({ error: "Admin not configured" }, { status: 503 });
   }
 
   const token = cookies().get(ADMIN_SESSION_COOKIE)?.value;
-  if (!token || !verifyAdminSessionToken(token, secret)) {
+  const session = token ? await parseAdminSessionToken(token, secret) : null;
+  if (!session?.sub) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

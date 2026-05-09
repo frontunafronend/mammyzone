@@ -63,6 +63,7 @@ export function Nav() {
   const journalActive = pathname.startsWith("/blog");
   const bookActive = pathname.startsWith("/book");
   const contactActive = pathname.startsWith("/contact");
+  const adminRoute = pathname.startsWith("/admin");
   const offHomeSections = journalActive || bookActive || contactActive;
 
   useEffect(() => {
@@ -182,6 +183,7 @@ export function Nav() {
 
   const shellClass = [
     "nav-shell",
+    adminRoute ? "nav-shell--document-flow" : "",
     scrolled ? "nav-shell--scrolled" : "",
     mobileOpen ? "z-[103]" : "z-[100]",
   ]

@@ -1,5 +1,5 @@
 /** Shared workflow for admin triage (M041). Newsletter rows use the same enum for consistency. */
-export type LeadWorkflowStatus = "new" | "contacted" | "booked" | "closed";
+export type LeadWorkflowStatus = "new" | "contacted" | "booked" | "closed" | "archived";
 
 export type NewsletterSignupSource = "modal" | "footer" | "blog";
 

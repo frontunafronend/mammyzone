@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { siteContact } from "@/lib/contact";
 import { layoutShell, useLanguage } from "@/lib/i18n";
@@ -44,6 +45,7 @@ const ACTIONS = [
 ] as const;
 
 export function FloatingCTACluster() {
+  const pathname = usePathname();
   const { language } = useLanguage();
   const [open, setOpen] = useState(false);
   const [wide, setWide] = useState(false);
@@ -77,6 +79,8 @@ export function FloatingCTACluster() {
   }, [open, close]);
 
   const bodyFont = language === "he" ? "font-bodyHe" : "font-bodyEn";
+
+  if (pathname.startsWith("/admin")) return null;
 
   return (
     <div
