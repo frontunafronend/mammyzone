@@ -14,19 +14,23 @@ export function Hero() {
       <div className="hero-cinematic__wash" aria-hidden />
 
       <div className="hero-text relative z-[2]">
-        <p className="hero-wordmark" aria-hidden={false}>
+        <p className="hero-wordmark" dir="ltr" aria-hidden={false}>
           Mammy<span>Zone</span>
         </p>
         <h1 className="hero-title">
           <span className="he">
             {hero.titleBeforeEm.he}
             <em>{hero.titleEm.he}</em>
-            <span className="line-accent">{hero.titleAccent.he}</span>
+            {hero.titleAccent.he ? (
+              <span className="line-accent">{hero.titleAccent.he}</span>
+            ) : null}
           </span>
           <span className="en">
             {hero.titleBeforeEm.en}
             <em>{hero.titleEm.en}</em>
-            <span className="line-accent">{hero.titleAccent.en}</span>
+            {hero.titleAccent.en ? (
+              <span className="line-accent">{hero.titleAccent.en}</span>
+            ) : null}
           </span>
         </h1>
 

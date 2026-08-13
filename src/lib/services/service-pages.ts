@@ -1,6 +1,6 @@
 import type { BlogCategory } from "@/lib/blog/categories";
 import { galleryPhotoSources } from "@/lib/media/gallery";
-import { retreatNatureSources } from "@/lib/media/sources";
+import { retreatSpaceSources } from "@/lib/media/sources";
 import type { Bilingual } from "@/types";
 
 export type ServiceFaqItem = { q: Bilingual; a: Bilingual };
@@ -164,7 +164,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       b("יוגה להריון מול הים — מתאים לגוף שמשתנה", "Prenatal yoga by the sea — honoring a changing body"),
     ),
     midVisual: serviceVisual(
-      galleryPhotoSources("prenatal-yoga", 6).slice(2, 5),
+      galleryPhotoSources("prenatal-yoga", 2).slice(1),
       b("הקשבה ומרווח — מקום לגוף שמשתנה כל שבוע", "Space and ease — room for a body that shifts each week"),
     ),
     problemTitle: b("כשהכל נראה כבד", "When everything feels heavy"),
@@ -403,7 +403,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       b("מעגל משפחה ותנועה — סדנה וריטריט", "Family circle and movement — workshop and retreat"),
     ),
     midVisual: serviceVisual(
-      retreatNatureSources,
+      retreatSpaceSources,
       b("טבע ואור — ריטריט יום לאמהות", "Nature and light — a day retreat for mothers"),
     ),
     problemTitle: b("כשהבית צפוף והלב צריך קהילה", "When home feels tight and the heart needs community"),

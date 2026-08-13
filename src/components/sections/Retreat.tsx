@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { retreat } from "@/lib/i18n";
-import { retreatNatureSources } from "@/lib/media/sources";
+import { retreatSpaceSources } from "@/lib/media/sources";
 
 export function Retreat() {
   return (
@@ -54,7 +54,7 @@ export function Retreat() {
           <div className="retreat-visual reveal reveal-delay-1">
             <div className="retreat-photo">
               <SafeImage
-                sources={retreatNatureSources}
+                sources={retreatSpaceSources}
                 alt={`${retreat.photoAlt.he} / ${retreat.photoAlt.en}`}
                 fill
                 className="object-cover"

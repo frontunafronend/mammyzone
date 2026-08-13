@@ -104,7 +104,7 @@ export const hero = {
   eyebrow: { he: "בית לאמהות", en: "A home for mothers" },
   titleBeforeEm: { he: "", en: "A " },
   titleEm: { he: "בית לאמהות", en: "home for mothers" },
-  titleAccent: { he: "מקום בשבילך — בואי כמו שאת", en: "A place for you — come as you are" },
+  titleAccent: { he: "", en: "" },
   sub: {
     he: "יוגה אשטנגה, יוגה להריון, עיסוי תינוקות ובייבי יוגה, יוגה לאחר לידה, ריטריטים לאמהות עובדות, ומאסטרית NLP מוסמכת.",
     en: "Ashtanga Yoga, prenatal yoga, infant massage and baby yoga, postnatal yoga, retreats for working moms, and certified NLP Master.",
@@ -171,7 +171,7 @@ export const trustSection = {
 
 export const transformationSection = {
   label: { he: "המעבר", en: "The shift" },
-  titleLine1: { he: "מחיצוני", en: "From the outer world" },
+  titleLine1: { he: "מרעש חיצוני", en: "From outer noise" },
   titleEm: { he: "לשקט פנימי", en: "to inner quiet" },
   sub: {
     he: "הגוף והנפש מדברים באותה שפה — כשמקשיבים, משהו מתרכך.",
@@ -193,8 +193,8 @@ export const transformationSection = {
 
 export const articlesSection = {
   label: { he: "שמזין את הנפש", en: "For the soul & SEO" },
-  titleLine1: { he: "מגזין", en: "Editorial" },
-  titleEm: { he: "קצר ועמוק", en: "short & deep" },
+  titleLine1: { he: "מילים", en: "Words" },
+  titleEm: { he: "לאמהות", en: "for mothers" },
   readMore: { he: "קראי עוד →", en: "Read more →" },
 } as const;
 
@@ -362,16 +362,16 @@ export const aboutOrtal = {
   titleBeforeEm: { he: "", en: "" },
   titleEm: { he: "אורטל", en: "Ortal" },
   bio: {
-    he: "אורטל היא אמא, מורה ליוגה אשטנגה, ומלווה יוגה להריון, יוגה לאחר לידה, ועיסוי תינוקות ובייבי יוגה. היא מקיימת ריטריטים מיוחדים לאמהות עובדות, אדריכלית ומעצבת מרחבים אנרגטיים, ומאסטרית NLP מוסמכת — ליווי אישי לצמיחה ולהעצמה. היא מאמינה שכל אמא היא כוח טבע — ושהמרחב הנכון, בגוף ובבית, יכול לשחרר אותו.",
-    en: "Ortal is a mom, an Ashtanga Yoga teacher, and a guide for prenatal yoga, postnatal yoga, and infant massage with baby yoga. She holds special retreats for working moms, is an architect and energy-focused spatial designer, and a certified NLP Master — personal coaching for growth and empowerment. She believes every mother is a force of nature — and that the right space, in body and home, can release it.",
+    he: "אורטל היא אמא, מורה ליוגה אשטנגה, ומלווה יוגה להריון, יוגה לאחר לידה, ועיסוי תינוקות ובייבי יוגה. היא מקיימת ריטריטים מיוחדים לאמהות עובדות, אדריכלית ומעצבת מרחבים אנרגטיים, ומאסטרית NLP מוסמכת — ליווי אישי לצמיחה ולהעצמה. היא מאמינה שכל אמא היא כוח טבע — ושהמרחב הנכון, בגוף, בנפש ובבית, יכול לשחרר אותו.",
+    en: "Ortal is a mom, an Ashtanga Yoga teacher, and a guide for prenatal yoga, postnatal yoga, and infant massage with baby yoga. She holds special retreats for working moms, is an architect and energy-focused spatial designer, and a certified NLP Master — personal coaching for growth and empowerment. She believes every mother is a force of nature — and that the right space, in body, soul, and home, can release it.",
   },
   story2: {
-    he: "הגעתי לשילוב הזה לא מתוך קורס אחד — אלא מתוך חיים: לידות, עייפות, רגעים של התרחבות ושל צמצום. לכן אני יודעת שאין \"נכון\" אחד לכולן — יש קצב שמתאים לך.",
-    en: "I arrived at this blend not from a single course — but from life: births, fatigue, moments of expansion and of pulling inward. That’s why I know there isn’t one “right” for everyone — there is a pace that fits you.",
+    he: "הגעתי לשילוב הזה לא מתוך קורס אחד — אלא מתוך חיים: לידות, עייפות, וכל מה שקורה בין לבין. לכן אני יודעת שאין \"נכון\" אחד לכולן — יש קצב שמתאים לך.",
+    en: "I arrived at this blend not from a single course — but from life: births, fatigue, and everything that happens in between. That’s why I know there isn’t one “right” for everyone — there is a pace that fits you.",
   },
   story3: {
-    he: "השיעורים והריטריטים שלי נשענים על הקשבה, על דיוק מקצועי, ועל אווירה שמאפשרת לך להיות בדיוק איפה שאת.",
-    en: "My classes and retreats lean on listening, professional precision, and an atmosphere that lets you be exactly where you are.",
+    he: "השיעורים והריטריטים שלי נשענים על הקשבה, על נוכחות חמה, ועל אווירה שמאפשרת לך להיות בדיוק איפה שאת.",
+    en: "My classes and retreats lean on listening, warm presence, and an atmosphere that lets you be exactly where you are.",
   },
   creds: [
     { he: "יוגה אשטנגה", en: "Ashtanga Yoga" },
@@ -446,8 +446,8 @@ export const retreat = {
     icon: "📍",
   },
   photoAlt: {
-    he: "טבע ואור — ריטריט יום לאמהות",
-    en: "Nature and light — a day retreat for mothers",
+    he: "חלל בנוי בטבע — ריטריט יום לאמהות",
+    en: "A built space in nature — a day retreat for mothers",
   },
   cta: {
     he: "הרשמי לריטריט הקרוב →",

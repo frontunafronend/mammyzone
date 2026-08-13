@@ -34,21 +34,18 @@ export function studioStack(...keys: StudioPhotoKey[]): string[] {
   return dedupeSources(keys.map((k) => studioPhotos[k]));
 }
 
-export const heroImageSources = studioStack(
-  "beachYogaArms",
-  "pregnancyBeachArms",
-);
+export const heroImageSources = studioStack("beachYogaArms", "yogaCoastStretch");
 
 export const aboutPortraitSources = studioStack(
-  "pregnancyBeachArms",
+  "pregnancyBw",
   "beachYogaArms",
-  "pregnancyBeachSalute",
+  "yogaCoastSeated",
 );
 
 const BLOG_FALLBACKS = studioStack(
   "yogaCoastSeated",
   "babyMassageSmile",
-  "pregnancyBeachSalute",
+  "pregnancyBw",
   "yogaCoastStretch",
 );
 
@@ -67,20 +64,28 @@ export function authorAvatarSources(primaryUrl: string | undefined | null): stri
   ]);
 }
 
-/** Unsplash (free license) — nature stills for retreat when no studio photo fits. */
-export const retreatNatureSources = [
-  unsplashPhoto("1441974231531-c6227db76b6e", 1600),
-  unsplashPhoto("1470252649378-9c29740c9fa8", 1600),
-  unsplashPhoto("1507525428034-b723cf961d3e", 1600),
+/** Unsplash — built space in nature (pavilion / house / interior with greenery). */
+export const retreatSpaceSources = [
+  unsplashPhoto("1600210492486-724fe5c67fb0", 1600),
+  unsplashPhoto("1600585154340-be6161a56a0c", 1600),
+  unsplashPhoto("1520250497591-112f2f40a3f4", 1600),
+];
+
+/** Unsplash — women's gatherings for workshops & circles (no studio circle photos). */
+export const workshopCircleSources = [
+  unsplashPhoto("1469571486292-0ba58a3f068b", 1600),
+  unsplashPhoto("1511632765486-a01980e01a18", 1600),
+  unsplashPhoto("1545205597-3d9d02c29597", 1600),
+  unsplashPhoto("1529156069898-49953e39b3ac", 1600),
 ];
 
 export const serviceCardImageSources: Record<"01" | "02" | "03" | "04" | "05" | "06", string[]> = {
   "01": studioStack("yogaCoastSeated", "yogaCoastPlank", "beachDowndog"),
-  "02": studioStack("pregnancyBeachSalute", "pregnancyBw", "pregnancyBeachArms"),
+  "02": studioStack("pregnancyBw", "pregnancyPool"),
   "03": studioStack("beachYogaArms", "yogaCoastStretch"),
   "04": studioStack("babyMassageSmile", "babyMassageHead", "babyMassageArms"),
-  "05": studioStack("babyClass", "momToddlerPark", "familyHome"),
-  "06": retreatNatureSources,
+  "05": workshopCircleSources,
+  "06": retreatSpaceSources,
 };
 
 export const socialGalleryStock: readonly SocialGalleryImage[] = [
@@ -90,7 +95,7 @@ export const socialGalleryStock: readonly SocialGalleryImage[] = [
   },
   {
     alt: { he: "יוגה להריון על החוף", en: "Prenatal yoga on the beach" },
-    sources: studioStack("pregnancyBeachSalute", "pregnancyBeachArms", "pregnancyBw"),
+    sources: studioStack("pregnancyBw", "pregnancyPool"),
   },
   {
     alt: { he: "עיסוי תינוקות", en: "Baby massage" },
@@ -110,7 +115,7 @@ export const socialGalleryStock: readonly SocialGalleryImage[] = [
   },
   {
     alt: { he: "שחרור במים", en: "Ease in the water" },
-    sources: studioStack("pregnancyPool", "pregnancyBeachArms"),
+    sources: studioStack("pregnancyPool"),
   },
   {
     alt: { he: "יוגה על החול", en: "Yoga on the sand" },

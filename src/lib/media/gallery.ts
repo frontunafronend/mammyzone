@@ -1,5 +1,5 @@
 import type { Bilingual, StudioGalleryCategory, StudioGalleryItem } from "@/types";
-import { studioPhotos } from "./sources";
+import { studioPhotos, workshopCircleSources } from "./sources";
 
 const b = (he: string, en: string): Bilingual => ({ he, en });
 
@@ -46,9 +46,7 @@ function still(
  * NLP = open-arm empowerment stills.
  */
 export const studioGalleryItems: readonly StudioGalleryItem[] = [
-  photo("pregnancy-beach-salute", studioPhotos.pregnancyBeachSalute, b("יוגה להריון על החוף — ידיים לשמיים", "Prenatal yoga on the beach — arms to the sky"), "prenatal-yoga", { shape: "portrait", featured: true }),
-  photo("pregnancy-bw", studioPhotos.pregnancyBw, b("דיוקן בהריון בשחור־לבן", "Black-and-white pregnancy portrait"), "prenatal-yoga", { shape: "portrait" }),
-  photo("pregnancy-beach-arms", studioPhotos.pregnancyBeachArms, b("יוגה להריון מול הגלים", "Prenatal yoga facing the waves"), "prenatal-yoga", { shape: "portrait", featured: true }),
+  photo("pregnancy-bw", studioPhotos.pregnancyBw, b("דיוקן בהריון בשחור־לבן", "Black-and-white pregnancy portrait"), "prenatal-yoga", { shape: "portrait", featured: true }),
   photo("pregnancy-pool", studioPhotos.pregnancyPool, b("שחרור במים בהריון", "Ease in the water during pregnancy"), "prenatal-yoga"),
 
   still("8193", b("קוברה על החול", "Cobra on the sand"), "postnatal-yoga", { shape: "wide", featured: true }),
@@ -83,17 +81,22 @@ export const studioGalleryItems: readonly StudioGalleryItem[] = [
   photo("img-9107", "/photos/img_9107.jpg", b("קרבה רכה בסלון", "Soft closeness on the sofa"), "baby-massage"),
   photo("img-9135", "/photos/img_9135.jpg", b("מבט משותף בבית", "A shared look at home"), "baby-massage"),
 
-  photo("baby-class", studioPhotos.babyClass, b("מפגש עיסוי תינוקות", "A baby massage gathering"), "workshops", { featured: true }),
-  photo("family-home", studioPhotos.familyHome, b("רגע משפחתי בבית", "A family moment at home"), "workshops", { shape: "portrait" }),
-  photo("promenade-child", studioPhotos.promenadeChild, b("רגע עם ילד על הטיילת", "A moment with a child on the promenade"), "workshops"),
-  still("8277", b("משחק מעוף בפארק", "Airplane play in the park"), "workshops", { shape: "portrait", featured: true }),
-  still("8268", b("משחק על הדשא בעיר", "Play on the city grass"), "workshops", { shape: "wide" }),
-  still("8261", b("רגע משחק בפארק", "A playful moment in the park"), "workshops", { shape: "wide" }),
-  photo("park-airplane", studioPhotos.parkAirplane, b("מטוס קטן על הדשא", "Airplane pose on the grass"), "workshops", { shape: "portrait" }),
-  photo("park-airplane-wide", studioPhotos.parkAirplaneWide, b("משחק רחב בפארק", "Wide play in the park"), "workshops", { shape: "wide" }),
-  photo("mom-toddler-park", studioPhotos.momToddlerPark, b("אמא ופעוט בפארק", "Mother and toddler in the park"), "workshops", { shape: "portrait" }),
-  still("8306", b("עיסוי ומשחק בפארק", "Massage and play in the park"), "workshops", { featured: true }),
-  photo("img-9118", "/photos/img_9118.jpg", b("צחוק משותף עם תינוק", "Shared laughter with a baby"), "workshops", { shape: "portrait" }),
+  photo("baby-class", studioPhotos.babyClass, b("מפגש עיסוי תינוקות", "A baby massage gathering"), "baby-massage", { featured: true }),
+  photo("family-home", studioPhotos.familyHome, b("רגע משפחתי בבית", "A family moment at home"), "baby-massage", { shape: "portrait" }),
+  photo("promenade-child", studioPhotos.promenadeChild, b("רגע עם ילד על הטיילת", "A moment with a child on the promenade"), "baby-massage"),
+  still("8277", b("משחק מעוף בפארק", "Airplane play in the park"), "baby-massage", { shape: "portrait", featured: true }),
+  still("8268", b("משחק על הדשא בעיר", "Play on the city grass"), "baby-massage", { shape: "wide" }),
+  still("8261", b("רגע משחק בפארק", "A playful moment in the park"), "baby-massage", { shape: "wide" }),
+  photo("park-airplane", studioPhotos.parkAirplane, b("מטוס קטן על הדשא", "Airplane pose on the grass"), "baby-massage", { shape: "portrait" }),
+  photo("park-airplane-wide", studioPhotos.parkAirplaneWide, b("משחק רחב בפארק", "Wide play in the park"), "baby-massage", { shape: "wide" }),
+  photo("mom-toddler-park", studioPhotos.momToddlerPark, b("אמא ופעוט בפארק", "Mother and toddler in the park"), "baby-massage", { shape: "portrait" }),
+  still("8306", b("עיסוי ומשחק בפארק", "Massage and play in the park"), "baby-massage"),
+  photo("img-9118", "/photos/img_9118.jpg", b("צחוק משותף עם תינוק", "Shared laughter with a baby"), "baby-massage", { shape: "portrait" }),
+
+  photo("workshop-circle", workshopCircleSources[0], b("מעגל נשים — ידיים שמתחברות", "A women's circle — hands meeting"), "workshops"),
+  photo("workshop-gathering", workshopCircleSources[1], b("מפגש משותף במעגל", "A shared gathering in circle"), "workshops"),
+  photo("workshop-yoga-room", workshopCircleSources[2], b("סדנה בתנועה ובנשימה", "A workshop in movement and breath"), "workshops", { shape: "wide" }),
+  photo("workshop-women", workshopCircleSources[3], b("נשים יחד — סדנה ומעגל", "Women together — workshop and circle"), "workshops", { shape: "wide" }),
 
   photo("beach-yoga-arms", studioPhotos.beachYogaArms, b("ידיים לשמיים על החוף", "Arms to the sky on the beach"), "nlp", { shape: "portrait", featured: true }),
   photo("yoga-coast-stretch", studioPhotos.yogaCoastStretch, b("ידיים פתוחות לצדדים ליד הים", "Arms open to the sides by the sea"), "nlp", { featured: true }),

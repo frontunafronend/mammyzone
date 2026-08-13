@@ -187,7 +187,7 @@ body.lang-en span.he {
   position: relative;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  grid-template-columns: minmax(0, 1.14fr) minmax(280px, 0.86fr);
   overflow: hidden;
   background: var(--cream);
 }
@@ -197,7 +197,11 @@ body.lang-en span.he {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: calc(var(--nav-h) + 4.5rem) clamp(1.75rem, 5vw, 5.5rem) 5.5rem;
+  min-width: 0;
+  overflow: hidden;
+  padding-block: calc(var(--nav-h) + 4.5rem) 5.5rem;
+  padding-inline-start: clamp(7.75rem, 13vw, 12.5rem);
+  padding-inline-end: clamp(1.25rem, 3.2vw, 2.75rem);
   z-index: 2;
   background: var(--cream);
   color: var(--ink);
@@ -205,12 +209,16 @@ body.lang-en span.he {
 
 .hero-wordmark {
   font-family: var(--font-wordmark);
-  font-size: clamp(3.4rem, 11vw, 8.2rem);
+  direction: ltr;
+  unicode-bidi: isolate;
+  align-self: flex-start;
+  max-width: 100%;
+  font-size: clamp(2.45rem, 5.6vw, 5.15rem);
   font-weight: 500;
-  line-height: 0.88;
-  letter-spacing: -0.045em;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
   color: var(--ink);
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.1rem;
   opacity: 0;
   animation: fadeUp 0.8s var(--ease-out) 0.05s forwards;
 }
@@ -1591,6 +1599,11 @@ body.lang-en .service-card.featured:hover .service-arrow {
 
   .hero-text {
     padding: 3rem 1.5rem 4rem;
+    overflow: visible;
+  }
+
+  .hero-wordmark {
+    font-size: clamp(2.35rem, 11vw, 3.4rem);
   }
 
   .services-grid {

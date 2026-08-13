@@ -20,13 +20,13 @@ export function generateMetadata(): Metadata {
       description: galleryPage.metaDescription.he,
       locale: "he_IL",
       siteName: "MammyZone",
-      images: [{ url: "/photos/pregnancy-beach-salute.jpg", alt: galleryPage.title.he }],
+      images: [{ url: "/photos/pregnancy-bw.jpg", alt: galleryPage.title.he }],
     },
     twitter: {
       card: "summary_large_image",
       title: galleryPage.metaTitle.en,
       description: galleryPage.metaDescription.en,
-      images: ["/photos/pregnancy-beach-salute.jpg"],
+      images: ["/photos/pregnancy-bw.jpg"],
     },
   };
 }

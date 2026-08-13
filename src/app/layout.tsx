@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     description: siteMeta.description.he,
     images: [
       {
-        url: "/photos/pregnancy-beach-salute.jpg",
-        alt: "אורטל חזן בהריון — יוגה מול הים",
+        url: "/photos/pregnancy-bw.jpg",
+        alt: "אורטל — דיוקן בהריון",
       },
     ],
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteMeta.title.he,
     description: siteMeta.description.he,
-    images: ["/photos/pregnancy-beach-salute.jpg"],
+    images: ["/photos/pregnancy-bw.jpg"],
   },
   robots: { index: true, follow: true },
 };
