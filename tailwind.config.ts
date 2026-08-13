@@ -34,6 +34,10 @@ const config: Config = {
           muted: "var(--ink-muted)",
         },
         paper: "var(--white)",
+        clay: {
+          DEFAULT: "var(--clay)",
+          deep: "var(--clay-deep)",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)"],

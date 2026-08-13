@@ -26,26 +26,10 @@ type NavItem =
 
 const NAV_ITEMS: NavItem[] = [
   { kind: "hash", href: "/#home", id: "home", labelKey: "home" },
-  { kind: "hash", href: "/#trust", id: "trust", labelKey: "trust" },
   { kind: "hash", href: "/#services", id: "services", labelKey: "services" },
   { kind: "hash", href: "/#about", id: "about", labelKey: "about" },
-  {
-    kind: "hash",
-    href: "/#transformation",
-    id: "transformation",
-    labelKey: "transformation",
-  },
-  {
-    kind: "hash",
-    href: "/#testimonials",
-    id: "testimonials",
-    labelKey: "testimonials",
-  },
-  { kind: "hash", href: "/#articles", id: "articles", labelKey: "articles" },
   { kind: "route", href: "/blog", id: "journal", labelKey: "journal" },
-  { kind: "route", href: "/book", id: "book", labelKey: "book" },
   { kind: "route", href: "/contact", id: "contact", labelKey: "contact" },
-  { kind: "hash", href: "/#journey", id: "journey", labelKey: "journey" },
 ];
 
 export function Nav() {
@@ -210,7 +194,7 @@ export function Nav() {
         >
           <Link
             href="/#home"
-            className="font-display text-[1.55rem] font-medium leading-none tracking-[0.02em] text-ink transition-[color,opacity] duration-300 hover:opacity-85 focus-visible:opacity-90"
+            className="font-display text-[1.7rem] font-normal leading-none tracking-[0.04em] text-paper transition-[color,opacity] duration-300 hover:opacity-85 focus-visible:opacity-90"
             onClick={closeMobile}
           >
             mammy<span className="text-rose">zone</span>
@@ -254,7 +238,7 @@ export function Nav() {
 
             <button
               type="button"
-              className={`rounded-pill border border-sand-deep/90 px-3 py-2 text-[0.72rem] font-medium tracking-[0.12em] text-ink-muted transition-[border-color,color,background-color] duration-300 hover:border-rose/50 hover:bg-rose-pale/40 hover:text-rose-deep ${bodyFont}`}
+              className={`rounded-[2px] border border-white/25 px-3 py-2 text-[0.72rem] font-medium tracking-[0.12em] text-paper/80 transition-[border-color,color,background-color] duration-300 hover:border-rose-light hover:text-rose-light ${bodyFont}`}
               aria-label={langAria}
               onClick={toggleLanguage}
             >
@@ -263,7 +247,7 @@ export function Nav() {
 
             <Link
               href="/book"
-              className={`hidden min-h-[44px] min-[901px]:inline-flex min-[901px]:items-center min-[901px]:justify-center min-[901px]:rounded-pill min-[901px]:bg-rose min-[901px]:px-5 min-[901px]:py-2.5 min-[901px]:text-[0.78rem] min-[901px]:font-medium min-[901px]:tracking-[0.06em] min-[901px]:text-paper min-[901px]:shadow-[0_6px_24px_rgba(184,80,112,0.2)] min-[901px]:transition-[background-color,transform,box-shadow] min-[901px]:duration-300 min-[901px]:hover:-translate-y-0.5 min-[901px]:hover:bg-rose-deep min-[901px]:hover:shadow-[0_10px_28px_rgba(122,45,69,0.22)] ${bodyFont}`}
+              className={`btn-primary hidden min-h-[44px] min-[901px]:inline-flex ${bodyFont}`}
               onClick={closeMobile}
             >
               {nav.cta[language]}
@@ -296,13 +280,13 @@ export function Nav() {
         <div className="flex shrink-0 items-center justify-between gap-4 pb-2">
           <p
             id={drawerTitleId}
-            className={`font-display text-[0.68rem] font-medium uppercase tracking-[0.2em] text-ink-muted ${bodyFont}`}
+            className={`font-display text-[0.72rem] font-normal uppercase tracking-[0.18em] text-white/55 ${bodyFont}`}
           >
             {nav.drawerTitle[language]}
           </p>
           <button
             type="button"
-            className={`min-h-[44px] rounded-pill border border-sand-deep/80 px-4 text-[0.7rem] font-medium uppercase tracking-[0.14em] text-ink-soft transition-colors duration-300 hover:border-rose hover:text-rose ${bodyFont}`}
+            className={`min-h-[44px] rounded-[2px] border border-white/25 px-4 text-[0.7rem] font-medium uppercase tracking-[0.14em] text-paper/80 transition-colors duration-300 hover:border-rose-light hover:text-rose-light ${bodyFont}`}
             aria-label={nav.ariaMenuClose[language]}
             onClick={closeMobile}
           >
@@ -323,7 +307,7 @@ export function Nav() {
         <div className="mobile-menu-panel__footer">
           <button
             type="button"
-            className={`w-full min-h-[48px] rounded-pill border border-sand-deep/80 text-[0.75rem] font-medium tracking-[0.1em] text-ink-soft transition-colors duration-300 hover:border-rose hover:text-rose ${bodyFont}`}
+            className={`w-full min-h-[48px] rounded-[2px] border border-white/25 text-[0.75rem] font-medium tracking-[0.1em] text-paper/80 transition-colors duration-300 hover:border-rose-light hover:text-rose-light ${bodyFont}`}
             aria-label={langAria}
             onClick={toggleLanguage}
           >

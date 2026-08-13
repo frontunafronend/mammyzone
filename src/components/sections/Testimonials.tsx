@@ -1,18 +1,12 @@
-import { OrganicTextureBackground } from "@/components/backgrounds/OrganicTextureBackground";
-import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
+import { CourtyardLattice } from "@/components/backgrounds/CourtyardLattice";
 import { testimonials, testimonialsSection } from "@/lib/i18n";
 
 export function Testimonials() {
   return (
     <section className="testimonials testimonials--lux" id="testimonials">
-      <SoftWellnessBackground />
-      <OrganicTextureBackground />
+      <CourtyardLattice tone="sun" />
       <div className="container relative z-[1]">
         <header className="testimonials__head">
-          <div className="section-label">
-            <span className="he">{testimonialsSection.label.he}</span>
-            <span className="en">{testimonialsSection.label.en}</span>
-          </div>
           <h2 className="section-title testimonials__title">
             <span className="he">
               {testimonialsSection.titleBeforeEm.he}
@@ -28,12 +22,9 @@ export function Testimonials() {
           {testimonials.map((t, i) => (
             <article
               key={t.author.he}
-              className={`testimonial-card testimonial-card--lux${i === 1 ? " testimonial-card--lux-accent" : ""}`}
+              className={`testimonial-card testimonial-card--lux${i === 0 ? " testimonial-card--lux-accent" : ""}`}
             >
               <div className="testimonial-card__inner">
-                <div className="testimonial-stars" aria-hidden>
-                  ★★★★★
-                </div>
                 <p className="testimonial-text">
                   <span className="he">{t.text.he}</span>
                   <span className="en">{t.text.en}</span>

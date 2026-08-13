@@ -39,22 +39,22 @@ export function SoftWellnessBackground({
         className="absolute inset-0"
         style={{
           background: isDark
-            ? `radial-gradient(ellipse 90% 72% at 18% 0%, rgba(184, 80, 112, 0.16), transparent 58%),
-               radial-gradient(ellipse 75% 55% at 100% 100%, rgba(122, 158, 142, 0.12), transparent 50%)`
-            : `radial-gradient(ellipse 74% 56% at 90% 6%, rgba(238, 246, 244, 0.88), transparent 56%),
-               radial-gradient(ellipse 70% 54% at 6% 94%, rgba(247, 238, 241, 0.92), transparent 52%),
-               radial-gradient(ellipse 50% 42% at 48% 50%, rgba(250, 247, 242, 0.35), transparent 72%)`,
+            ? `radial-gradient(ellipse 90% 72% at 18% 0%, rgba(194, 24, 91, 0.22), transparent 58%),
+               radial-gradient(ellipse 75% 55% at 100% 100%, rgba(27, 107, 69, 0.16), transparent 50%)`
+            : `radial-gradient(ellipse 74% 56% at 90% 6%, rgba(196, 92, 40, 0.12), transparent 56%),
+               radial-gradient(ellipse 70% 54% at 6% 94%, rgba(194, 24, 91, 0.1), transparent 52%),
+               radial-gradient(ellipse 50% 42% at 48% 50%, rgba(20, 27, 44, 0.06), transparent 72%)`,
         }}
       />
 
       <div
         className={`absolute -start-[20%] top-[6%] h-[min(52vw,500px)] w-[min(52vw,500px)] rounded-full blur-3xl ${
-          isDark ? "bg-[rgba(122,158,142,0.16)]" : "bg-[rgba(196,222,218,0.38)]"
+          isDark ? "bg-[rgba(27,107,69,0.18)]" : "bg-[rgba(196,92,40,0.16)]"
         } opacity-90`}
       />
       <div
         className={`absolute -end-[16%] bottom-[4%] h-[min(46vw,420px)] w-[min(46vw,420px)] rounded-full blur-3xl ${
-          isDark ? "bg-[rgba(184,80,112,0.14)]" : "bg-[rgba(232,196,207,0.42)]"
+          isDark ? "bg-[rgba(194,24,91,0.16)]" : "bg-[rgba(194,24,91,0.14)]"
         } opacity-85`}
       />
 

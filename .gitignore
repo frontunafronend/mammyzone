@@ -37,6 +37,9 @@ yarn-error.log*
 .env*
 !.env.example
 
+# storybook
+/storybook-static
+
 # vercel
 .vercel
 

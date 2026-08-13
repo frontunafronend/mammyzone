@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
+import { CourtyardLattice } from "@/components/backgrounds/CourtyardLattice";
+import { heroMarks } from "@/components/icons/Marks";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { hero } from "@/lib/i18n";
 import { heroImageSources } from "@/lib/media/sources";
@@ -8,19 +9,11 @@ import { Pill } from "@/components/ui/Pill";
 export function Hero() {
   return (
     <section className="hero hero-cinematic" id="home">
-      <SoftWellnessBackground variant="quiet" showBotanical={false} />
+      <CourtyardLattice tone="shade" />
       <div className="hero-cinematic__grain" aria-hidden />
       <div className="hero-cinematic__wash" aria-hidden />
-      <div className="hero-cinematic__vignette" aria-hidden />
-      <div className="hero-dot-grid" aria-hidden />
-      <div className="hero-circle hero-cinematic__orb" aria-hidden />
 
       <div className="hero-text relative z-[2]">
-        <div className="hero-eyebrow">
-          <span className="he">{hero.eyebrow.he}</span>
-          <span className="en">{hero.eyebrow.en}</span>
-        </div>
-
         <h1 className="hero-title">
           <span className="he">
             {hero.titleBeforeEm.he}
@@ -51,13 +44,16 @@ export function Hero() {
         </div>
 
         <div className="hero-pills">
-          {hero.pills.map((p) => (
-            <Pill key={p.he} sage={"sage" in p && p.sage}>
-              <span aria-hidden>{p.icon}</span>
-              <span className="he">{p.he}</span>
-              <span className="en">{p.en}</span>
-            </Pill>
-          ))}
+          {hero.pills.map((p, i) => {
+            const Mark = heroMarks[i] ?? heroMarks[0];
+            return (
+              <Pill key={p.he} sage={"sage" in p && p.sage}>
+                <Mark />
+                <span className="he">{p.he}</span>
+                <span className="en">{p.en}</span>
+              </Pill>
+            );
+          })}
         </div>
       </div>
 
@@ -73,7 +69,7 @@ export function Hero() {
             sizes="(max-width: 900px) 100vw, 50vw"
           />
         </div>
-        <div className="hero-cinematic__frame" aria-hidden />
+        <CourtyardLattice tone="sun" />
         <div className="hero-credential">
           <div className="hero-credential-name">
             <span className="he">{hero.credentialName.he}</span>

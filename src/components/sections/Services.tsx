@@ -1,19 +1,25 @@
 import Link from "next/link";
-import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
+import { CourtyardLattice } from "@/components/backgrounds/CourtyardLattice";
+import { serviceMarks } from "@/components/icons/Marks";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { serviceCardImageSources } from "@/lib/media/sources";
 import { services, servicesSection } from "@/lib/i18n";
 
+const SERVICE_HREFS: Record<string, string> = {
+  "01": "/yoga-after-birth",
+  "02": "/pregnancy-yoga",
+  "03": "/nlp-for-mothers",
+  "04": "/baby-massage",
+  "05": "/workshops",
+  "06": "/book",
+};
+
 export function Services() {
   return (
     <section className="services" id="services">
-      <SoftWellnessBackground showBotanical={false} />
+      <CourtyardLattice tone="sun" />
       <div className="container relative z-[1]">
         <div className="services-header">
-          <div className="section-label">
-            <span className="he">{servicesSection.label.he}</span>
-            <span className="en">{servicesSection.label.en}</span>
-          </div>
           <h2 className="section-title">
             <span className="he">
               {servicesSection.titleLine1.he}
@@ -29,47 +35,50 @@ export function Services() {
         </div>
 
         <div className="services-grid">
-          {services.map((card) => (
-            <Link
-              key={card.num}
-              href="/book"
-              className={`service-card service-card--link${card.featured ? " featured" : ""}`}
-            >
-              {(card.num === "01" || card.num === "02") && (
-                <div className="service-card__visual">
-                  <SafeImage
-                    sources={serviceCardImageSources[card.num]}
-                    alt={`${card.title.he} / ${card.title.en}`}
-                    fill
-                    className="service-card__img object-cover"
-                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              <div className="service-num">{card.num}</div>
-              <div className="service-icon" aria-hidden>
-                {card.icon}
-              </div>
-              <h3 className="service-title">
-                <span className="he">{card.title.he}</span>
-                <span className="en">{card.title.en}</span>
-              </h3>
-              <p className="service-desc">
-                <span className="he">{card.description.he}</span>
-                <span className="en">{card.description.en}</span>
-              </p>
-              <span
-                className={`service-tag${card.tagVariant === "sage" ? " service-tag-sage" : ""}`}
+          {services.map((card, i) => {
+            const Mark = serviceMarks[i] ?? serviceMarks[0];
+            const href = SERVICE_HREFS[card.num] ?? "/book";
+            return (
+              <Link
+                key={card.num}
+                href={href}
+                className={`service-card service-card--link${card.featured ? " featured" : ""}`}
               >
-                <span className="he">{card.tag.he}</span>
-                <span className="en">{card.tag.en}</span>
-              </span>
-              <span className="service-arrow" aria-hidden>
-                ←
-              </span>
-            </Link>
-          ))}
+                {(card.num === "01" || card.num === "02") && (
+                  <div className="service-card__visual">
+                    <SafeImage
+                      sources={serviceCardImageSources[card.num]}
+                      alt={`${card.title.he} / ${card.title.en}`}
+                      fill
+                      className="service-card__img object-cover"
+                      sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div className="service-icon" aria-hidden>
+                  <Mark />
+                </div>
+                <h3 className="service-title">
+                  <span className="he">{card.title.he}</span>
+                  <span className="en">{card.title.en}</span>
+                </h3>
+                <p className="service-desc">
+                  <span className="he">{card.description.he}</span>
+                  <span className="en">{card.description.en}</span>
+                </p>
+                <span
+                  className={`service-tag${card.tagVariant === "sage" ? " service-tag-sage" : ""}`}
+                >
+                  <span className="he">{card.tag.he}</span>
+                  <span className="en">{card.tag.en}</span>
+                </span>
+                <span className="service-arrow" aria-hidden>
+                  ←
+                </span>
+              </Link>
+            );
+          })}
         </div>
         <p className="services-unsure">
           <span className="he">{servicesSection.unsureHint.he}</span>
