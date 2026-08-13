@@ -22,7 +22,7 @@ export function articleJsonLd(
     "@type": "BlogPosting",
     headline: title,
     description,
-    image: [post.image],
+    image: [post.image.startsWith("/") ? absoluteUrl(post.image) : post.image],
     datePublished: post.publishedAt,
     dateModified: post.updatedAt ?? post.publishedAt,
     author: author

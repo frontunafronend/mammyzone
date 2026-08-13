@@ -1,6 +1,5 @@
 import type { BlogCategory } from "@/lib/blog/categories";
-import { unsplashCuratedPhotoIds as U } from "@/lib/media/sources";
-import { dedupeSources, unsplashPhoto } from "@/lib/media/unsplash";
+import { studioStack } from "@/lib/media/sources";
 import type { Bilingual } from "@/types";
 
 export type ServiceFaqItem = { q: Bilingual; a: Bilingual };
@@ -12,15 +11,11 @@ export type ServicePageVisual = {
   sources: readonly string[];
 };
 
-type CuratedPhotoKey = keyof typeof U;
-
 function serviceVisual(
-  ids: readonly CuratedPhotoKey[],
-  width: number,
+  paths: readonly string[],
   alt: Bilingual,
 ): ServicePageVisual {
-  const sources = dedupeSources(ids.map((id) => unsplashPhoto(U[id], width)));
-  return { alt, sources };
+  return { alt, sources: paths };
 }
 
 export type ServicePageDefinition = {
@@ -32,7 +27,7 @@ export type ServicePageDefinition = {
   heroEyebrow: Bilingual;
   heroTitle: Bilingual;
   heroSub: Bilingual;
-  /** Hero column — subject-related Unsplash stack + bilingual alt. */
+  /** Hero column — studio photo stack + bilingual alt. */
   heroVisual: ServicePageVisual;
   /** Wide editorial image after the problem section. */
   midVisual: ServicePageVisual;
@@ -80,17 +75,15 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "No comparing to “before,” no forcing flexibility. Room to breathe, feel your floor, and come home to yourself.",
     ),
     heroVisual: serviceVisual(
-      ["momBaby", "stretch", "heroYoga"],
-      1600,
+      studioStack("momToddlerPark", "parkAirplane", "yogaCoastStretch"),
       b(
         "אמא ותינוק באווירה רכה — מגע ויוגה עדינה אחרי לידה",
         "Mother and baby in a soft mood — gentle touch and postnatal yoga",
       ),
     ),
     midVisual: serviceVisual(
-      ["meditate", "yogaWindow", "momBaby"],
-      1400,
-      b("אור חלון ונשימה — מרחב שקט לפני חזרה ליום", "Window light and breath — quiet before returning to the day"),
+      studioStack("yogaCoastSeated", "yogaCoastStretch", "momToddlerPark"),
+      b("אור ונשימה — מרחב שקט לפני חזרה ליום", "Light and breath — quiet before returning to the day"),
     ),
     problemTitle: b("כשהגוף זר והלב עייף", "When the body feels foreign and the heart is tired"),
     problemBody: b(
@@ -166,14 +159,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "No racing Instagram, no forced load. Breath, stability, and care for pelvic floor and back.",
     ),
     heroVisual: serviceVisual(
-      ["stretch", "yogaWindow", "heroYoga"],
-      1600,
-      b("יוגה עדינה באור רך — מתאים לגוף בהריון", "Gentle yoga in soft light — honoring pregnancy"),
+      studioStack("pregnancyBeachSalute", "pregnancyBw", "pregnancyBeachArms"),
+      b("יוגה בהריון מול הים — מתאים לגוף שמשתנה", "Prenatal yoga by the sea — honoring a changing body"),
     ),
     midVisual: serviceVisual(
-      ["momBaby", "journalZen", "yogaWindow"],
-      1400,
-      b("הקשבה ומרווח — מקום לגוף שמשתנה כל שבוע", "Space and cushion — room for a body that shifts each week"),
+      studioStack("pregnancyPool", "beachYogaArms", "pregnancyBeachArms"),
+      b("הקשבה ומרווח — מקום לגוף שמשתנה כל שבוע", "Space and ease — room for a body that shifts each week"),
     ),
     problemTitle: b("כשהכל נראה כבד", "When everything feels heavy"),
     problemBody: b(
@@ -228,14 +219,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "Structured massage isn’t rough — it’s language. Sometimes it helps evenings, closeness, and a moment where you breathe too.",
     ),
     heroVisual: serviceVisual(
-      ["momBaby", "circle", "meditate"],
-      1600,
+      studioStack("babyMassageSmile", "babyMassageHead", "babyMassageArms"),
       b("מגע אמא־תינוק — חמימות, קירבה, שגרת לפני שינה", "Mother-baby touch — warmth, bonding, a pre-sleep rhythm"),
     ),
     midVisual: serviceVisual(
-      ["meal", "momBaby", "journalZen"],
-      1400,
-      b("רגע שקט בבית — ארוחה ונוכחות משותפת", "A quiet moment at home — meal and shared presence"),
+      studioStack("babyClass", "babyMassageTummy", "babyMassageLegs"),
+      b("רגע שקט בבית — נוכחות משותפת", "A quiet moment at home — shared presence"),
     ),
     problemTitle: b("כשהערב נמתח", "When the evening stretches thin"),
     problemBody: b(
@@ -290,14 +279,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "NLP here doesn’t “fix personality” — it offers tools to ask differently, breathe before reacting, and choose a small step that fits you.",
     ),
     heroVisual: serviceVisual(
-      ["journalNlp", "journalZen", "meditate"],
-      1600,
-      b("עבודה שקטה — מחברת, מחשבה, מרחב פנימי", "Quiet work — notebook, thought, inner space"),
+      studioStack("yogaCoastSeated", "yogaCoastStretch", "yogaCoastPlank"),
+      b("עבודה שקטה — מרחב פנימי ליד הים", "Quiet work — inner space by the sea"),
     ),
     midVisual: serviceVisual(
-      ["journalZen", "circle", "journalNlp"],
-      1400,
-      b("מעגל נשים — שיחה וקשב בלי תחרות", "Women in circle — conversation and attention without competition"),
+      studioStack("yogaCoastCobra", "beachUpdog", "yogaCoastSeated"),
+      b("נשימה וקשב — בלי תחרות", "Breath and attention — without competition"),
     ),
     problemTitle: b("עומס שאין לו כותרת", "Load without a headline"),
     problemBody: b(
@@ -352,14 +339,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "After birth there is no single timeline. Here we listen to fatigue, pulse, tears without explanation — and build a path that fits you.",
     ),
     heroVisual: serviceVisual(
-      ["meditate", "momBaby", "stretch"],
-      1600,
+      studioStack("yogaCoastSeated", "momToddlerPark", "yogaCoastStretch"),
       b("מנוחה ונשימה — שיקום רך אחרי לידה", "Rest and breath — gentle postpartum recovery"),
     ),
     midVisual: serviceVisual(
-      ["circle", "yogaWindow", "momBaby"],
-      1400,
-      b("מעגל ויוגה באור רך — לא לבד עם השיקום", "Circle and yoga in soft light — not alone in recovery"),
+      studioStack("parkAirplane", "babyMassageSmile", "momToddlerPark"),
+      b("יוגה ומגע — לא לבד עם השיקום", "Yoga and touch — not alone in recovery"),
     ),
     problemTitle: b("כשהגוף מבקש רק שקט", "When the body asks only for quiet"),
     problemBody: b(
@@ -413,14 +398,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "A good workshop doesn’t “fill the calendar” — it lets you feel you’re not alone with what moves through you.",
     ),
     heroVisual: serviceVisual(
-      ["circle", "meal", "journalZen"],
-      1600,
-      b("מעגל נשים וארוחה משותפת — סדנה וריטריט", "Women’s circle and shared meal — workshop and retreat"),
+      studioStack("parkAirplaneWide", "promenadeChild", "familyHome"),
+      b("מעגל משפחה ותנועה — סדנה וריטריט", "Family circle and movement — workshop and retreat"),
     ),
     midVisual: serviceVisual(
-      ["momBaby", "circle", "meal"],
-      1400,
-      b("קהילה ומגע רך — מרחב נשי משותף", "Community and soft touch — a shared women’s space"),
+      studioStack("promenadeStretch", "yogaCoastStretch", "parkAirplane"),
+      b("קהילה ומגע — מרחב נשי משותף", "Community and touch — a shared women’s space"),
     ),
     problemTitle: b("כשהבית צפוף והלב צריך קהילה", "When home feels tight and the heart needs community"),
     problemBody: b(

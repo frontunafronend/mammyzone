@@ -1,46 +1,57 @@
 import type { Bilingual, SocialGalleryImage } from "@/types";
-import { dedupeSources, unsplashPhoto } from "./unsplash";
+import { dedupeSources } from "./unsplash";
 
-/**
- * Curated Unsplash stacks — IDs are reused from this repo / MDX for stable CDN URLs.
- * `SafeImage` always appends `/media-fallback.svg` after these remotes.
- */
-const P = {
-  yogaWindow: "photo-1545205597-3d9d02c29597",
-  stretch: "photo-1571019613454-1cb2f99b2d8b",
-  /** Replaced 2026-05: prior Unsplash IDs returned 404 from images.unsplash.com (Imgix). */
-  meditate: "photo-1438761681033-6461ffad8d80",
-  momBaby: "photo-1518611012118-696072aa579a",
-  meal: "photo-1511895426328-dc8714191300",
-  heroYoga: "photo-1544367567-0f2fcb009e0b",
-  journalZen: "photo-1506126613408-eca07ce68773",
-  journalNlp: "photo-1515378791036-0648a3ef77b2",
-  circle: "photo-1529156069898-49953e39b3ac",
+/** Studio photographs from Ortal — served from `/public/photos`. */
+export const studioPhotos = {
+  pregnancyBw: "/photos/pregnancy-bw.jpg",
+  yogaCoastStretch: "/photos/yoga-coast-stretch.jpg",
+  yogaCoastPlank: "/photos/yoga-coast-plank.jpg",
+  yogaCoastCobra: "/photos/yoga-coast-cobra.jpg",
+  yogaCoastSeated: "/photos/yoga-coast-seated.jpg",
+  pregnancyBeachArms: "/photos/pregnancy-beach-arms.jpg",
+  pregnancyBeachSalute: "/photos/pregnancy-beach-salute.jpg",
+  babyMassageHead: "/photos/baby-massage-head.jpg",
+  babyMassageArms: "/photos/baby-massage-arms.jpg",
+  babyMassageSmile: "/photos/baby-massage-smile.jpg",
+  babyMassageLegs: "/photos/baby-massage-legs.jpg",
+  babyMassageTummy: "/photos/baby-massage-tummy.jpg",
+  momToddlerPark: "/photos/mom-toddler-park.jpg",
+  pregnancyPool: "/photos/pregnancy-pool.jpg",
+  familyHome: "/photos/family-home.jpg",
+  babyClass: "/photos/baby-class.jpg",
+  promenadeStretch: "/photos/promenade-stretch.jpg",
+  promenadeChild: "/photos/promenade-child.jpg",
+  beachYogaArms: "/photos/beach-yoga-arms.jpg",
+  beachUpdog: "/photos/beach-updog.jpg",
+  beachDowndog: "/photos/beach-downdog.jpg",
+  parkAirplaneWide: "/photos/park-airplane-wide.jpg",
+  parkAirplane: "/photos/park-airplane.jpg",
 } as const;
 
-/** Same vetted Unsplash ids as `P` — for service landings and other stacks. */
-export const unsplashCuratedPhotoIds = P;
+export type StudioPhotoKey = keyof typeof studioPhotos;
 
-export const heroImageSources = dedupeSources([
-  unsplashPhoto(P.heroYoga, 1200),
-  unsplashPhoto(P.yogaWindow, 1200),
-  unsplashPhoto(P.journalZen, 1200),
-  unsplashPhoto(P.stretch, 1200),
-]);
+export function studioStack(...keys: StudioPhotoKey[]): string[] {
+  return dedupeSources(keys.map((k) => studioPhotos[k]));
+}
 
-export const aboutPortraitSources = dedupeSources([
-  unsplashPhoto(P.momBaby, 900),
-  unsplashPhoto(P.heroYoga, 900),
-  unsplashPhoto(P.yogaWindow, 900),
-  unsplashPhoto(P.meditate, 900),
-]);
+export const heroImageSources = studioStack(
+  "pregnancyBeachSalute",
+  "pregnancyBw",
+  "beachYogaArms",
+);
 
-const BLOG_FALLBACKS = dedupeSources([
-  unsplashPhoto(P.journalZen, 1400),
-  unsplashPhoto(P.journalNlp, 1400),
-  unsplashPhoto(P.heroYoga, 1400),
-  unsplashPhoto(P.stretch, 1400),
-]);
+export const aboutPortraitSources = studioStack(
+  "pregnancyBw",
+  "familyHome",
+  "pregnancyBeachSalute",
+);
+
+const BLOG_FALLBACKS = studioStack(
+  "yogaCoastSeated",
+  "babyMassageSmile",
+  "pregnancyBeachSalute",
+  "yogaCoastStretch",
+);
 
 export function blogCoverSources(primaryUrl: string | undefined | null): string[] {
   const p = primaryUrl?.trim();
@@ -51,72 +62,48 @@ export function authorAvatarSources(primaryUrl: string | undefined | null): stri
   const p = primaryUrl?.trim();
   return dedupeSources([
     ...(p ? [p] : []),
-    unsplashPhoto(P.momBaby, 200),
-    unsplashPhoto(P.journalNlp, 200),
-    unsplashPhoto(P.meditate, 200),
+    studioPhotos.familyHome,
+    studioPhotos.babyClass,
+    studioPhotos.pregnancyBw,
   ]);
 }
 
 export const serviceCardImageSources: Record<"01" | "02", string[]> = {
-  "01": dedupeSources([
-    unsplashPhoto(P.heroYoga, 900),
-    unsplashPhoto(P.yogaWindow, 900),
-    unsplashPhoto(P.stretch, 900),
-  ]),
-  "02": dedupeSources([
-    unsplashPhoto(P.stretch, 900),
-    unsplashPhoto(P.momBaby, 900),
-    unsplashPhoto(P.meditate, 900),
-  ]),
+  "01": studioStack("momToddlerPark", "parkAirplane", "yogaCoastStretch"),
+  "02": studioStack("pregnancyBeachSalute", "pregnancyBw", "pregnancyBeachArms"),
 };
 
 export const socialGalleryStock: readonly SocialGalleryImage[] = [
   {
-    alt: { he: "מעגל נשים יושבות במעגל", en: "Women seated in circle" },
-    sources: dedupeSources([
-      unsplashPhoto(P.circle, 800),
-      unsplashPhoto(P.yogaWindow, 800),
-      unsplashPhoto(P.momBaby, 800),
-    ]),
+    alt: { he: "יוגה מול הים", en: "Yoga by the sea" },
+    sources: studioStack("yogaCoastStretch", "yogaCoastCobra", "beachUpdog"),
   },
   {
-    alt: { he: "יוגה באור חלון", en: "Yoga by window light" },
-    sources: dedupeSources([
-      unsplashPhoto(P.yogaWindow, 800),
-      unsplashPhoto(P.heroYoga, 800),
-      unsplashPhoto(P.journalZen, 800),
-    ]),
+    alt: { he: "יוגה בהריון על החוף", en: "Prenatal yoga on the beach" },
+    sources: studioStack("pregnancyBeachSalute", "pregnancyBeachArms", "pregnancyBw"),
   },
   {
-    alt: { he: "מתיחה עדינה", en: "Gentle stretch" },
-    sources: dedupeSources([
-      unsplashPhoto(P.stretch, 800),
-      unsplashPhoto(P.meditate, 800),
-      unsplashPhoto(P.heroYoga, 800),
-    ]),
+    alt: { he: "עיסוי תינוקות", en: "Baby massage" },
+    sources: studioStack("babyMassageSmile", "babyMassageHead", "babyMassageArms"),
   },
   {
-    alt: { he: "מדיטציה יושבת", en: "Seated meditation" },
-    sources: dedupeSources([
-      unsplashPhoto(P.meditate, 800),
-      unsplashPhoto(P.journalZen, 800),
-      unsplashPhoto(P.yogaWindow, 800),
-    ]),
+    alt: { he: "תנוחה על הדשא ליד הים", en: "A pose on the grass by the sea" },
+    sources: studioStack("yogaCoastCobra", "yogaCoastPlank", "yogaCoastSeated"),
   },
   {
-    alt: { he: "אמא ותינוק במבט רך", en: "Mother and baby, soft gaze" },
-    sources: dedupeSources([
-      unsplashPhoto(P.momBaby, 800),
-      unsplashPhoto(P.circle, 800),
-      unsplashPhoto(P.meal, 800),
-    ]),
+    alt: { he: "רגע של משחק עם פעוט", en: "A playful moment with a toddler" },
+    sources: studioStack("parkAirplane", "momToddlerPark", "parkAirplaneWide"),
   },
   {
-    alt: { he: "ארוחה משותפת על שולחן", en: "Shared meal at a table" },
-    sources: dedupeSources([
-      unsplashPhoto(P.meal, 800),
-      unsplashPhoto(P.momBaby, 800),
-      unsplashPhoto(P.journalNlp, 800),
-    ]),
+    alt: { he: "מפגש עיסוי תינוקות", en: "A baby massage gathering" },
+    sources: studioStack("babyClass", "babyMassageTummy", "babyMassageLegs"),
+  },
+  {
+    alt: { he: "שחרור במים", en: "Ease in the water" },
+    sources: studioStack("pregnancyPool", "pregnancyBeachArms"),
+  },
+  {
+    alt: { he: "יוגה על החול", en: "Yoga on the sand" },
+    sources: studioStack("beachUpdog", "beachDowndog", "beachYogaArms"),
   },
 ];

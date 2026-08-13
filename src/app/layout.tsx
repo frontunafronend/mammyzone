@@ -46,11 +46,18 @@ export const metadata: Metadata = {
     siteName: "MammyZone",
     title: siteMeta.title.he,
     description: siteMeta.description.he,
+    images: [
+      {
+        url: "/photos/pregnancy-beach-salute.jpg",
+        alt: "אורטל חזן בהריון — יוגה מול הים",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteMeta.title.he,
     description: siteMeta.description.he,
+    images: ["/photos/pregnancy-beach-salute.jpg"],
   },
   robots: { index: true, follow: true },
 };

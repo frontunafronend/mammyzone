@@ -57,13 +57,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       modifiedTime: meta.updatedAt ?? meta.publishedAt,
       title: `${titleHe} / ${titleEn}`,
       description: `${descHe}\n${descEn}`,
-      images: [{ url: meta.image, width: 1200, height: 630, alt: meta.imageAlt.he }],
+      images: [
+        {
+          url: meta.image.startsWith("/") ? absoluteUrl(meta.image) : meta.image,
+          width: 1200,
+          height: 630,
+          alt: meta.imageAlt.he,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${titleHe} | MammyZone`,
       description: descHe,
-      images: [meta.image],
+      images: [meta.image.startsWith("/") ? absoluteUrl(meta.image) : meta.image],
     },
     robots: { index: true, follow: true },
   };

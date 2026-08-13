@@ -9,7 +9,11 @@ function titleForDocument(t: string) {
 }
 
 function primaryHeroImageUrl(sources: readonly string[]) {
-  return sources.find((s) => s.startsWith("http"));
+  const first = sources.find((s) => s.trim().length > 0);
+  if (!first) return undefined;
+  if (first.startsWith("http")) return first;
+  if (first.startsWith("/")) return absoluteUrl(first);
+  return first;
 }
 
 export function generateServiceMetadata(slug: ServicePageSlug): Metadata {

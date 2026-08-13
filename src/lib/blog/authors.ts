@@ -16,8 +16,7 @@ export const blogAuthors: Record<string, BlogAuthor> = {
       he: "מדריכת יוגה · מאמנת NLP · מומחית עיסוי תינוקות",
       en: "Yoga guide · NLP coach · Baby massage specialist",
     },
-    image:
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=200&q=80",
+    image: "/photos/family-home.jpg",
     imageAlt: {
       he: "אורטל חזן",
       en: "Ortal Hazan",
