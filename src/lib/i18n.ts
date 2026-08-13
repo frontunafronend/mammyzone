@@ -30,6 +30,7 @@ export const nav = {
   articles: { he: "קריאה", en: "Journal" },
   journey: { he: "התחילי כאן", en: "Begin" },
   journal: { he: "מגזין", en: "Journal" },
+  gallery: { he: "גלריה", en: "Gallery" },
   /** Primary booking route — `/book` */
   book: { he: "הזמנה", en: "Book" },
   /** `/contact` — soft conversion */
@@ -196,20 +197,44 @@ export const articlesSection = {
 } as const;
 
 export const socialGallerySection = {
-  label: { he: "מהאינסטגרם", en: "From Instagram" },
+  label: { he: "מהסטודיו", en: "From the studio" },
   titleLine1: { he: "רגעים", en: "Moments" },
   titleEm: { he: "חיים מהשטיח", en: "off the mat" },
   sub: {
-    he: "תמונות מהשיעורים, מהריטריטים ומהמעגלים — מוזמנות להצטרף לקהילה.",
-    en: "Scenes from classes, retreats, and circles — you’re welcome in this community.",
+    he: "תמונות וסרטונים קצרים מהחוף, מהטיילת, מהפארק ומהבית — וגלריה מלאה למטה.",
+    en: "Stills and short films from the beach, the promenade, the park, and home — plus a full gallery below.",
   },
   followCta: { he: "עקבי אחריי באינסטגרם", en: "Follow on Instagram" },
   followHref: siteContact.instagramUrl,
   embedTitle: { he: "רגע מהשטיח", en: "A moment from the mat" },
   embedOpen: { he: "פתיחה באינסטגרם", en: "Open on Instagram" },
+  openGallery: { he: "לגלריה המלאה", en: "Open the full gallery" },
 } as const;
 
-/** Unsplash-backed gallery tiles — see `src/lib/media/sources.ts` */
+export const galleryPage = {
+  title: { he: "גלריה", en: "Gallery" },
+  metaTitle: { he: "גלריה — MammyZone", en: "Gallery — MammyZone" },
+  metaDescription: {
+    he: "תמונות וסרטונים קצרים מאורטל חזן: יוגה, הריון, עיסוי תינוקות ורגעים מהשטיח.",
+    en: "Photos and short films with Ortal Hazan: yoga, pregnancy, baby massage, and moments from the mat.",
+  },
+  label: { he: "סטודיו חי", en: "A living studio" },
+  titleLine1: { he: "הגלריה", en: "The gallery" },
+  titleEm: { he: "של MammyZone", en: "of MammyZone" },
+  sub: {
+    he: "לחצי לתמונה או לסרטון כדי לפתוח במסך מלא. הסרטונים קצרים — רגעי Live מהשטח.",
+    en: "Tap a photo or film to open it full-screen. The clips are short — live moments from the field.",
+  },
+} as const;
+
+export const galleryUi = {
+  videoBadge: { he: "סרטון", en: "Film" },
+  close: { he: "סגירה", en: "Close" },
+  next: { he: "הבא", en: "Next" },
+  prev: { he: "הקודם", en: "Previous" },
+} as const;
+
+/** Homepage preview tiles — full set lives in `src/lib/media/gallery.ts`. */
 export const socialGalleryImages = socialGalleryStock;
 
 export const finalJourneySection = {
@@ -569,6 +594,7 @@ export const footer = {
     ],
     community: [
       { he: "הבלוג", en: "Blog", href: "/blog" },
+      { he: "גלריה", en: "Gallery", href: "/gallery" },
       { he: "מעגל הנשים", en: "Women's circle", href: "#" },
       { he: "Marketplace", en: "Marketplace", href: "#marketplace" },
       { he: "לא בטוחה מה מתאים?", en: "Not sure what fits?", href: "/contact" },
@@ -625,6 +651,8 @@ export const translations = {
   articlesSection,
   socialGallerySection,
   socialGalleryImages,
+  galleryPage,
+  galleryUi,
   finalJourneySection,
   servicesSection,
   services,

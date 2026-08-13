@@ -28,6 +28,7 @@ const NAV_ITEMS: NavItem[] = [
   { kind: "hash", href: "/#home", id: "home", labelKey: "home" },
   { kind: "hash", href: "/#services", id: "services", labelKey: "services" },
   { kind: "hash", href: "/#about", id: "about", labelKey: "about" },
+  { kind: "route", href: "/gallery", id: "gallery", labelKey: "gallery" },
   { kind: "route", href: "/blog", id: "journal", labelKey: "journal" },
   { kind: "route", href: "/contact", id: "contact", labelKey: "contact" },
 ];
@@ -45,16 +46,18 @@ export function Nav() {
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
   const journalActive = pathname.startsWith("/blog");
+  const galleryActive = pathname.startsWith("/gallery");
   const bookActive = pathname.startsWith("/book");
   const contactActive = pathname.startsWith("/contact");
   const adminRoute = pathname.startsWith("/admin");
-  const offHomeSections = journalActive || bookActive || contactActive;
+  const offHomeSections = journalActive || galleryActive || bookActive || contactActive;
 
   useEffect(() => {
     if (bookActive) setActiveId("book");
+    else if (galleryActive) setActiveId("gallery");
     else if (journalActive) setActiveId("journal");
     else if (contactActive) setActiveId("contact");
-  }, [bookActive, journalActive, contactActive]);
+  }, [bookActive, galleryActive, journalActive, contactActive]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -64,7 +67,12 @@ export function Nav() {
   }, []);
 
   useEffect(() => {
-    if (pathname.startsWith("/blog") || pathname.startsWith("/book") || pathname.startsWith("/contact"))
+    if (
+      pathname.startsWith("/blog") ||
+      pathname.startsWith("/book") ||
+      pathname.startsWith("/contact") ||
+      pathname.startsWith("/gallery")
+    )
       return;
     const hash = typeof window !== "undefined" ? window.location.hash.slice(1) : "";
     if (hash && NAV_ITEMS.some((l) => l.kind === "hash" && l.id === hash)) {
@@ -177,6 +185,7 @@ export function Nav() {
   const linkActive = (item: NavItem) => {
     if (item.kind === "route") {
       if (item.id === "journal") return journalActive;
+      if (item.id === "gallery") return galleryActive;
       if (item.id === "book") return bookActive;
       if (item.id === "contact") return contactActive;
       return false;

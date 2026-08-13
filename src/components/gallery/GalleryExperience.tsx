@@ -1,0 +1,171 @@
+"use client";
+
+import { useCallback, useEffect, useId, useState } from "react";
+import { SafeImage } from "@/components/ui/SafeImage";
+import { StudioVideo } from "@/components/ui/StudioVideo";
+import { galleryUi, useLanguage } from "@/lib/i18n";
+import type { StudioGalleryItem } from "@/types";
+
+type GalleryExperienceProps = {
+  items: readonly StudioGalleryItem[];
+  layout: "preview" | "full";
+};
+
+export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
+  const { language } = useLanguage();
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const titleId = useId();
+  const open = openIndex != null ? items[openIndex] : null;
+
+  const close = useCallback(() => setOpenIndex(null), []);
+
+  const step = useCallback(
+    (delta: number) => {
+      setOpenIndex((current) => {
+        if (current == null || items.length === 0) return current;
+        return (current + delta + items.length) % items.length;
+      });
+    },
+    [items.length],
+  );
+
+  useEffect(() => {
+    if (openIndex == null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") step(language === "he" ? -1 : 1);
+      if (e.key === "ArrowLeft") step(language === "he" ? 1 : -1);
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [close, language, openIndex, step]);
+
+  return (
+    <>
+      <ul className={`studio-gallery studio-gallery--${layout}`}>
+        {items.map((item, i) => {
+          const shape = item.shape ?? "landscape";
+          const label = `${item.alt[language]}${item.kind === "video" ? ` — ${galleryUi.videoBadge[language]}` : ""}`;
+          return (
+            <li
+              key={item.id}
+              className={`studio-gallery__cell studio-gallery__cell--${shape}${i === 0 && layout === "preview" ? " studio-gallery__cell--lead" : ""}`}
+            >
+              <button
+                type="button"
+                className="studio-gallery__tile"
+                onClick={() => setOpenIndex(i)}
+                aria-label={label}
+              >
+                {item.kind === "video" ? (
+                  <StudioVideo
+                    src={item.src}
+                    poster={item.poster}
+                    className="studio-gallery__media"
+                    autoPlayInView
+                  />
+                ) : (
+                  <SafeImage
+                    sources={[item.src]}
+                    alt={label}
+                    fill
+                    className="studio-gallery__media"
+                    sizes={
+                      layout === "full"
+                        ? "(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+                        : "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 16vw"
+                    }
+                    loading="lazy"
+                  />
+                )}
+                {item.kind === "video" ? (
+                  <span className="studio-gallery__play" aria-hidden>
+                    <span className="studio-gallery__play-icon" />
+                  </span>
+                ) : null}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+
+      {open && openIndex != null ? (
+        <div
+          className="gallery-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={titleId}
+          onClick={close}
+        >
+          <div className="gallery-lightbox__bar">
+            <p id={titleId} className="gallery-lightbox__title">
+              <span className="he">{open.alt.he}</span>
+              <span className="en">{open.alt.en}</span>
+            </p>
+            <p className="gallery-lightbox__count">
+              {openIndex + 1} / {items.length}
+            </p>
+            <button type="button" className="gallery-lightbox__close" onClick={close}>
+              <span className="he">{galleryUi.close.he}</span>
+              <span className="en">{galleryUi.close.en}</span>
+            </button>
+          </div>
+          <button
+            type="button"
+            className="gallery-lightbox__nav gallery-lightbox__nav--prev"
+            onClick={(e) => {
+              e.stopPropagation();
+              step(-1);
+            }}
+          >
+            <span className="he">{galleryUi.prev.he}</span>
+            <span className="en">{galleryUi.prev.en}</span>
+          </button>
+          <div
+            className="gallery-lightbox__stage"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {open.kind === "video" ? (
+              <StudioVideo
+                key={open.id}
+                src={open.src}
+                poster={open.poster}
+                className="gallery-lightbox__media"
+                controls
+                autoPlay
+              />
+            ) : (
+              <div className="gallery-lightbox__photo">
+                <SafeImage
+                  sources={[open.src]}
+                  alt={`${open.alt.he} / ${open.alt.en}`}
+                  fill
+                  objectFit="contain"
+                  className="gallery-lightbox__media"
+                  sizes="90vw"
+                  priority
+                />
+              </div>
+            )}
+          </div>
+          <button
+            type="button"
+            className="gallery-lightbox__nav gallery-lightbox__nav--next"
+            onClick={(e) => {
+              e.stopPropagation();
+              step(1);
+            }}
+          >
+            <span className="he">{galleryUi.next.he}</span>
+            <span className="en">{galleryUi.next.en}</span>
+          </button>
+        </div>
+      ) : null}
+    </>
+  );
+}

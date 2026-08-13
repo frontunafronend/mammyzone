@@ -41,3 +41,16 @@ export type SocialGalleryImage = {
   /** Primary URL first, then alternates; `SafeImage` appends a local SVG fallback. */
   sources: readonly string[];
 };
+
+export type StudioGalleryShape = "portrait" | "landscape" | "wide";
+
+export type StudioGalleryItem = {
+  id: string;
+  kind: "photo" | "video";
+  src: string;
+  /** Still frame for video tiles and lightbox posters. */
+  poster?: string;
+  alt: Bilingual;
+  shape?: StudioGalleryShape;
+  featured?: boolean;
+};

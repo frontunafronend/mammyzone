@@ -33,11 +33,29 @@ const nextConfig = {
         ],
       },
       {
+        source: "/photos/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/videos/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
         source: "/api/version",
         headers: htmlCache,
       },
       {
-        source: "/((?!_next/static|_next/image).*)",
+        source: "/((?!_next/static|_next/image|photos/|videos/).*)",
         headers: htmlCache,
       },
     ];

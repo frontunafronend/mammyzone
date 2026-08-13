@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/`, lastModified: last, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/book`, lastModified: last, changeFrequency: "weekly", priority: 0.95 },
     { url: `${base}/contact`, lastModified: last, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/gallery`, lastModified: last, changeFrequency: "weekly", priority: 0.86 },
     { url: `${base}/blog`, lastModified: last, changeFrequency: "weekly", priority: 0.9 },
     ...SERVICE_PAGE_SLUGS.map((slug) => ({
       url: `${base}/${slug}`,

@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
+import { GalleryExperience } from "@/components/gallery/GalleryExperience";
 import { InstagramPost } from "@/components/sections/InstagramPost";
-import { SafeImage } from "@/components/ui/SafeImage";
-import { INSTAGRAM_POST_URL } from "@/lib/contact";
-import { socialGalleryImages, socialGallerySection } from "@/lib/i18n";
+import { homepageGalleryItems } from "@/lib/media/gallery";
+import { socialGallerySection } from "@/lib/i18n";
 
 export function SocialGallery() {
   return (
@@ -32,32 +33,16 @@ export function SocialGallery() {
 
         <InstagramPost />
 
-        <div className="social-gallery__grid">
-          {socialGalleryImages.map((img, i) => (
-            <a
-              key={img.sources[0] ?? `tile-${i}`}
-              href={INSTAGRAM_POST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`social-tile social-tile--${(i % 6) + 1}`}
-            >
-              <SafeImage
-                sources={img.sources}
-                alt={`${img.alt.he} / ${img.alt.en}`}
-                width={480}
-                height={480}
-                className="social-tile__img"
-                sizes="(max-width: 600px) 50vw, 16vw"
-                loading="lazy"
-              />
-            </a>
-          ))}
-        </div>
+        <GalleryExperience items={homepageGalleryItems} layout="preview" />
 
         <div className="social-gallery__cta">
+          <Link href="/gallery" className="btn-primary social-gallery__follow">
+            <span className="he">{socialGallerySection.openGallery.he}</span>
+            <span className="en">{socialGallerySection.openGallery.en}</span>
+          </Link>
           <a
             href={socialGallerySection.followHref}
-            className="btn-primary social-gallery__follow"
+            className="btn-ghost social-gallery__follow"
             target="_blank"
             rel="noopener noreferrer"
           >

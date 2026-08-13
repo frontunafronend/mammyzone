@@ -23,6 +23,7 @@ type SafeImageProps = {
   sizes?: string;
   priority?: boolean;
   loading?: "lazy" | "eager";
+  objectFit?: "cover" | "contain";
 };
 
 /**
@@ -40,6 +41,7 @@ export function SafeImage({
   sizes,
   priority,
   loading,
+  objectFit,
 }: SafeImageProps) {
   const chain = useMemo(() => {
     const list = sources
@@ -97,6 +99,7 @@ export function SafeImage({
   };
 
   const remountKey = `${chainKey}::${safeIndex}`;
+  const fit = objectFit ?? (fill ? "cover" : undefined);
 
   if (fill) {
     return (
@@ -105,7 +108,7 @@ export function SafeImage({
         {...common}
         alt={alt}
         fill
-        style={{ objectFit: "cover" }}
+        style={fit ? { objectFit: fit } : undefined}
       />
     );
   }
@@ -114,5 +117,14 @@ export function SafeImage({
     throw new Error("SafeImage requires width and height unless fill is set");
   }
 
-  return <Image key={remountKey} {...common} alt={alt} width={width} height={height} />;
+  return (
+    <Image
+      key={remountKey}
+      {...common}
+      alt={alt}
+      width={width}
+      height={height}
+      style={fit ? { objectFit: fit } : undefined}
+    />
+  );
 }
