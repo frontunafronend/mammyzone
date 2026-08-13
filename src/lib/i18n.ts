@@ -102,29 +102,29 @@ export const scrollChrome = {
 
 export const hero = {
   eyebrow: { he: "מרחב מקודש לאמהות", en: "A sacred space for mothers" },
-  titleBeforeEm: { he: "את", en: "You are the" },
-  titleEm: { he: " ראשית ", en: " origin" },
-  titleAccent: { he: "הכוח שלך", en: "of your own power" },
+  titleBeforeEm: { he: "כאן את", en: "This is where you" },
+  titleEm: { he: " חוזרת ", en: " come home" },
+  titleAccent: { he: "אל עצמך", en: "to yourself" },
   sub: {
-    he: "יוגה לאחר לידה, יוגה להריון, עיסוי תינוקות, ריטריט לאמהות עובדות ואימון NLP אישי — עם אורטל חזן.",
-    en: "Postnatal yoga, pregnancy yoga, baby massage, working-mom retreats and personal NLP coaching — with Ortal Hazan.",
+    he: "יוגה אשטנגה להריון, לתינוקות ולאחר לידה, עיסוי תינוקות, ריטריטים לאמהות עובדות, ואימון NLP אישי — עם אורטל חזן.",
+    en: "Ashtanga Yoga for pregnancy, babies and after birth, infant massage, retreats for working moms, and personal NLP coaching — with Ortal Hazan.",
   },
   primaryCta: { he: "בואי להתחיל →", en: "Begin your journey →" },
   ghostCta: { he: "קראי עליי", en: "Meet Ortal" },
   pills: [
     { icon: "🧘", he: "יוגה לאחר לידה", en: "Postnatal yoga" },
-    { icon: "🤰", he: "יוגה בהריון", en: "Pregnancy yoga" },
-    { icon: "👶", he: "עיסוי תינוקות", en: "Baby massage", sage: true },
+    { icon: "🤰", he: "יוגה בהריון", en: "Prenatal yoga" },
+    { icon: "👶", he: "עיסוי ויוגה לתינוקות", en: "Baby massage & yoga", sage: true },
     { icon: "🌿", he: "NLP", en: "NLP coaching", sage: true },
   ] as const,
   credentialName: { he: "אורטל חזן", en: "Ortal Hazan" },
   credentialTags: {
-    he: "מדריכת יוגה ואשטנגה · מומחית עיסוי תינוקות\nמאמנת NLP מוסמכת · מעצבת פנים",
-    en: "Yoga & Ashtanga instructor · baby massage\nCertified NLP coach · interior designer",
+    he: "אמא · מורה ליוגה אשטנגה\nהריון · תינוקות · לאחר לידה · עיסוי תינוקות\nריטריטים לאמהות עובדות · NLP · אדריכלות אנרגטית",
+    en: "Mom · Ashtanga Yoga teacher\nPrenatal · baby yoga · postnatal · infant massage\nWorking-mom retreats · NLP · energy architecture",
   },
   imageAlt: {
-    he: "יוגה חיה מול הים",
-    en: "Living yoga by the sea",
+    he: "אורטל חזן ביוגה בהריון על החוף — ידיים לשמיים",
+    en: "Ortal Hazan in prenatal yoga on the beach — arms to the sky",
   },
 } as const;
 
@@ -151,7 +151,7 @@ export const trustSection = {
       label: { he: "שנות ליווי נשים", en: "Years guiding women" },
     },
     {
-      value: "4",
+      value: "6",
       label: { he: "התמחויות מרכזיות", en: "Core disciplines" },
     },
     {
@@ -160,10 +160,12 @@ export const trustSection = {
     },
   ] as const,
   credentials: [
-    { he: "מדריכת יוגה ואשטנגה מוסמכת", en: "Certified yoga & Ashtanga teacher" },
-    { he: "מומחית עיסוי תינוקות", en: "Baby massage specialist" },
-    { he: "מאמנת NLP מוסמכת", en: "Certified NLP coach" },
-    { he: "מעצבת פנים ומרחבי אנרגיה", en: "Interior & energetic space design" },
+    { he: "אמא", en: "Mom" },
+    { he: "מורה ליוגה אשטנגה — הריון, יוגה לתינוקות ולאחר לידה", en: "Ashtanga Yoga teacher — prenatal, baby yoga, and postnatal" },
+    { he: "עיסוי תינוקות", en: "Infant massage" },
+    { he: "ריטריטים מיוחדים לאמהות עובדות", en: "Retreats designed for working moms" },
+    { he: "אדריכלית ומעצבת מרחבים אנרגטיים", en: "Architect and energy-focused spatial designer" },
+    { he: "אימון NLP אישי לצמיחה ולהעצמה", en: "Personal NLP coaching for growth and empowerment" },
   ] as const satisfies readonly Bilingual[],
 } as const;
 
@@ -201,8 +203,8 @@ export const socialGallerySection = {
   titleLine1: { he: "רגעים", en: "Moments" },
   titleEm: { he: "חיים מהשטיח", en: "off the mat" },
   sub: {
-    he: "תמונות וסרטונים קצרים מהחוף, מהטיילת, מהפארק ומהבית — וגלריה מלאה למטה.",
-    en: "Stills and short films from the beach, the promenade, the park, and home — plus a full gallery below.",
+    he: "תמונות מהחוף, מהטיילת, מהפארק ומהבית — וגלריה מלאה למטה.",
+    en: "Photos from the beach, the promenade, the park, and home — plus a full gallery below.",
   },
   followCta: { he: "עקבי אחריי באינסטגרם", en: "Follow on Instagram" },
   followHref: siteContact.instagramUrl,
@@ -215,23 +217,23 @@ export const galleryPage = {
   title: { he: "גלריה", en: "Gallery" },
   metaTitle: { he: "גלריה — MammyZone", en: "Gallery — MammyZone" },
   metaDescription: {
-    he: "תמונות וסרטונים קצרים מאורטל חזן: יוגה, הריון, עיסוי תינוקות ורגעים מהשטיח.",
-    en: "Photos and short films with Ortal Hazan: yoga, pregnancy, baby massage, and moments from the mat.",
+    he: "תמונות מאורטל חזן: יוגה בהריון ולאחר לידה, עיסוי ויוגה לתינוקות, סדנאות ומעגלים, ו־NLP.",
+    en: "Photos with Ortal Hazan: prenatal and postnatal yoga, baby massage and yoga, circle workshops, and NLP.",
   },
   label: { he: "סטודיו חי", en: "A living studio" },
   titleLine1: { he: "הגלריה", en: "The gallery" },
   titleEm: { he: "של MammyZone", en: "of MammyZone" },
   sub: {
-    he: "בחרי קטגוריה — יוגה בהריון, יוגה עם ילדים, עיסוי תינוקות ועוד. לחצי לתמונה או לסרטון למסך מלא.",
-    en: "Choose a category — pregnancy yoga, yoga with children, baby massage, and more. Tap a photo or film for full screen.",
+    he: "בחרי קטגוריה — יוגה לאחר לידה, יוגה בהריון, עיסוי ויוגה לתינוקות, סדנאות ומעגלים, ו־NLP. לחצי לתמונה למסך מלא.",
+    en: "Choose a category — postnatal yoga, prenatal yoga, baby massage and yoga, circle workshops, and NLP. Tap a photo for full screen.",
   },
   all: { he: "הכול", en: "All" },
   categories: {
-    "pregnancy-yoga": { he: "יוגה בהריון", en: "Pregnancy yoga" },
-    "yoga-children": { he: "יוגה עם ילדים", en: "Yoga with children" },
-    "baby-massage": { he: "עיסוי תינוקות", en: "Baby massage" },
-    yoga: { he: "יוגה", en: "Yoga" },
-    family: { he: "בית ומשפחה", en: "Home & family" },
+    "postnatal-yoga": { he: "יוגה לאחר לידה", en: "Postnatal yoga" },
+    "prenatal-yoga": { he: "יוגה בהריון", en: "Prenatal yoga" },
+    "baby-massage": { he: "עיסוי ויוגה לתינוקות", en: "Baby massage & yoga" },
+    workshops: { he: "סדנאות ומעגלים", en: "Circle workshops" },
+    nlp: { he: "NLP", en: "NLP" },
   },
 } as const;
 
@@ -298,7 +300,7 @@ export const services: ServiceCard[] = [
   {
     num: "02",
     icon: "🤰",
-    title: { he: "יוגה בהריון", en: "Pregnancy yoga" },
+    title: { he: "יוגה בהריון", en: "Prenatal yoga" },
     description: {
       he: "אשטנגה רכה לפי שלב — תמיכה בגב, באגן ובלב שמתרחב.",
       en: "Soft Ashtanga by trimester — support for your back, pelvis, and the heart that is growing room.",
@@ -360,8 +362,8 @@ export const aboutOrtal = {
   titleBeforeEm: { he: "אורטל חזן — ", en: "Ortal Hazan — " },
   titleEm: { he: "המדריכה שלך", en: "your guide" },
   bio: {
-    he: "אורטל חזן היא מדריכת יוגה ואשטנגה, מומחית עיסוי תינוקות, מאמנת NLP מוסמכת ומעצבת פנים. היא מאמינה שכל אמא היא כוח טבע — ושהמרחב הנכון, בגוף ובבית, יכול לשחרר אותו.",
-    en: "Ortal Hazan is a yoga and Ashtanga instructor, baby massage specialist, certified NLP coach and interior designer. She believes every mother is a force of nature — and that the right space, in body and home, can release it.",
+    he: "אורטל חזן היא אמא, מורה ליוגה אשטנגה (הריון, יוגה לתינוקות ולאחר לידה), ומדריכת עיסוי תינוקות. היא מקיימת ריטריטים מיוחדים לאמהות עובדות, אדריכלית ומעצבת מרחבים אנרגטיים, ומציעה אימון NLP אישי לצמיחה ולהעצמה. היא מאמינה שכל אמא היא כוח טבע — ושהמרחב הנכון, בגוף ובבית, יכול לשחרר אותו.",
+    en: "Ortal Hazan is a mom, an Ashtanga Yoga teacher (prenatal, baby yoga, and postnatal), and an infant-massage guide. She holds special retreats designed for working moms, is an architect and energy-focused spatial designer, and offers personal NLP coaching for growth and empowerment. She believes every mother is a force of nature — and that the right space, in body and home, can release it.",
   },
   story2: {
     he: "הגעתי לשילוב הזה לא מתוך קורס אחד — אלא מתוך חיים: לידות, עייפות, רגעים של התרחבות ושל צמצום. לכן אני יודעת שאין \"נכון\" אחד לכולן — יש קצב שמתאים לך.",
@@ -372,18 +374,23 @@ export const aboutOrtal = {
     en: "My classes and retreats lean on listening, professional precision, and an atmosphere that lets you be exactly where you are.",
   },
   creds: [
+    { he: "אמא", en: "Mom" },
     {
-      he: "מדריכת יוגה ואשטנגה מוסמכת",
-      en: "Certified Yoga & Ashtanga Instructor",
+      he: "מורה ליוגה אשטנגה — הריון, יוגה לתינוקות ולאחר לידה",
+      en: "Ashtanga Yoga teacher — prenatal, baby yoga, and postnatal",
     },
-    { he: "מומחית עיסוי תינוקות", en: "Baby Massage Specialist" },
+    { he: "עיסוי תינוקות", en: "Infant massage" },
     {
-      he: "מאמנת NLP מוסמכת",
-      en: "Certified NLP Coach",
+      he: "ריטריטים מיוחדים לאמהות עובדות",
+      en: "Retreats designed for working moms",
     },
     {
-      he: "מעצבת פנים ועיצוב אנרגטי",
-      en: "Interior & Energy Space Designer",
+      he: "אדריכלית ומעצבת מרחבים אנרגטיים",
+      en: "Architect and energy-focused spatial designer",
+    },
+    {
+      he: "אימון NLP אישי לצמיחה ולהעצמה",
+      en: "Personal NLP coaching for growth and empowerment",
     },
   ] as const satisfies readonly Bilingual[],
   cta: { he: "בואי נדבר →", en: "Let’s talk →" },

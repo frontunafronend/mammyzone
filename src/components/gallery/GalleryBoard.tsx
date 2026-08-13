@@ -14,7 +14,7 @@ export function GalleryBoard({ items }: { items: readonly StudioGalleryItem[] })
   const grouped = useMemo(() => {
     return GALLERY_CATEGORIES.map((category) => ({
       category,
-      items: items.filter((item) => item.category === category),
+      items: items.filter((item) => item.categories.includes(category)),
     })).filter((group) => group.items.length > 0);
   }, [items]);
 

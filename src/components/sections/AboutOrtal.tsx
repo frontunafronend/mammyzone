@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { CourtyardLattice } from "@/components/backgrounds/CourtyardLattice";
-import { StudioVideo } from "@/components/ui/StudioVideo";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { aboutOrtal } from "@/lib/i18n";
-import { aboutVideo } from "@/lib/media/sources";
+import { aboutPortraitSources } from "@/lib/media/sources";
 
 export function AboutOrtal() {
   return (
@@ -12,14 +12,13 @@ export function AboutOrtal() {
         <div className="ortal-inner ortal-inner--story">
           <div className="ortal-image-wrap">
             <div className="ortal-image-frame">
-              <StudioVideo
-                className="ortal-video"
-                src={aboutVideo.src}
-                poster={aboutVideo.poster}
-                autoPlay
-                autoPlayInView
-                preload="auto"
-                label={`${aboutOrtal.titleBeforeEm.he}${aboutOrtal.titleEm.he} / ${aboutOrtal.titleBeforeEm.en}${aboutOrtal.titleEm.en}`}
+              <SafeImage
+                sources={aboutPortraitSources}
+                alt={`${aboutOrtal.titleBeforeEm.he}${aboutOrtal.titleEm.he} / ${aboutOrtal.titleBeforeEm.en}${aboutOrtal.titleEm.en}`}
+                width={720}
+                height={900}
+                sizes="(max-width: 900px) 100vw, 50vw"
+                loading="lazy"
               />
             </div>
             <div className="ortal-quote-badge">

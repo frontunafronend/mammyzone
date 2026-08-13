@@ -33,9 +33,7 @@ export function generateMetadata(): Metadata {
 
 export default function GalleryPage() {
   const url = absoluteUrl("/gallery");
-  const imageUrls = studioGalleryItems
-    .filter((item) => item.kind === "photo")
-    .map((item) => absoluteUrl(item.src));
+  const imageUrls = [...new Set(studioGalleryItems.map((item) => absoluteUrl(item.src)))];
   const jsonLd = galleryJsonLd(url, imageUrls);
 
   return (

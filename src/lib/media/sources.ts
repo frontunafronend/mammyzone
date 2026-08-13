@@ -34,25 +34,15 @@ export function studioStack(...keys: StudioPhotoKey[]): string[] {
   return dedupeSources(keys.map((k) => studioPhotos[k]));
 }
 
-export const heroVideo = {
-  src: "/videos/studio-IMG_8193.mp4",
-  poster: "/photos/studio-IMG_8193.jpg",
-} as const;
-
-export const aboutVideo = {
-  src: "/videos/studio-IMG_8214.mp4",
-  poster: "/photos/studio-IMG_8214.jpg",
-} as const;
-
 export const heroImageSources = studioStack(
   "pregnancyBeachSalute",
-  "pregnancyBw",
+  "pregnancyBeachArms",
   "beachYogaArms",
 );
 
 export const aboutPortraitSources = studioStack(
-  "pregnancyBw",
-  "familyHome",
+  "pregnancyBeachArms",
+  "beachYogaArms",
   "pregnancyBeachSalute",
 );
 
@@ -79,8 +69,8 @@ export function authorAvatarSources(primaryUrl: string | undefined | null): stri
 }
 
 export const serviceCardImageSources: Record<"01" | "02", string[]> = {
-  "01": studioStack("momToddlerPark", "parkAirplane", "promenadeStretch"),
-  "02": studioStack("pregnancyBeachSalute", "pregnancyBw", "pregnancyBeachArms"),
+  "01": studioStack("pregnancyBeachSalute", "pregnancyBw", "pregnancyBeachArms"),
+  "02": studioStack("pregnancyBeachArms", "pregnancyBeachSalute", "pregnancyBw"),
 };
 
 export const socialGalleryStock: readonly SocialGalleryImage[] = [

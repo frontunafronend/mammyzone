@@ -206,7 +206,7 @@ export function Nav() {
             className={`nav-logo ${pathname === "/" && !scrolled ? "nav-logo--home" : ""} text-ink transition-[color,opacity,font-size] duration-300 hover:opacity-85 focus-visible:opacity-90`}
             onClick={closeMobile}
           >
-            mammy<span className="text-rose">zone</span>
+            Mammy<span className="text-rose">Zone</span>
           </Link>
 
           <ul className="hidden min-[901px]:flex min-[901px]:list-none min-[901px]:items-center min-[901px]:gap-5 min-[1200px]:gap-6">

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { CourtyardLattice } from "@/components/backgrounds/CourtyardLattice";
 import { heroMarks } from "@/components/icons/Marks";
-import { StudioVideo } from "@/components/ui/StudioVideo";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { hero } from "@/lib/i18n";
-import { heroVideo } from "@/lib/media/sources";
+import { heroImageSources } from "@/lib/media/sources";
 import { Pill } from "@/components/ui/Pill";
 
 export function Hero() {
@@ -15,7 +15,7 @@ export function Hero() {
 
       <div className="hero-text relative z-[2]">
         <p className="hero-wordmark" aria-hidden={false}>
-          mammy<span>zone</span>
+          Mammy<span>Zone</span>
         </p>
         <h1 className="hero-title">
           <span className="he">
@@ -62,14 +62,13 @@ export function Hero() {
 
       <div className="hero-image-wrap hero-cinematic__visual">
         <div className="hero-image-parallax">
-          <StudioVideo
-            className="hero-video hero-photo--layer"
-            src={heroVideo.src}
-            poster={heroVideo.poster}
-            autoPlay
-            autoPlayInView
-            preload="auto"
-            label={`${hero.imageAlt.he} / ${hero.imageAlt.en}`}
+          <SafeImage
+            sources={heroImageSources}
+            alt={`${hero.imageAlt.he} / ${hero.imageAlt.en}`}
+            fill
+            className="hero-photo hero-photo--layer"
+            sizes="(max-width: 900px) 100vw, 55vw"
+            priority
           />
         </div>
         <CourtyardLattice tone="sun" />

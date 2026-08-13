@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useId, useState } from "react";
 import { SafeImage } from "@/components/ui/SafeImage";
-import { StudioVideo } from "@/components/ui/StudioVideo";
 import { galleryUi, useLanguage } from "@/lib/i18n";
 import type { StudioGalleryItem } from "@/types";
 
@@ -52,7 +51,7 @@ export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
       <ul className={`studio-gallery studio-gallery--${layout}`}>
         {items.map((item, i) => {
           const shape = item.shape ?? "landscape";
-          const label = `${item.alt[language]}${item.kind === "video" ? ` — ${galleryUi.videoBadge[language]}` : ""}`;
+          const label = item.alt[language];
           return (
             <li
               key={item.id}
@@ -64,32 +63,18 @@ export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
                 onClick={() => setOpenIndex(i)}
                 aria-label={label}
               >
-                {item.kind === "video" ? (
-                  <StudioVideo
-                    src={item.src}
-                    poster={item.poster}
-                    className="studio-gallery__media"
-                    autoPlayInView
-                  />
-                ) : (
-                  <SafeImage
-                    sources={[item.src]}
-                    alt={label}
-                    fill
-                    className="studio-gallery__media"
-                    sizes={
-                      layout === "full"
-                        ? "(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
-                        : "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 16vw"
-                    }
-                    loading="lazy"
-                  />
-                )}
-                {item.kind === "video" ? (
-                  <span className="studio-gallery__play" aria-hidden>
-                    <span className="studio-gallery__play-icon" />
-                  </span>
-                ) : null}
+                <SafeImage
+                  sources={[item.src]}
+                  alt={label}
+                  fill
+                  className="studio-gallery__media"
+                  sizes={
+                    layout === "full"
+                      ? "(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 25vw"
+                      : "(max-width: 600px) 100vw, (max-width: 900px) 50vw, 16vw"
+                  }
+                  loading="lazy"
+                />
               </button>
             </li>
           );
@@ -139,28 +124,17 @@ export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
             className="gallery-lightbox__stage"
             onClick={(e) => e.stopPropagation()}
           >
-            {open.kind === "video" ? (
-              <StudioVideo
-                key={open.id}
-                src={open.src}
-                poster={open.poster}
+            <div className="gallery-lightbox__photo">
+              <SafeImage
+                sources={[open.src]}
+                alt={`${open.alt.he} / ${open.alt.en}`}
+                fill
+                objectFit="contain"
                 className="gallery-lightbox__media"
-                controls
-                autoPlay
+                sizes="90vw"
+                priority
               />
-            ) : (
-              <div className="gallery-lightbox__photo">
-                <SafeImage
-                  sources={[open.src]}
-                  alt={`${open.alt.he} / ${open.alt.en}`}
-                  fill
-                  objectFit="contain"
-                  className="gallery-lightbox__media"
-                  sizes="90vw"
-                  priority
-                />
-              </div>
-            )}
+            </div>
           </div>
           <button
             type="button"
