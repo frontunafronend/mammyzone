@@ -123,8 +123,8 @@ export const hero = {
     en: "Mom · Ashtanga Yoga teacher\nPrenatal · baby yoga · postnatal · infant massage\nWorking-mom retreats · NLP · energy architecture",
   },
   imageAlt: {
-    he: "אורטל חזן ביוגה בהריון על החוף — ידיים לשמיים",
-    en: "Ortal Hazan in prenatal yoga on the beach — arms to the sky",
+    he: "אורטל חזן ביוגה על החוף — ידיים לשמיים",
+    en: "Ortal Hazan in yoga on the beach — arms to the sky",
   },
 } as const;
 

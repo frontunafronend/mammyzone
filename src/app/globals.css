@@ -388,7 +388,7 @@ body.lang-en span.he {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 72%;
   opacity: 0;
   animation: imgReveal 1.2s var(--ease-out) 0.3s forwards;
 }
@@ -1652,7 +1652,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
@@ -1741,7 +1741,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 
 .section-io--visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

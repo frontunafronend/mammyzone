@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useId, useState } from "react";
+import { createPortal } from "react-dom";
 import { SafeImage } from "@/components/ui/SafeImage";
 import { galleryUi, useLanguage } from "@/lib/i18n";
 import type { StudioGalleryItem } from "@/types";
@@ -13,6 +14,7 @@ type GalleryExperienceProps = {
 export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
   const { language } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
   const titleId = useId();
   const open = openIndex != null ? items[openIndex] : null;
 
@@ -29,6 +31,10 @@ export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
   );
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
     if (openIndex == null) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
@@ -36,15 +42,102 @@ export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
       if (e.key === "ArrowLeft") step(language === "he" ? 1 : -1);
     };
     document.addEventListener("keydown", onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    document.body.classList.add("lightbox-open");
+
+    const body = document.body;
+    const html = document.documentElement;
+    const y = window.scrollY;
+    const prev = {
+      overflow: body.style.overflow,
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+      htmlOverflow: html.style.overflow,
+    };
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${y}px`;
+    body.style.width = "100%";
+    html.style.overflow = "hidden";
+    body.classList.add("lightbox-open");
+
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prev;
-      document.body.classList.remove("lightbox-open");
+      body.style.overflow = prev.overflow;
+      body.style.position = prev.position;
+      body.style.top = prev.top;
+      body.style.width = prev.width;
+      html.style.overflow = prev.htmlOverflow;
+      body.classList.remove("lightbox-open");
+      window.scrollTo(0, y);
     };
   }, [close, language, openIndex, step]);
+
+  const lightbox =
+    open && openIndex != null ? (
+      <div
+        className="gallery-lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+        onClick={close}
+      >
+        <div className="gallery-lightbox__bar">
+          <p id={titleId} className="gallery-lightbox__title">
+            <span className="he">{open.alt.he}</span>
+            <span className="en">{open.alt.en}</span>
+          </p>
+          <p className="gallery-lightbox__count">
+            {openIndex + 1} / {items.length}
+          </p>
+          <button
+            type="button"
+            className="gallery-lightbox__close"
+            onClick={(e) => {
+              e.stopPropagation();
+              close();
+            }}
+          >
+            <span className="he">{galleryUi.close.he}</span>
+            <span className="en">{galleryUi.close.en}</span>
+          </button>
+        </div>
+        <button
+          type="button"
+          className="gallery-lightbox__nav gallery-lightbox__nav--prev"
+          onClick={(e) => {
+            e.stopPropagation();
+            step(-1);
+          }}
+        >
+          <span className="he">{galleryUi.prev.he}</span>
+          <span className="en">{galleryUi.prev.en}</span>
+        </button>
+        <div className="gallery-lightbox__stage" onClick={(e) => e.stopPropagation()}>
+          <div className="gallery-lightbox__photo">
+            <SafeImage
+              sources={[open.src]}
+              alt={`${open.alt.he} / ${open.alt.en}`}
+              fill
+              objectFit="contain"
+              className="gallery-lightbox__media"
+              sizes="90vw"
+              priority
+            />
+          </div>
+        </div>
+        <button
+          type="button"
+          className="gallery-lightbox__nav gallery-lightbox__nav--next"
+          onClick={(e) => {
+            e.stopPropagation();
+            step(1);
+          }}
+        >
+          <span className="he">{galleryUi.next.he}</span>
+          <span className="en">{galleryUi.next.en}</span>
+        </button>
+      </div>
+    ) : null;
 
   return (
     <>
@@ -80,75 +173,7 @@ export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
           );
         })}
       </ul>
-
-      {open && openIndex != null ? (
-        <div
-          className="gallery-lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby={titleId}
-          onClick={close}
-        >
-          <div className="gallery-lightbox__bar">
-            <p id={titleId} className="gallery-lightbox__title">
-              <span className="he">{open.alt.he}</span>
-              <span className="en">{open.alt.en}</span>
-            </p>
-            <p className="gallery-lightbox__count">
-              {openIndex + 1} / {items.length}
-            </p>
-            <button
-              type="button"
-              className="gallery-lightbox__close"
-              onClick={(e) => {
-                e.stopPropagation();
-                close();
-              }}
-            >
-              <span className="he">{galleryUi.close.he}</span>
-              <span className="en">{galleryUi.close.en}</span>
-            </button>
-          </div>
-          <button
-            type="button"
-            className="gallery-lightbox__nav gallery-lightbox__nav--prev"
-            onClick={(e) => {
-              e.stopPropagation();
-              step(-1);
-            }}
-          >
-            <span className="he">{galleryUi.prev.he}</span>
-            <span className="en">{galleryUi.prev.en}</span>
-          </button>
-          <div
-            className="gallery-lightbox__stage"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="gallery-lightbox__photo">
-              <SafeImage
-                sources={[open.src]}
-                alt={`${open.alt.he} / ${open.alt.en}`}
-                fill
-                objectFit="contain"
-                className="gallery-lightbox__media"
-                sizes="90vw"
-                priority
-              />
-            </div>
-          </div>
-          <button
-            type="button"
-            className="gallery-lightbox__nav gallery-lightbox__nav--next"
-            onClick={(e) => {
-              e.stopPropagation();
-              step(1);
-            }}
-          >
-            <span className="he">{galleryUi.next.he}</span>
-            <span className="en">{galleryUi.next.en}</span>
-          </button>
-        </div>
-      ) : null}
+      {mounted && lightbox ? createPortal(lightbox, document.body) : null}
     </>
   );
 }

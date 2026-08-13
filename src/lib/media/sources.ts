@@ -35,9 +35,8 @@ export function studioStack(...keys: StudioPhotoKey[]): string[] {
 }
 
 export const heroImageSources = studioStack(
-  "pregnancyBeachSalute",
-  "pregnancyBeachArms",
   "beachYogaArms",
+  "pregnancyBeachArms",
 );
 
 export const aboutPortraitSources = studioStack(
