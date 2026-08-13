@@ -14,6 +14,9 @@ export function Hero() {
       <div className="hero-cinematic__wash" aria-hidden />
 
       <div className="hero-text relative z-[2]">
+        <p className="hero-kicker" dir="ltr">
+          {hero.brandKicker}
+        </p>
         <p className="hero-wordmark" dir="ltr" aria-hidden={false}>
           Mammy<span>Zone</span>
         </p>

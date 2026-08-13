@@ -12,19 +12,24 @@ export function GalleryBoard({ items }: { items: readonly StudioGalleryItem[] })
   const [filter, setFilter] = useState<Filter>("all");
 
   const grouped = useMemo(() => {
-    const seenSrc = new Set<string>();
-    return GALLERY_CATEGORIES.map((category) => {
-      const groupItems = items.filter((item) => {
-        if (!item.categories.includes(category) || seenSrc.has(item.src)) return false;
-        seenSrc.add(item.src);
-        return true;
-      });
-      return { category, items: groupItems };
-    }).filter((group) => group.items.length > 0);
+    return GALLERY_CATEGORIES.map((category) => ({
+      category,
+      items: items.filter((item) => item.categories.includes(category)),
+    })).filter((group) => group.items.length > 0);
   }, [items]);
 
-  const visible =
-    filter === "all" ? grouped : grouped.filter((group) => group.category === filter);
+  const visibleItems = useMemo(() => {
+    const seen = new Set<string>();
+    const pool =
+      filter === "all"
+        ? items
+        : items.filter((item) => item.categories.includes(filter));
+    return pool.filter((item) => {
+      if (seen.has(item.src)) return false;
+      seen.add(item.src);
+      return true;
+    });
+  }, [filter, items]);
 
   return (
     <div>
@@ -54,15 +59,7 @@ export function GalleryBoard({ items }: { items: readonly StudioGalleryItem[] })
         ))}
       </div>
 
-      {visible.map(({ category, items: groupItems }) => (
-        <section key={category} className="gallery-category" aria-labelledby={`gallery-${category}`}>
-          <h2 id={`gallery-${category}`} className="gallery-category__title">
-            <span className="he">{galleryPage.categories[category].he}</span>
-            <span className="en">{galleryPage.categories[category].en}</span>
-          </h2>
-          <GalleryExperience items={groupItems} layout="full" />
-        </section>
-      ))}
+      <GalleryExperience items={visibleItems} layout="full" />
     </div>
   );
 }

@@ -204,8 +204,12 @@ export function Nav() {
           <Link
             href="/#home"
             className={`nav-logo ${pathname === "/" && !scrolled ? "nav-logo--home" : ""} text-ink transition-[color,opacity,font-size] duration-300 hover:opacity-85 focus-visible:opacity-90`}
+            dir="ltr"
             onClick={closeMobile}
           >
+            <span className="nav-logo__ortal" dir="ltr">
+              Ortal
+            </span>
             Mammy<span className="text-rose">Zone</span>
           </Link>
 

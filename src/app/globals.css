@@ -130,10 +130,21 @@ body.lang-en span.he {
 
 .nav-logo {
   font-family: var(--font-wordmark);
+  direction: ltr;
+  unicode-bidi: isolate;
   font-size: clamp(1.85rem, 3.4vw, 2.45rem);
   font-weight: 500;
   line-height: 0.9;
   letter-spacing: -0.04em;
+}
+
+.nav-logo__ortal {
+  display: inline;
+  margin-inline-end: 0.28em;
+  font-size: 0.62em;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  color: var(--ink-soft);
 }
 
 .nav-logo--home {
@@ -205,6 +216,20 @@ body.lang-en span.he {
   z-index: 2;
   background: var(--cream);
   color: var(--ink);
+}
+
+.hero-kicker {
+  font-family: var(--font-wordmark);
+  direction: ltr;
+  unicode-bidi: isolate;
+  align-self: flex-start;
+  margin: 0 0 0.4rem;
+  font-size: clamp(0.92rem, 1.5vw, 1.12rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.02s forwards;
 }
 
 .hero-wordmark {

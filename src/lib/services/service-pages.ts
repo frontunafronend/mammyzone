@@ -1,6 +1,12 @@
 import type { BlogCategory } from "@/lib/blog/categories";
 import { galleryPhotoSources } from "@/lib/media/gallery";
-import { retreatSpaceSources } from "@/lib/media/sources";
+import {
+  nlpEmpowerSources,
+  postnatalYogaSources,
+  prenatalYogaSources,
+  retreatSpaceSources,
+  workshopFireSources,
+} from "@/lib/media/sources";
 import type { Bilingual } from "@/types";
 
 export type ServiceFaqItem = { q: Bilingual; a: Bilingual };
@@ -76,14 +82,14 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "No comparing to “before,” no forcing flexibility. Room to breathe, feel your floor, and come home to yourself.",
     ),
     heroVisual: serviceVisual(
-      galleryPhotoSources("postnatal-yoga"),
+      postnatalYogaSources,
       b(
         "יוגה רכה אחרי לידה — נשימה, רצפת אגן, וקצב שמכבד את הגוף",
         "Gentle yoga after birth — breath, pelvic floor, and a pace that honors the body",
       ),
     ),
     midVisual: serviceVisual(
-      galleryPhotoSources("postnatal-yoga", 6).slice(2, 5),
+      postnatalYogaSources.slice(1),
       b("אור ונשימה — מרחב שקט לפני חזרה ליום", "Light and breath — quiet before returning to the day"),
     ),
     problemTitle: b("כשהגוף זר והלב עייף", "When the body feels foreign and the heart is tired"),
@@ -160,11 +166,11 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "No racing Instagram, no forced load. Breath, stability, and care for pelvic floor and back.",
     ),
     heroVisual: serviceVisual(
-      galleryPhotoSources("prenatal-yoga"),
+      prenatalYogaSources,
       b("יוגה להריון מול הים — מתאים לגוף שמשתנה", "Prenatal yoga by the sea — honoring a changing body"),
     ),
     midVisual: serviceVisual(
-      galleryPhotoSources("prenatal-yoga", 2).slice(1),
+      prenatalYogaSources.slice(1),
       b("הקשבה ומרווח — מקום לגוף שמשתנה כל שבוע", "Space and ease — room for a body that shifts each week"),
     ),
     problemTitle: b("כשהכל נראה כבד", "When everything feels heavy"),
@@ -280,11 +286,11 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "NLP here doesn’t “fix personality” — it offers tools to ask differently, breathe before reacting, and choose a small step that fits you.",
     ),
     heroVisual: serviceVisual(
-      galleryPhotoSources("nlp"),
+      nlpEmpowerSources,
       b("ידיים לשמיים — צמיחה והעצמה", "Arms to the sky — growth and empowerment"),
     ),
     midVisual: serviceVisual(
-      galleryPhotoSources("nlp", 2),
+      nlpEmpowerSources,
       b("ידיים פתוחות לצדדים — מרחב פנימי", "Arms open to the sides — inner space"),
     ),
     problemTitle: b("עומס שאין לו כותרת", "Load without a headline"),
@@ -340,11 +346,11 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "After birth there is no single timeline. Here we listen to fatigue, pulse, tears without explanation — and build a path that fits you.",
     ),
     heroVisual: serviceVisual(
-      galleryPhotoSources("postnatal-yoga"),
+      postnatalYogaSources,
       b("מנוחה ונשימה — שיקום רך אחרי לידה", "Rest and breath — gentle postpartum recovery"),
     ),
     midVisual: serviceVisual(
-      [...galleryPhotoSources("postnatal-yoga", 2), ...galleryPhotoSources("baby-massage", 1)],
+      [...postnatalYogaSources.slice(0, 2), ...galleryPhotoSources("baby-massage", 1)],
       b("יוגה ומגע — לא לבד עם השיקום", "Yoga and touch — not alone in recovery"),
     ),
     problemTitle: b("כשהגוף מבקש רק שקט", "When the body asks only for quiet"),
@@ -399,12 +405,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "A good workshop doesn’t “fill the calendar” — it lets you feel you’re not alone with what moves through you.",
     ),
     heroVisual: serviceVisual(
-      galleryPhotoSources("workshops"),
-      b("מעגל משפחה ותנועה — סדנה וריטריט", "Family circle and movement — workshop and retreat"),
+      workshopFireSources,
+      b("מעגל נשים סביב האש — סדנה ומעגל", "A women's circle around the fire — workshop and gathering"),
     ),
     midVisual: serviceVisual(
       retreatSpaceSources,
-      b("טבע ואור — ריטריט יום לאמהות", "Nature and light — a day retreat for mothers"),
+      b("דק וחלונות אל הטבע — מקום ליוגה", "A deck and windows onto nature — a place for yoga"),
     ),
     problemTitle: b("כשהבית צפוף והלב צריך קהילה", "When home feels tight and the heart needs community"),
     problemBody: b(

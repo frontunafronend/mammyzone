@@ -44,12 +44,7 @@ export type SocialGalleryImage = {
 
 export type StudioGalleryShape = "portrait" | "landscape" | "wide";
 
-export type StudioGalleryCategory =
-  | "postnatal-yoga"
-  | "prenatal-yoga"
-  | "baby-massage"
-  | "workshops"
-  | "nlp";
+export type StudioGalleryCategory = "yoga" | "baby-massage";
 
 export type StudioGalleryItem = {
   id: string;

@@ -9,7 +9,7 @@ export const WHATSAPP_NUMBER_DIGITS = "972544256903" as const;
 /** Click-to-call (E.164) */
 export const PHONE_E164 = "+972544256903" as const;
 
-export const EMAIL_ADDRESS = "ortitul@gmail.com" as const;
+export const EMAIL_ADDRESS = "ortalmammyzone@gmail.com" as const;
 
 /** Canonical Instagram post — used for every public Instagram link and homepage embed */
 export const INSTAGRAM_POST_URL = "https://www.instagram.com/p/DIOZcbQi4Yf/" as const;

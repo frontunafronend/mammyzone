@@ -37,7 +37,7 @@ export function studioStack(...keys: StudioPhotoKey[]): string[] {
 export const heroImageSources = studioStack("beachYogaArms", "yogaCoastStretch");
 
 export const aboutPortraitSources = studioStack(
-  "pregnancyBw",
+  "pregnancyBeachArms",
   "beachYogaArms",
   "yogaCoastSeated",
 );
@@ -64,27 +64,36 @@ export function authorAvatarSources(primaryUrl: string | undefined | null): stri
   ]);
 }
 
-/** Unsplash — built space in nature (pavilion / house / interior with greenery). */
+/** Unsplash — large yoga room with mats, windows onto greenery, and a deck. */
 export const retreatSpaceSources = [
-  unsplashPhoto("1600210492486-724fe5c67fb0", 1600),
-  unsplashPhoto("1600585154340-be6161a56a0c", 1600),
-  unsplashPhoto("1520250497591-112f2f40a3f4", 1600),
+  unsplashPhoto("1761971975962-9cc397e2ba2a", 1600),
+  unsplashPhoto("1506126613408-eca07ce68773", 1600),
+  unsplashPhoto("1687783615476-f4c12358ca9d", 1600),
 ];
 
-/** Unsplash — women's gatherings for workshops & circles (no studio circle photos). */
-export const workshopCircleSources = [
-  unsplashPhoto("1469571486292-0ba58a3f068b", 1600),
-  unsplashPhoto("1511632765486-a01980e01a18", 1600),
+/** Unsplash — circle around a fire, then a women's gathering as fallback. */
+export const workshopFireSources = [
+  unsplashPhoto("1478131143081-80f7f84ca84d", 1600),
   unsplashPhoto("1545205597-3d9d02c29597", 1600),
-  unsplashPhoto("1529156069898-49953e39b3ac", 1600),
 ];
+
+export const postnatalYogaSources = studioStack(
+  "yogaCoastSeated",
+  "yogaCoastPlank",
+  "beachDowndog",
+  "beachUpdog",
+);
+
+export const prenatalYogaSources = studioStack("pregnancyBw", "pregnancyPool");
+
+export const nlpEmpowerSources = studioStack("beachYogaArms", "yogaCoastStretch");
 
 export const serviceCardImageSources: Record<"01" | "02" | "03" | "04" | "05" | "06", string[]> = {
-  "01": studioStack("yogaCoastSeated", "yogaCoastPlank", "beachDowndog"),
-  "02": studioStack("pregnancyBw", "pregnancyPool"),
-  "03": studioStack("beachYogaArms", "yogaCoastStretch"),
+  "01": postnatalYogaSources,
+  "02": prenatalYogaSources,
+  "03": nlpEmpowerSources,
   "04": studioStack("babyMassageSmile", "babyMassageHead", "babyMassageArms"),
-  "05": workshopCircleSources,
+  "05": workshopFireSources,
   "06": retreatSpaceSources,
 };
 

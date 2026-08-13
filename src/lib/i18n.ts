@@ -101,6 +101,7 @@ export const scrollChrome = {
 } as const;
 
 export const hero = {
+  brandKicker: "Ortal MammyZone",
   eyebrow: { he: "בית לאמהות", en: "A home for mothers" },
   titleBeforeEm: { he: "", en: "A " },
   titleEm: { he: "בית לאמהות", en: "home for mothers" },
@@ -217,23 +218,20 @@ export const galleryPage = {
   title: { he: "גלריה", en: "Gallery" },
   metaTitle: { he: "גלריה — MammyZone", en: "Gallery — MammyZone" },
   metaDescription: {
-    he: "תמונות מאורטל: יוגה להריון ולאחר לידה, עיסוי תינוקות ובייבי יוגה, סדנאות ומעגלי נשים, ו־NLP.",
-    en: "Photos with Ortal: prenatal and postnatal yoga, infant massage and baby yoga, women's circles, and NLP.",
+    he: "תמונות מאורטל: יוגה (אשטנגה, הריון, לאחר לידה) ועיסוי תינוקות ובייבי יוגה.",
+    en: "Photos with Ortal: yoga (Ashtanga, prenatal, postnatal) and infant massage with baby yoga.",
   },
   label: { he: "סטודיו חי", en: "A living studio" },
   titleLine1: { he: "גלריה", en: "Gallery" },
   titleEm: { he: "", en: "" },
   sub: {
-    he: "בחרי קטגוריה — יוגה לאחר לידה, יוגה להריון, עיסוי תינוקות ובייבי יוגה, סדנאות ומעגלי נשים, ו־NLP. לחצי לתמונה למסך מלא.",
-    en: "Choose a category — postnatal yoga, prenatal yoga, infant massage and baby yoga, women's circles, and NLP. Tap a photo for full screen.",
+    he: "יוגה (אשטנגה, הריון, לאחר לידה) ועיסוי תינוקות ובייבי יוגה. לחצי לתמונה למסך מלא.",
+    en: "Yoga (Ashtanga, prenatal, postnatal) and infant massage with baby yoga. Tap a photo for full screen.",
   },
   all: { he: "הכול", en: "All" },
   categories: {
-    "postnatal-yoga": { he: "יוגה לאחר לידה", en: "Postnatal yoga" },
-    "prenatal-yoga": { he: "יוגה להריון", en: "Prenatal yoga" },
+    yoga: { he: "יוגה (אשטנגה, הריון, לאחר לידה)", en: "Yoga (Ashtanga, prenatal, postnatal)" },
     "baby-massage": { he: "עיסוי תינוקות ובייבי יוגה", en: "Infant massage & baby yoga" },
-    workshops: { he: "סדנאות ומעגלי נשים", en: "Workshops & women's circles" },
-    nlp: { he: "NLP", en: "NLP" },
   },
 } as const;
 
@@ -446,8 +444,8 @@ export const retreat = {
     icon: "📍",
   },
   photoAlt: {
-    he: "חלל בנוי בטבע — ריטריט יום לאמהות",
-    en: "A built space in nature — a day retreat for mothers",
+    he: "דק וחלונות אל הטבע — מקום ליוגה",
+    en: "A deck and windows onto nature — a place for yoga",
   },
   cta: {
     he: "הרשמי לריטריט הקרוב →",
@@ -637,8 +635,8 @@ export const footer = {
         href: siteContact.whatsappUrl,
       },
       {
-        he: "ortitul@gmail.com",
-        en: "ortitul@gmail.com",
+        he: siteContact.email,
+        en: siteContact.email,
         href: siteContact.mailto,
       },
       { he: "לוח שיעורים", en: "Class calendar", href: "/book" },

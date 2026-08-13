@@ -37,8 +37,8 @@ export function Footer() {
       <div className="container">
         <div className="footer-inner">
           <div className="footer-brand">
-            <div className="footer-logo">
-              Mammy<span>Zone</span>
+            <div className="footer-logo" dir="ltr">
+              Ortal Mammy<span>Zone</span>
             </div>
             <p className="footer-tagline">
               <span className="he">{footer.tagline.he}</span>
