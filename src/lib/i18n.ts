@@ -234,6 +234,19 @@ export const galleryUi = {
   prev: { he: "הקודם", en: "Previous" },
 } as const;
 
+export const notFoundPage = {
+  code: "404",
+  title: { he: "העמוד הזה לא נמצא", en: "This page could not be found" },
+  sub: {
+    he: "יכול להיות שהקישור ישן, או שהעמוד עוד בדרך. בואי נחזור למרחב.",
+    en: "The link may be old, or the page is still on its way. Let’s go back to the space.",
+  },
+  home: { he: "לעמוד הבית", en: "Back home" },
+  gallery: { he: "לגלריה", en: "Gallery" },
+  contact: { he: "לדף הקשר", en: "Contact" },
+  book: { he: "הזמנה", en: "Book" },
+} as const;
+
 /** Homepage preview tiles — full set lives in `src/lib/media/gallery.ts`. */
 export const socialGalleryImages = socialGalleryStock;
 
@@ -653,6 +666,7 @@ export const translations = {
   socialGalleryImages,
   galleryPage,
   galleryUi,
+  notFoundPage,
   finalJourneySection,
   servicesSection,
   services,
