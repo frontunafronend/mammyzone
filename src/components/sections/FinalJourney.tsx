@@ -111,6 +111,15 @@ export function FinalJourney() {
                 <span className="he">{calendarSection.whatsapp.he}</span>
                 <span className="en">{calendarSection.whatsapp.en}</span>
               </a>
+              <a
+                href={siteContact.instagramUrl}
+                className="final-journey__ig"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="he">{calendarSection.instagram.he}</span>
+                <span className="en">{calendarSection.instagram.en}</span>
+              </a>
             </div>
           </div>
         </div>

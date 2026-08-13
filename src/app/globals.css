@@ -1986,6 +1986,11 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
   color: var(--sage);
 }
 
+.floating-cta__btn--ig {
+  border-color: rgba(184, 80, 112, 0.28);
+  color: var(--rose-deep);
+}
+
 .floating-cta__toggle {
   width: 48px;
   height: 48px;
@@ -2582,10 +2587,13 @@ html[dir="rtl"] .transform-bridge__glyph {
 
 .social-tile {
   position: relative;
+  display: block;
   margin: 0;
   border-radius: 14px;
   overflow: hidden;
   aspect-ratio: 1;
+  color: inherit;
+  text-decoration: none;
 }
 
 .social-tile--1 {
@@ -2615,6 +2623,47 @@ html[dir="rtl"] .transform-bridge__glyph {
 .social-gallery__follow {
   min-height: 48px;
   padding-inline: 2rem;
+}
+
+.ig-embed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.ig-embed__title {
+  margin: 0;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.ig-embed__frame {
+  width: min(100%, 400px);
+  height: min(82vh, 720px);
+  border: 0;
+  border-radius: 18px;
+  background: var(--cream, #faf7f2);
+  box-shadow: 0 20px 56px rgba(62, 48, 42, 0.08);
+}
+
+.ig-embed__open {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--rose-deep);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184, 80, 112, 0.35);
+}
+
+.ig-embed__open:hover {
+  border-bottom-color: var(--rose);
 }
 
 .final-journey__emotion {
@@ -2731,6 +2780,25 @@ html[dir="rtl"] .transform-bridge__glyph {
 .final-journey__book-online:hover {
   background: rgba(255, 252, 248, 0.08);
   border-color: rgba(255, 252, 248, 0.75);
+}
+
+.final-journey__ig {
+  display: inline-flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255, 252, 248, 0.92);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.final-journey__ig:hover {
+  opacity: 0.9;
 }
 
 .service-card--link {
@@ -3928,7 +3996,13 @@ html[dir="rtl"] .transform-bridge__glyph {
 
 @media (min-width: 720px) {
   .contact-card-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .contact-card-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

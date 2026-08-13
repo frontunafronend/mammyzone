@@ -32,10 +32,10 @@ export default function HomePage() {
         <FeaturedArticles />
       </SectionReveal>
       <SectionReveal stagger={2}>
-        <SocialGallery />
+        <FinalJourney />
       </SectionReveal>
       <SectionReveal stagger={3}>
-        <FinalJourney />
+        <SocialGallery />
       </SectionReveal>
     </main>
   );

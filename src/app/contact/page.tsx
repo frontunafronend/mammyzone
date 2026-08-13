@@ -57,6 +57,7 @@ function JsonLd() {
     url: base,
     telephone: PHONE_E164,
     email: siteContact.email,
+    sameAs: [siteContact.instagramUrl],
     areaServed: "IL",
     priceRange: "$$",
   };
@@ -147,6 +148,24 @@ export default function ContactPage() {
                     <span className="he">{contactCards.email.cta.he}</span>
                     <span className="en">{contactCards.email.cta.en}</span>
                     <span className="contact-card__num">{siteContact.email}</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteContact.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card contact-card--ig"
+                >
+                  <span className="contact-card__kicker">Instagram</span>
+                  <span className="he contact-card__title">{contactCards.instagram.title.he}</span>
+                  <span className="en contact-card__title">{contactCards.instagram.title.en}</span>
+                  <span className="he contact-card__body">{contactCards.instagram.body.he}</span>
+                  <span className="en contact-card__body">{contactCards.instagram.body.en}</span>
+                  <span className="contact-card__cta">
+                    <span className="he">{contactCards.instagram.cta.he}</span>
+                    <span className="en">{contactCards.instagram.cta.en}</span>
                   </span>
                 </a>
               </li>

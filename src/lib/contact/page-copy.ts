@@ -51,6 +51,14 @@ export const contactCards = {
     } as Bilingual,
     cta: { he: "פתיחת דוא״ל", en: "Compose email" } as Bilingual,
   },
+  instagram: {
+    title: { he: "אינסטגרם", en: "Instagram" } as Bilingual,
+    body: {
+      he: "רגע מהשטיח — מוזמנת להציץ ואז לכתוב אם זה מרגיש נכון.",
+      en: "A moment from the mat — look, then write if it feels right.",
+    } as Bilingual,
+    cta: { he: "פתיחה באינסטגרם", en: "Open on Instagram" } as Bilingual,
+  },
 } as const;
 
 export const contactFormCopy = {

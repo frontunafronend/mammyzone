@@ -11,6 +11,13 @@ export const PHONE_E164 = "+972544256903" as const;
 
 export const EMAIL_ADDRESS = "ortitul@gmail.com" as const;
 
+/** Canonical Instagram post — used for every public Instagram link and homepage embed */
+export const INSTAGRAM_POST_URL = "https://www.instagram.com/p/DIOZcbQi4Yf/" as const;
+
+/** Official embed endpoint for the same post */
+export const INSTAGRAM_EMBED_URL =
+  "https://www.instagram.com/p/DIOZcbQi4Yf/embed" as const;
+
 /** Human display (Israel) */
 export const PHONE_DISPLAY_IL = "054-425-6903" as const;
 
@@ -50,4 +57,6 @@ export const siteContact = {
   whatsappUrl: buildWhatsAppMeUrl(),
   email: EMAIL_ADDRESS,
   mailto: buildMailtoHref(),
+  instagramUrl: INSTAGRAM_POST_URL,
+  instagramEmbedUrl: INSTAGRAM_EMBED_URL,
 } as const;

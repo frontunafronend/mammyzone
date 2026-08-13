@@ -15,6 +15,13 @@ const ACTIONS = [
     style: "floating-cta__btn--wa",
   },
   {
+    key: "ig",
+    href: siteContact.instagramUrl,
+    external: true,
+    labelKey: "floatingInstagram" as const,
+    style: "floating-cta__btn--ig",
+  },
+  {
     key: "contact",
     href: "/contact",
     external: false,

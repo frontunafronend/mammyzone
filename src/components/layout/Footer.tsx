@@ -53,11 +53,21 @@ export function Footer() {
               <a href={siteContact.mailto}>{siteContact.email}</a>
             </p>
             <div className="footer-social">
-              {footer.social.map((s) => (
-                <Link key={s.label} href={s.href} aria-label={s.label}>
-                  {s.abbr}
-                </Link>
-              ))}
+              {footer.social.map((s) => {
+                const external = s.href.startsWith("http");
+                return (
+                  <Link
+                    key={s.label}
+                    href={s.href}
+                    aria-label={s.label}
+                    {...(external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
+                    {s.abbr}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <div>
@@ -98,14 +108,22 @@ export function Footer() {
               <span className="en">{footer.colContact.en}</span>
             </div>
             <ul className="footer-links">
-              {footer.links.contact.map((item) => (
-                <li key={item.href + item.he}>
-                  <Link href={item.href}>
-                    <span className="he">{item.he}</span>
-                    <span className="en">{item.en}</span>
-                  </Link>
-                </li>
-              ))}
+              {footer.links.contact.map((item) => {
+                const external = item.href.startsWith("http");
+                return (
+                  <li key={item.href + item.he}>
+                    <Link
+                      href={item.href}
+                      {...(external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                    >
+                      <span className="he">{item.he}</span>
+                      <span className="en">{item.en}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

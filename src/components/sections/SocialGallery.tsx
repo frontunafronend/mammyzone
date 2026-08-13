@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
+import { InstagramPost } from "@/components/sections/InstagramPost";
 import { SafeImage } from "@/components/ui/SafeImage";
+import { INSTAGRAM_POST_URL } from "@/lib/contact";
 import { socialGalleryImages, socialGallerySection } from "@/lib/i18n";
 
 export function SocialGallery() {
@@ -29,10 +30,15 @@ export function SocialGallery() {
           </p>
         </header>
 
+        <InstagramPost />
+
         <div className="social-gallery__grid">
           {socialGalleryImages.map((img, i) => (
-            <figure
+            <a
               key={img.sources[0] ?? `tile-${i}`}
+              href={INSTAGRAM_POST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`social-tile social-tile--${(i % 6) + 1}`}
             >
               <SafeImage
@@ -44,12 +50,12 @@ export function SocialGallery() {
                 sizes="(max-width: 600px) 50vw, 16vw"
                 loading="lazy"
               />
-            </figure>
+            </a>
           ))}
         </div>
 
         <div className="social-gallery__cta">
-          <Link
+          <a
             href={socialGallerySection.followHref}
             className="btn-primary social-gallery__follow"
             target="_blank"
@@ -57,7 +63,7 @@ export function SocialGallery() {
           >
             <span className="he">{socialGallerySection.followCta.he}</span>
             <span className="en">{socialGallerySection.followCta.en}</span>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

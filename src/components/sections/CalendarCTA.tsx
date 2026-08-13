@@ -90,6 +90,15 @@ export function CalendarCTA() {
               <span className="he">{calendarSection.whatsapp.he}</span>
               <span className="en">{calendarSection.whatsapp.en}</span>
             </a>
+            <a
+              href={siteContact.instagramUrl}
+              className="mt-3 inline-flex w-full min-h-[44px] items-center justify-center text-center text-[0.78rem] font-medium tracking-[0.06em] text-[rgba(255,252,248,0.92)] underline decoration-[rgba(255,252,248,0.4)] underline-offset-4 transition-opacity hover:opacity-90"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="he">{calendarSection.instagram.he}</span>
+              <span className="en">{calendarSection.instagram.en}</span>
+            </a>
           </div>
         </div>
       </div>

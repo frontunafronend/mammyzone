@@ -83,6 +83,7 @@ export const layoutShell = {
   },
   footerContactLabel: { he: "קשר ישיר", en: "Direct line" },
   floatingWhatsapp: { he: "וואטסאפ", en: "WhatsApp" },
+  floatingInstagram: { he: "אינסטגרם", en: "Instagram" },
   floatingContact: { he: "לדף קשר", en: "Contact page" },
   floatingBook: { he: "הזמנה", en: "Book" },
   floatingNewsletter: { he: "ניוזלטר", en: "Newsletter" },
@@ -203,8 +204,9 @@ export const socialGallerySection = {
     en: "Scenes from classes, retreats, and circles — you’re welcome in this community.",
   },
   followCta: { he: "עקבי אחריי באינסטגרם", en: "Follow on Instagram" },
-  /** Placeholder — replace with real @ handle when live */
-  followHref: "https://www.instagram.com/",
+  followHref: siteContact.instagramUrl,
+  embedTitle: { he: "הרגע האחרון מהשטיח", en: "A moment from the mat" },
+  embedOpen: { he: "פתיחה באינסטגרם", en: "Open on Instagram" },
 } as const;
 
 /** Unsplash-backed gallery tiles — see `src/lib/media/sources.ts` */
@@ -496,6 +498,7 @@ export const calendarSection = {
   },
   ctaEmailEyebrow: { he: "אימייל", en: "Email" },
   whatsapp: { he: "שלחי הודעה בוואטסאפ →", en: "Message on WhatsApp →" },
+  instagram: { he: "צפי באינסטגרם →", en: "See on Instagram →" },
   bookOnline: { he: "קביעה עדינה באתר →", en: "Book gently online →" },
 } as const;
 
@@ -593,10 +596,11 @@ export const footer = {
       },
       { he: "לוח שיעורים", en: "Class calendar", href: "/book" },
       { he: "הרשמה לניוזלטר", en: "Newsletter signup", href: "#newsletter" },
+      { he: "אינסטגרם", en: "Instagram", href: siteContact.instagramUrl },
     ],
   },
   social: [
-    { label: "Instagram", abbr: "ig", href: "#" },
+    { label: "Instagram", abbr: "ig", href: siteContact.instagramUrl },
     { label: "Facebook", abbr: "fb", href: "#" },
     { label: "TikTok", abbr: "tk", href: "#" },
     { label: "WhatsApp", abbr: "wa", href: siteContact.whatsappUrl },

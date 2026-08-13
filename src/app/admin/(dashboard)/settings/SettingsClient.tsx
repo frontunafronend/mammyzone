@@ -8,7 +8,7 @@ const PRESETS: { key: string; label: string; placeholder: string }[] = [
   { key: "site.phone_display", label: "Site phone (display)", placeholder: "054-425-6903" },
   { key: "site.whatsapp_digits", label: "WhatsApp digits (no +)", placeholder: "972544256903" },
   { key: "site.email", label: "Public email", placeholder: "hello@example.com" },
-  { key: "site.instagram_url", label: "Instagram URL", placeholder: "https://instagram.com/…" },
+  { key: "site.instagram_url", label: "Instagram URL", placeholder: "https://www.instagram.com/p/DIOZcbQi4Yf/" },
   { key: "booking.default_timezone", label: "Booking default timezone", placeholder: "Asia/Jerusalem" },
   { key: "newsletter.modal_delay_seconds", label: "Newsletter modal delay (seconds)", placeholder: "25" },
   { key: "seo.base_url", label: "SEO base URL", placeholder: "https://mammyzone.co.il" },
