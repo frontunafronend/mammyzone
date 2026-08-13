@@ -13,8 +13,8 @@ export const blogAuthors: Record<string, BlogAuthor> = {
     slug: "ortal",
     name: { he: "אורטל חזן", en: "Ortal Hazan" },
     role: {
-      he: "מדריכת יוגה · מאמנת NLP · מומחית עיסוי תינוקות",
-      en: "Yoga guide · NLP coach · Baby massage specialist",
+      he: "מורה ליוגה · מאסטרית NLP מוסמכת · עיסוי תינוקות ובייבי יוגה",
+      en: "Yoga teacher · certified NLP Master · infant massage & baby yoga",
     },
     image: "/photos/family-home.jpg",
     imageAlt: {

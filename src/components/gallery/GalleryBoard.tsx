@@ -12,10 +12,15 @@ export function GalleryBoard({ items }: { items: readonly StudioGalleryItem[] })
   const [filter, setFilter] = useState<Filter>("all");
 
   const grouped = useMemo(() => {
-    return GALLERY_CATEGORIES.map((category) => ({
-      category,
-      items: items.filter((item) => item.categories.includes(category)),
-    })).filter((group) => group.items.length > 0);
+    const seenSrc = new Set<string>();
+    return GALLERY_CATEGORIES.map((category) => {
+      const groupItems = items.filter((item) => {
+        if (!item.categories.includes(category) || seenSrc.has(item.src)) return false;
+        seenSrc.add(item.src);
+        return true;
+      });
+      return { category, items: groupItems };
+    }).filter((group) => group.items.length > 0);
   }, [items]);
 
   const visible =

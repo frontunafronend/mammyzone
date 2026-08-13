@@ -100,10 +100,10 @@ export const CONTACT_INTEREST_ORDER: ContactInterestType[] = [
 export const contactInterestLabels: Record<ContactInterestType, Bilingual> = {
   private_session: { he: "שיעור פרטי / ליווי אישי", en: "Private session / one-to-one" },
   yoga_after_birth: { he: "יוגה לאחר לידה", en: "Yoga after birth" },
-  pregnancy_yoga: { he: "יוגה בהריון", en: "Pregnancy yoga" },
-  baby_massage: { he: "עיסוי תינוקות", en: "Baby massage" },
-  nlp: { he: "NLP / ליווי רגשי", en: "NLP / emotional support" },
-  workshop: { he: "סדנה", en: "Workshop" },
+  pregnancy_yoga: { he: "יוגה להריון", en: "Prenatal yoga" },
+  baby_massage: { he: "עיסוי תינוקות ובייבי יוגה", en: "Infant massage & baby yoga" },
+  nlp: { he: "מאסטרית NLP", en: "NLP Master" },
+  workshop: { he: "סדנאות ומעגלי נשים", en: "Workshops & women's circles" },
   retreat: { he: "ריטריט", en: "Retreat" },
   not_sure: { he: "עדיין לא בטוחה", en: "Not sure yet" },
 };

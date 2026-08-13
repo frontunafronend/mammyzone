@@ -1,5 +1,5 @@
 import type { Bilingual, SocialGalleryImage } from "@/types";
-import { dedupeSources } from "./unsplash";
+import { dedupeSources, unsplashPhoto } from "./unsplash";
 
 /** Studio photographs from Ortal — served from `/public/photos`. */
 export const studioPhotos = {
@@ -67,9 +67,20 @@ export function authorAvatarSources(primaryUrl: string | undefined | null): stri
   ]);
 }
 
-export const serviceCardImageSources: Record<"01" | "02", string[]> = {
-  "01": studioStack("pregnancyBeachSalute", "pregnancyBw", "pregnancyBeachArms"),
-  "02": studioStack("pregnancyBeachArms", "pregnancyBeachSalute", "pregnancyBw"),
+/** Unsplash (free license) — nature stills for retreat when no studio photo fits. */
+export const retreatNatureSources = [
+  unsplashPhoto("1441974231531-c6227db76b6e", 1600),
+  unsplashPhoto("1470252649378-9c29740c9fa8", 1600),
+  unsplashPhoto("1507525428034-b723cf961d3e", 1600),
+];
+
+export const serviceCardImageSources: Record<"01" | "02" | "03" | "04" | "05" | "06", string[]> = {
+  "01": studioStack("yogaCoastSeated", "yogaCoastPlank", "beachDowndog"),
+  "02": studioStack("pregnancyBeachSalute", "pregnancyBw", "pregnancyBeachArms"),
+  "03": studioStack("beachYogaArms", "yogaCoastStretch"),
+  "04": studioStack("babyMassageSmile", "babyMassageHead", "babyMassageArms"),
+  "05": studioStack("babyClass", "momToddlerPark", "familyHome"),
+  "06": retreatNatureSources,
 };
 
 export const socialGalleryStock: readonly SocialGalleryImage[] = [
@@ -78,7 +89,7 @@ export const socialGalleryStock: readonly SocialGalleryImage[] = [
     sources: studioStack("yogaCoastStretch", "yogaCoastCobra", "beachUpdog"),
   },
   {
-    alt: { he: "יוגה בהריון על החוף", en: "Prenatal yoga on the beach" },
+    alt: { he: "יוגה להריון על החוף", en: "Prenatal yoga on the beach" },
     sources: studioStack("pregnancyBeachSalute", "pregnancyBeachArms", "pregnancyBw"),
   },
   {

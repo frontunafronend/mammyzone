@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { retreat } from "@/lib/i18n";
+import { retreatNatureSources } from "@/lib/media/sources";
 
 export function Retreat() {
   return (
@@ -50,6 +52,16 @@ export function Retreat() {
           </div>
 
           <div className="retreat-visual reveal reveal-delay-1">
+            <div className="retreat-photo">
+              <SafeImage
+                sources={retreatNatureSources}
+                alt={`${retreat.photoAlt.he} / ${retreat.photoAlt.en}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 900px) 100vw, 50vw"
+                loading="lazy"
+              />
+            </div>
             <div className="retreat-card-stack">
               <div className="retreat-card large">
                 <div className="retreat-card-icon" aria-hidden>

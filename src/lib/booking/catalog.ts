@@ -47,8 +47,8 @@ export const BOOKING_OFFERINGS: BookingOffering[] = [
     id: "private-nlp",
     kind: "private_session",
     title: {
-      he: "אימון NLP אישי",
-      en: "Private NLP coaching",
+      he: "ליווי NLP אישי — מאסטרית מוסמכת",
+      en: "Private NLP — certified Master",
     },
     description: {
       he: "מסגרת בטוחה לעיבוד דפוסים, גבולות, ומעברי אמהות — בזום או פרונטלי.",

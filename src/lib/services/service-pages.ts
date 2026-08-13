@@ -1,5 +1,6 @@
 import type { BlogCategory } from "@/lib/blog/categories";
 import { galleryPhotoSources } from "@/lib/media/gallery";
+import { retreatNatureSources } from "@/lib/media/sources";
 import type { Bilingual } from "@/types";
 
 export type ServiceFaqItem = { q: Bilingual; a: Bilingual };
@@ -77,8 +78,8 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     heroVisual: serviceVisual(
       galleryPhotoSources("postnatal-yoga"),
       b(
-        "יוגה בהריון על החוף — ידיים לשמיים, כוח רך אחרי לידה",
-        "Prenatal yoga on the beach — arms to the sky, soft strength after birth",
+        "יוגה רכה אחרי לידה — נשימה, רצפת אגן, וקצב שמכבד את הגוף",
+        "Gentle yoga after birth — breath, pelvic floor, and a pace that honors the body",
       ),
     ),
     midVisual: serviceVisual(
@@ -145,12 +146,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
   },
   "pregnancy-yoga": {
     slug: "pregnancy-yoga",
-    metaTitle: b("יוגה בהריון — MammyZone", "Prenatal yoga — MammyZone"),
+    metaTitle: b("יוגה להריון — MammyZone", "Prenatal yoga — MammyZone"),
     metaDescription: b(
-      "יוגה רכה לפי שלבי הריון: אגן, נשימה, ותמיכה בלב שמתרחב. MammyZone עם אורטל חזן.",
-      "Soft yoga by trimester: pelvis, breath, and support for your widening heart. MammyZone with Ortal Hazan.",
+      "יוגה רכה לפי שלבי הריון: אגן, נשימה, ותמיכה בלב שמתרחב. MammyZone עם אורטל.",
+      "Soft yoga by trimester: pelvis, breath, and support for your widening heart. MammyZone with Ortal.",
     ),
-    schemaName: b("יוגה בהריון", "Prenatal yoga"),
+    schemaName: b("יוגה להריון", "Prenatal yoga"),
     schemaServiceType: "Prenatal yoga classes and private sessions",
     heroEyebrow: b("הריון", "Pregnancy"),
     heroTitle: b("מקום לגוף שמשתנה כל שבוע", "Space for a body that changes every week"),
@@ -160,7 +161,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     ),
     heroVisual: serviceVisual(
       galleryPhotoSources("prenatal-yoga"),
-      b("יוגה בהריון מול הים — מתאים לגוף שמשתנה", "Prenatal yoga by the sea — honoring a changing body"),
+      b("יוגה להריון מול הים — מתאים לגוף שמשתנה", "Prenatal yoga by the sea — honoring a changing body"),
     ),
     midVisual: serviceVisual(
       galleryPhotoSources("prenatal-yoga", 6).slice(2, 5),
@@ -205,12 +206,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
   },
   "baby-massage": {
     slug: "baby-massage",
-    metaTitle: b("עיסוי תינוקות — MammyZone", "Baby massage — MammyZone"),
+    metaTitle: b("עיסוי תינוקות ובייבי יוגה — MammyZone", "Infant massage & baby yoga — MammyZone"),
     metaDescription: b(
-      "מגע עדין לתינוק ולאמא: שגרה מרגיעה, קשר, וכלים לימים עמוסים. MammyZone.",
-      "Gentle touch for baby and mother: soothing routine, bonding, tools for full days. MammyZone.",
+      "מגע עדין ובייבי יוגה לתינוק ולאמא: שגרה מרגיעה, קשר, וכלים לימים עמוסים. MammyZone.",
+      "Gentle touch and baby yoga for baby and mother: soothing routine, bonding, tools for full days. MammyZone.",
     ),
-    schemaName: b("עיסוי תינוקות", "Infant massage instruction"),
+    schemaName: b("עיסוי תינוקות ובייבי יוגה", "Infant massage and baby yoga"),
     schemaServiceType: "Baby massage instruction for parents",
     heroEyebrow: b("מגע", "Touch"),
     heroTitle: b("ידיים שמלמדות שקט", "Hands that teach quiet"),
@@ -265,12 +266,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
   },
   "nlp-for-mothers": {
     slug: "nlp-for-mothers",
-    metaTitle: b("NLP לאמהות — MammyZone", "NLP for mothers — MammyZone"),
+    metaTitle: b("מאסטרית NLP לאמהות — MammyZone", "NLP Master for mothers — MammyZone"),
     metaDescription: b(
       "ליווי שפה ודפוסים: גבולות, עומס, מעברים. מרחב בטוח לשאול בלי בושה. MammyZone.",
       "Language & pattern support: boundaries, overwhelm, transitions. A safe space to ask without shame. MammyZone.",
     ),
-    schemaName: b("אימון NLP לאמהות", "NLP coaching for mothers"),
+    schemaName: b("מאסטרית NLP לאמהות", "NLP Master coaching for mothers"),
     schemaServiceType: "NLP-based coaching for mothers",
     heroEyebrow: b("שפה פנימית", "Inner language"),
     heroTitle: b("כשהמילים שאת אומרת לעצמך כבדות", "When the words you say to yourself feel heavy"),
@@ -280,11 +281,11 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     ),
     heroVisual: serviceVisual(
       galleryPhotoSources("nlp"),
-      b("ידיים פתוחות לשמיים — צמיחה והעצמה", "Arms open to the sky — growth and empowerment"),
+      b("ידיים לשמיים — צמיחה והעצמה", "Arms to the sky — growth and empowerment"),
     ),
     midVisual: serviceVisual(
-      galleryPhotoSources("nlp", 6).slice(3, 6),
-      b("נשימה וקשב — בלי תחרות", "Breath and attention — without competition"),
+      galleryPhotoSources("nlp", 2),
+      b("ידיים פתוחות לצדדים — מרחב פנימי", "Arms open to the sides — inner space"),
     ),
     problemTitle: b("עומס שאין לו כותרת", "Load without a headline"),
     problemBody: b(
@@ -384,12 +385,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
   },
   workshops: {
     slug: "workshops",
-    metaTitle: b("סדנאות ומעגלים — MammyZone", "Workshops & circles — MammyZone"),
+    metaTitle: b("סדנאות ומעגלי נשים — MammyZone", "Workshops & women's circles — MammyZone"),
     metaDescription: b(
-      "מעגלים חיים, סדנאות עומק, ויום ריטריט — מרחב נשי מקודש. MammyZone עם אורטל חזן.",
-      "Live circles, deep workshops, and day retreats — a sacred women’s container. MammyZone with Ortal Hazan.",
+      "מעגלי נשים, סדנאות עומק, ויום ריטריט — מרחב נשי מקודש. MammyZone עם אורטל.",
+      "Women's circles, deep workshops, and day retreats — a sacred women’s container. MammyZone with Ortal.",
     ),
-    schemaName: b("סדנאות וריטריטים", "Workshops and retreats"),
+    schemaName: b("סדנאות ומעגלי נשים", "Workshops and women's circles"),
     schemaServiceType: "Women's wellness workshops and retreats",
     heroEyebrow: b("ביחד", "Together"),
     heroTitle: b("כשהחדר מלא נשימה אחת", "When the room holds one breath"),
@@ -402,8 +403,8 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       b("מעגל משפחה ותנועה — סדנה וריטריט", "Family circle and movement — workshop and retreat"),
     ),
     midVisual: serviceVisual(
-      galleryPhotoSources("workshops", 6).slice(2, 5),
-      b("קהילה ומגע — מרחב נשי משותף", "Community and touch — a shared women’s space"),
+      retreatNatureSources,
+      b("טבע ואור — ריטריט יום לאמהות", "Nature and light — a day retreat for mothers"),
     ),
     problemTitle: b("כשהבית צפוף והלב צריך קהילה", "When home feels tight and the heart needs community"),
     problemBody: b(

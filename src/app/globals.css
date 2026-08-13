@@ -22,10 +22,10 @@
   --white: #fbf8f7;
   --clay: #7a5c8c;
   --clay-deep: #4f3a5c;
-  --font-body-en: Arial, Helvetica, sans-serif;
-  --font-body-he: var(--font-assistant);
-  --font-display: var(--font-assistant);
-  --font-wordmark: Arial, Helvetica, sans-serif;
+  --font-body-en: var(--font-rubik), sans-serif;
+  --font-body-he: var(--font-rubik), sans-serif;
+  --font-display: var(--font-rubik), sans-serif;
+  --font-wordmark: var(--font-rubik), sans-serif;
   --nav-h: 86px;
   --max-w: 1340px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -94,7 +94,7 @@ body.lang-en .en {
 body.lang-en {
   font-family: var(--font-body-en);
   direction: ltr;
-  --font-display: Arial, Helvetica, sans-serif;
+  --font-display: var(--font-rubik), sans-serif;
 }
 
 body.lang-en [dir="rtl"] {
@@ -1065,6 +1065,20 @@ body.lang-en .service-card.featured:hover .service-arrow {
   font-size: 0.8rem;
   font-weight: 300;
   color: rgba(255, 252, 248, 0.5);
+}
+
+.retreat-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.retreat-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
 }
 
 .retreat-card-stack {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Assistant } from "next/font/google";
+import { Rubik } from "next/font/google";
 import { DeployFreshness } from "@/components/layout/DeployFreshness";
 import { FloatingCTACluster } from "@/components/layout/FloatingCTACluster";
 import { Footer } from "@/components/layout/Footer";
@@ -12,9 +12,9 @@ import { LanguageProvider, siteMeta } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const assistant = Assistant({
+const rubik = Rubik({
   subsets: ["hebrew", "latin", "latin-ext"],
-  variable: "--font-assistant",
+  variable: "--font-rubik",
   weight: "variable",
   display: "swap",
   adjustFontFallback: true,
@@ -62,11 +62,11 @@ export default function RootLayout({
     <html
       lang="he"
       dir="rtl"
-      className={assistant.variable}
+      className={rubik.variable}
       data-build={deployId}
       suppressHydrationWarning
     >
-      <body className="antialiased">
+      <body className={`${rubik.className} antialiased`}>
         <style
           id="mz-palette"
           dangerouslySetInnerHTML={{ __html: PALETTE_INLINE_CSS }}
@@ -78,7 +78,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `<!--
 THESIS: A mother rests in a warm lilac courtyard — dusty purple, light turquoise — then books. Softer than cream-and-pink, still quiet.
-OWN-WORLD: Lilac-warm field, purple accent, turquoise secondary. Assistant + Arial. Rounded pills. Quiet vine lattice. Marks instead of emoji.
+OWN-WORLD: Lilac-warm field, purple accent, turquoise secondary. Rubik. Rounded pills. Quiet vine lattice. Marks instead of emoji.
 STORY: Ortal holds body, mind, and space as one practice. Believe the pace; book or write.
 FIRST VIEWPORT: Cream copy column, sun photograph with a faint lattice, glass name plaque.
 FORM: Pastel courtyard quiet pass over grounded direction 4. Seed key a4cd0422.

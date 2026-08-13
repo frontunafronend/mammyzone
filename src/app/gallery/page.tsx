@@ -51,12 +51,8 @@ export default function GalleryPage() {
               <span className="en">{galleryPage.label.en}</span>
             </p>
             <h1 className="section-title">
-              <span className="he">
-                {galleryPage.titleLine1.he} <em>{galleryPage.titleEm.he}</em>
-              </span>
-              <span className="en">
-                {galleryPage.titleLine1.en} <em>{galleryPage.titleEm.en}</em>
-              </span>
+              <span className="he">{galleryPage.titleLine1.he}</span>
+              <span className="en">{galleryPage.titleLine1.en}</span>
             </h1>
             <p className="section-sub gallery-page__sub">
               <span className="he">{galleryPage.sub.he}</span>

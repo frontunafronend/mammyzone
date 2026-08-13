@@ -44,10 +44,10 @@ export function Services() {
                 href={href}
                 className={`service-card service-card--link${card.featured ? " featured" : ""}`}
               >
-                {(card.num === "01" || card.num === "02") && (
+                {(card.num in serviceCardImageSources) && (
                   <div className="service-card__visual">
                     <SafeImage
-                      sources={serviceCardImageSources[card.num]}
+                      sources={serviceCardImageSources[card.num as keyof typeof serviceCardImageSources]}
                       alt={`${card.title.he} / ${card.title.en}`}
                       fill
                       className="service-card__img object-cover"
