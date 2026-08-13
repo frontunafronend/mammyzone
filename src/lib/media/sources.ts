@@ -69,7 +69,7 @@ export function authorAvatarSources(primaryUrl: string | undefined | null): stri
 }
 
 export const serviceCardImageSources: Record<"01" | "02", string[]> = {
-  "01": studioStack("momToddlerPark", "parkAirplane", "yogaCoastStretch"),
+  "01": studioStack("momToddlerPark", "parkAirplane", "promenadeStretch"),
   "02": studioStack("pregnancyBeachSalute", "pregnancyBw", "pregnancyBeachArms"),
 };
 

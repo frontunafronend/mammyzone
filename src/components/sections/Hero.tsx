@@ -14,6 +14,9 @@ export function Hero() {
       <div className="hero-cinematic__wash" aria-hidden />
 
       <div className="hero-text relative z-[2]">
+        <p className="hero-wordmark" aria-hidden={false}>
+          mammy<span>zone</span>
+        </p>
         <h1 className="hero-title">
           <span className="he">
             {hero.titleBeforeEm.he}

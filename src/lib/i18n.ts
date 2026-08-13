@@ -222,8 +222,16 @@ export const galleryPage = {
   titleLine1: { he: "הגלריה", en: "The gallery" },
   titleEm: { he: "של MammyZone", en: "of MammyZone" },
   sub: {
-    he: "לחצי לתמונה או לסרטון כדי לפתוח במסך מלא. הסרטונים קצרים — רגעי Live מהשטח.",
-    en: "Tap a photo or film to open it full-screen. The clips are short — live moments from the field.",
+    he: "בחרי קטגוריה — יוגה בהריון, יוגה עם ילדים, עיסוי תינוקות ועוד. לחצי לתמונה או לסרטון למסך מלא.",
+    en: "Choose a category — pregnancy yoga, yoga with children, baby massage, and more. Tap a photo or film for full screen.",
+  },
+  all: { he: "הכול", en: "All" },
+  categories: {
+    "pregnancy-yoga": { he: "יוגה בהריון", en: "Pregnancy yoga" },
+    "yoga-children": { he: "יוגה עם ילדים", en: "Yoga with children" },
+    "baby-massage": { he: "עיסוי תינוקות", en: "Baby massage" },
+    yoga: { he: "יוגה", en: "Yoga" },
+    family: { he: "בית ומשפחה", en: "Home & family" },
   },
 } as const;
 

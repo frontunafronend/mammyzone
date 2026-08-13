@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SoftWellnessBackground } from "@/components/backgrounds/SoftWellnessBackground";
-import { GalleryExperience } from "@/components/gallery/GalleryExperience";
+import { GalleryBoard } from "@/components/gallery/GalleryBoard";
 import { PageShell } from "@/components/layout/PageShell";
 import { galleryPage } from "@/lib/i18n";
 import { galleryJsonLd, studioGalleryItems } from "@/lib/media/gallery";
@@ -65,7 +65,7 @@ export default function GalleryPage() {
               <span className="en">{galleryPage.sub.en}</span>
             </p>
           </header>
-          <GalleryExperience items={studioGalleryItems} layout="full" />
+          <GalleryBoard items={studioGalleryItems} />
         </PageShell>
       </section>
     </main>

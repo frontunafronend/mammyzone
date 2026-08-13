@@ -203,7 +203,7 @@ export function Nav() {
         >
           <Link
             href="/#home"
-            className="font-display text-[1.55rem] font-medium leading-none tracking-[0.02em] text-ink transition-[color,opacity] duration-300 hover:opacity-85 focus-visible:opacity-90"
+            className={`nav-logo ${pathname === "/" && !scrolled ? "nav-logo--home" : ""} text-ink transition-[color,opacity,font-size] duration-300 hover:opacity-85 focus-visible:opacity-90`}
             onClick={closeMobile}
           >
             mammy<span className="text-rose">zone</span>

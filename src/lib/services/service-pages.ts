@@ -1,5 +1,5 @@
 import type { BlogCategory } from "@/lib/blog/categories";
-import { studioStack } from "@/lib/media/sources";
+import { galleryPhotoSources } from "@/lib/media/gallery";
 import type { Bilingual } from "@/types";
 
 export type ServiceFaqItem = { q: Bilingual; a: Bilingual };
@@ -75,14 +75,14 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "No comparing to “before,” no forcing flexibility. Room to breathe, feel your floor, and come home to yourself.",
     ),
     heroVisual: serviceVisual(
-      studioStack("momToddlerPark", "parkAirplane", "yogaCoastStretch"),
+      galleryPhotoSources("yoga-children"),
       b(
         "אמא ותינוק באווירה רכה — מגע ויוגה עדינה אחרי לידה",
         "Mother and baby in a soft mood — gentle touch and postnatal yoga",
       ),
     ),
     midVisual: serviceVisual(
-      studioStack("yogaCoastSeated", "yogaCoastStretch", "momToddlerPark"),
+      galleryPhotoSources("yoga-children", 6).slice(3, 6),
       b("אור ונשימה — מרחב שקט לפני חזרה ליום", "Light and breath — quiet before returning to the day"),
     ),
     problemTitle: b("כשהגוף זר והלב עייף", "When the body feels foreign and the heart is tired"),
@@ -159,11 +159,11 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "No racing Instagram, no forced load. Breath, stability, and care for pelvic floor and back.",
     ),
     heroVisual: serviceVisual(
-      studioStack("pregnancyBeachSalute", "pregnancyBw", "pregnancyBeachArms"),
+      galleryPhotoSources("pregnancy-yoga"),
       b("יוגה בהריון מול הים — מתאים לגוף שמשתנה", "Prenatal yoga by the sea — honoring a changing body"),
     ),
     midVisual: serviceVisual(
-      studioStack("pregnancyPool", "beachYogaArms", "pregnancyBeachArms"),
+      galleryPhotoSources("pregnancy-yoga", 6).slice(2, 5),
       b("הקשבה ומרווח — מקום לגוף שמשתנה כל שבוע", "Space and ease — room for a body that shifts each week"),
     ),
     problemTitle: b("כשהכל נראה כבד", "When everything feels heavy"),
@@ -219,11 +219,11 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "Structured massage isn’t rough — it’s language. Sometimes it helps evenings, closeness, and a moment where you breathe too.",
     ),
     heroVisual: serviceVisual(
-      studioStack("babyMassageSmile", "babyMassageHead", "babyMassageArms"),
+      galleryPhotoSources("baby-massage"),
       b("מגע אמא־תינוק — חמימות, קירבה, שגרת לפני שינה", "Mother-baby touch — warmth, bonding, a pre-sleep rhythm"),
     ),
     midVisual: serviceVisual(
-      studioStack("babyClass", "babyMassageTummy", "babyMassageLegs"),
+      galleryPhotoSources("baby-massage", 8).slice(4, 7),
       b("רגע שקט בבית — נוכחות משותפת", "A quiet moment at home — shared presence"),
     ),
     problemTitle: b("כשהערב נמתח", "When the evening stretches thin"),
@@ -279,11 +279,11 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "NLP here doesn’t “fix personality” — it offers tools to ask differently, breathe before reacting, and choose a small step that fits you.",
     ),
     heroVisual: serviceVisual(
-      studioStack("yogaCoastSeated", "yogaCoastStretch", "yogaCoastPlank"),
+      galleryPhotoSources("yoga"),
       b("עבודה שקטה — מרחב פנימי ליד הים", "Quiet work — inner space by the sea"),
     ),
     midVisual: serviceVisual(
-      studioStack("yogaCoastCobra", "beachUpdog", "yogaCoastSeated"),
+      galleryPhotoSources("yoga", 6).slice(3, 6),
       b("נשימה וקשב — בלי תחרות", "Breath and attention — without competition"),
     ),
     problemTitle: b("עומס שאין לו כותרת", "Load without a headline"),
@@ -339,11 +339,11 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "After birth there is no single timeline. Here we listen to fatigue, pulse, tears without explanation — and build a path that fits you.",
     ),
     heroVisual: serviceVisual(
-      studioStack("yogaCoastSeated", "momToddlerPark", "yogaCoastStretch"),
+      galleryPhotoSources("yoga-children"),
       b("מנוחה ונשימה — שיקום רך אחרי לידה", "Rest and breath — gentle postpartum recovery"),
     ),
     midVisual: serviceVisual(
-      studioStack("parkAirplane", "babyMassageSmile", "momToddlerPark"),
+      [...galleryPhotoSources("yoga-children", 2), ...galleryPhotoSources("baby-massage", 1)],
       b("יוגה ומגע — לא לבד עם השיקום", "Yoga and touch — not alone in recovery"),
     ),
     problemTitle: b("כשהגוף מבקש רק שקט", "When the body asks only for quiet"),
@@ -398,11 +398,11 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       "A good workshop doesn’t “fill the calendar” — it lets you feel you’re not alone with what moves through you.",
     ),
     heroVisual: serviceVisual(
-      studioStack("parkAirplaneWide", "promenadeChild", "familyHome"),
+      [...galleryPhotoSources("yoga-children", 2), ...galleryPhotoSources("family", 1)],
       b("מעגל משפחה ותנועה — סדנה וריטריט", "Family circle and movement — workshop and retreat"),
     ),
     midVisual: serviceVisual(
-      studioStack("promenadeStretch", "yogaCoastStretch", "parkAirplane"),
+      galleryPhotoSources("yoga-children", 6).slice(2, 5),
       b("קהילה ומגע — מרחב נשי משותף", "Community and touch — a shared women’s space"),
     ),
     problemTitle: b("כשהבית צפוף והלב צריך קהילה", "When home feels tight and the heart needs community"),

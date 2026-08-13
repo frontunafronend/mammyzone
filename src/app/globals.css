@@ -22,10 +22,11 @@
   --white: #fbf8f7;
   --clay: #7a5c8c;
   --clay-deep: #4f3a5c;
-  --font-body-en: var(--font-dm-sans);
-  --font-body-he: var(--font-heebo);
-  --font-display: var(--font-body-he);
-  --nav-h: 72px;
+  --font-body-en: var(--font-figtree);
+  --font-body-he: var(--font-assistant);
+  --font-display: var(--font-assistant);
+  --font-wordmark: var(--font-fraunces);
+  --nav-h: 86px;
   --max-w: 1340px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -53,7 +54,7 @@ body {
   background: var(--cream);
   color: var(--ink);
   font-family: var(--font-body-he);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -93,7 +94,7 @@ body.lang-en .en {
 body.lang-en {
   font-family: var(--font-body-en);
   direction: ltr;
-  --font-display: var(--font-body-en);
+  --font-display: var(--font-fraunces);
 }
 
 body.lang-en [dir="rtl"] {
@@ -126,6 +127,18 @@ body.lang-en span.he {
 }
 
 /* Main nav: styled in src/components/layout/Nav.tsx (Tailwind). */
+
+.nav-logo {
+  font-family: var(--font-wordmark);
+  font-size: clamp(1.85rem, 3.4vw, 2.45rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.nav-logo--home {
+  font-size: clamp(2.05rem, 4vw, 2.85rem);
+}
 
 /* Always in the DOM (search for class "scroll-top"); .scroll-top--visible after scroll */
 .scroll-top {
@@ -190,13 +203,29 @@ body.lang-en span.he {
   color: var(--ink);
 }
 
+.hero-wordmark {
+  font-family: var(--font-wordmark);
+  font-size: clamp(3.4rem, 11vw, 8.2rem);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+  margin: 0 0 1.35rem;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.05s forwards;
+}
+
+.hero-wordmark span {
+  color: var(--rose);
+}
+
 .hero-eyebrow {
   display: none;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 6.5vw, 7rem);
+  font-size: clamp(2.15rem, 4.6vw, 4.4rem);
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.01em;
@@ -1366,8 +1395,8 @@ body.lang-en .service-card.featured:hover .service-arrow {
 }
 
 .footer-logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-family: var(--font-wordmark);
+  font-size: 2rem;
   font-weight: 500;
   color: var(--white);
   margin-bottom: 1rem;
@@ -2657,7 +2686,7 @@ html[dir="rtl"] .transform-bridge__glyph {
 .studio-gallery {
   display: grid;
   gap: 0.55rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   padding: 0;
   list-style: none;
 }
@@ -2763,6 +2792,42 @@ html[dir="rtl"] .transform-bridge__glyph {
 
 .gallery-page__sub {
   margin-top: 1rem;
+}
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 2rem;
+}
+
+.gallery-filters__chip {
+  min-height: 42px;
+  padding: 0.45rem 1.05rem;
+  border-radius: 999px;
+  border: 1px solid rgba(122, 92, 140, 0.22);
+  background: var(--white);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.gallery-filters__chip.is-active {
+  background: var(--rose);
+  border-color: var(--rose);
+  color: var(--white);
+}
+
+.gallery-category {
+  margin-top: 2.75rem;
+}
+
+.gallery-category__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 500;
 }
 
 .gallery-lightbox {

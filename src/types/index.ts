@@ -44,6 +44,13 @@ export type SocialGalleryImage = {
 
 export type StudioGalleryShape = "portrait" | "landscape" | "wide";
 
+export type StudioGalleryCategory =
+  | "pregnancy-yoga"
+  | "yoga-children"
+  | "baby-massage"
+  | "yoga"
+  | "family";
+
 export type StudioGalleryItem = {
   id: string;
   kind: "photo" | "video";
@@ -51,6 +58,7 @@ export type StudioGalleryItem = {
   /** Still frame for video tiles and lightbox posters. */
   poster?: string;
   alt: Bilingual;
+  category: StudioGalleryCategory;
   shape?: StudioGalleryShape;
   featured?: boolean;
 };
