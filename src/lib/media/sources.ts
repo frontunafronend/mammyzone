@@ -39,6 +39,11 @@ export const heroVideo = {
   poster: "/photos/studio-IMG_8193.jpg",
 } as const;
 
+export const aboutVideo = {
+  src: "/videos/studio-IMG_8214.mp4",
+  poster: "/photos/studio-IMG_8214.jpg",
+} as const;
+
 export const heroImageSources = studioStack(
   "pregnancyBeachSalute",
   "pregnancyBw",
