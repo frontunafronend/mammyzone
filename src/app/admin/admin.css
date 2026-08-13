@@ -165,7 +165,7 @@
 }
 
 .admin-login__lang:hover {
-  border-color: rgba(122, 92, 140, 0.45);
+  border-color: rgba(184, 80, 112, 0.45);
   color: var(--rose-deep);
   background: rgba(255, 252, 248, 0.95);
 }
@@ -360,7 +360,7 @@
 }
 
 .admin-shell__lang:hover {
-  border-color: rgba(122, 92, 140, 0.45);
+  border-color: rgba(184, 80, 112, 0.45);
   color: var(--rose-deep);
   background: rgba(255, 252, 248, 0.95);
 }

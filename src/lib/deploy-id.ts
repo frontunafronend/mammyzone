@@ -9,4 +9,4 @@ export function getDeployId(): string {
 }
 
 /** Critical palette inlined in HTML so a stale cached stylesheet cannot keep old colors. */
-export const PALETTE_INLINE_CSS = `:root{--rose:#7a5c8c;--rose-light:#d4c6dc;--rose-pale:#eee8f2;--rose-deep:#4f3a5c;--sage:#5eb8b2;--sage-light:#c5e8e5;--sage-pale:#e8f5f4;--sand:#e2d6d4;--sand-deep:#b89a90;--cream:#f4f1f3;--cream-warm:#efe8e6;--ink:#2a1e24;--ink-soft:#5a4752;--ink-muted:#948490;--white:#fbf8f7;--clay:#7a5c8c;--clay-deep:#4f3a5c}`;
+export const PALETTE_INLINE_CSS = `:root{--rose:#b85070;--rose-light:#e8c4cf;--rose-pale:#f7eef1;--rose-deep:#7a2d45;--sage:#5eb8b2;--sage-light:#c5e8e5;--sage-pale:#e8f5f4;--sand:#e8ddd0;--sand-deep:#c4a882;--cream:#faf7f2;--cream-warm:#f3ede4;--ink:#2a1f1a;--ink-soft:#5c4a40;--ink-muted:#9a8a80;--white:#fffcf8;--clay:#b85070;--clay-deep:#7a2d45}`;
