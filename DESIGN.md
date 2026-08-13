@@ -20,15 +20,15 @@ Color is quiet: the field is a warm lilac stone; purple is the action; turquoise
 
 - Hebrew: Heebo (display and body)
 - English: DM Sans
-- Headings may italicize rose emphasis; no uppercase kickers above titles
+- Headings may italicize purple emphasis; no uppercase kickers above titles
 
 ## Components
 
-- Primary action: rose pill
+- Primary action: purple pill
 - Ghost: underline
 - Marks: SVG set in `src/components/icons/Marks.tsx`
 - Lattice: very faint vine light
-- Nav: cream glass, five destinations + Book
+- Nav: lilac glass, five destinations + Book
 - Offerings: rooms linking to real landings
 
 ## Motion
