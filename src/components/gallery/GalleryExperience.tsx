@@ -39,9 +39,11 @@ export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
     document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    document.body.classList.add("lightbox-open");
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
+      document.body.classList.remove("lightbox-open");
     };
   }, [close, language, openIndex, step]);
 
@@ -110,7 +112,14 @@ export function GalleryExperience({ items, layout }: GalleryExperienceProps) {
             <p className="gallery-lightbox__count">
               {openIndex + 1} / {items.length}
             </p>
-            <button type="button" className="gallery-lightbox__close" onClick={close}>
+            <button
+              type="button"
+              className="gallery-lightbox__close"
+              onClick={(e) => {
+                e.stopPropagation();
+                close();
+              }}
+            >
               <span className="he">{galleryUi.close.he}</span>
               <span className="en">{galleryUi.close.en}</span>
             </button>
