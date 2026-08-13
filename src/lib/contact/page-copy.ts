@@ -3,7 +3,7 @@ import type { Bilingual } from "@/types";
 
 export const contactPageMeta = {
   title: {
-    he: "קשר עדין — MammyZone | אורטל חזן",
+    he: "יצירת קשר — MammyZone | אורטל חזן",
     en: "A gentle line to MammyZone | Ortal Hazan",
   },
   description: {
@@ -16,7 +16,7 @@ export const contactHero = {
   eyebrow: { he: "כאן בשבילך", en: "Right here for you" },
   title: { he: "בואי כמו שאת", en: "Come as you are" },
   sub: {
-    he: "אם הלב רועד קצת לפני ששולחות הודעה — זה בסדר. כתבי כמה מילים, או בחרי וואטסאפ. אני כאן.",
+    he: "אם הלב רועד קצת לפני ששולחות הודעה — זה בסדר. כתבי כמה מילים, או בחרי בוואטסאפ. אני כאן.",
     en: "If your heart flutters before you reach out — that is okay. Leave a few words, or choose WhatsApp. I am here.",
   },
 } as const;
@@ -99,7 +99,7 @@ export const CONTACT_INTEREST_ORDER: ContactInterestType[] = [
 
 export const contactInterestLabels: Record<ContactInterestType, Bilingual> = {
   private_session: { he: "שיעור פרטי / ליווי אישי", en: "Private session / one-to-one" },
-  yoga_after_birth: { he: "יוגה אחרי לידה", en: "Yoga after birth" },
+  yoga_after_birth: { he: "יוגה לאחר לידה", en: "Yoga after birth" },
   pregnancy_yoga: { he: "יוגה בהריון", en: "Pregnancy yoga" },
   baby_massage: { he: "עיסוי תינוקות", en: "Baby massage" },
   nlp: { he: "NLP / ליווי רגשי", en: "NLP / emotional support" },
@@ -133,7 +133,7 @@ export const contactFaq = {
         en: "How long until I hear back?",
       },
       a: {
-        he: "בדרך כלל תוך יום־יומיים בימי חול. בסופ״ש אולי קצת יותר.",
+        he: "בדרך כלל תוך יום או יומיים בימי חול. בסוף השבוע אולי קצת יותר.",
         en: "Usually within a day or two on weekdays. Weekends may be a little slower.",
       },
     },
@@ -163,7 +163,7 @@ export const contactFaq = {
 export const contactFinalCta = {
   title: { he: "מוכנה לקבוע זמן בשביל עצמך?", en: "Ready to put time on your calendar for you?" } as Bilingual,
   body: {
-    he: "אפשר גם לעבור ישר ליומן הדיגיטלי — לבחור שירות ותאריך בקצב שלך.",
+    he: "אפשר גם לעבור ישר ליומן — לבחור שירות ותאריך בקצב שלך.",
     en: "You can also move straight to the booking flow — pick a service and date at your pace.",
   } as Bilingual,
   cta: { he: "לקביעת שיעור", en: "Book a session" } as Bilingual,

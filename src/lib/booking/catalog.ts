@@ -51,7 +51,7 @@ export const BOOKING_OFFERINGS: BookingOffering[] = [
       en: "Private NLP coaching",
     },
     description: {
-      he: "מסגרת בטוחה לעיבוד דפוסים, גבולות, ומעברי אםות — בזום או פרונטלי.",
+      he: "מסגרת בטוחה לעיבוד דפוסים, גבולות, ומעברי אמהות — בזום או פרונטלי.",
       en: "A safe frame to work patterns, boundaries, and motherhood transitions — video or in person.",
     },
     durationMin: 75,
@@ -81,7 +81,7 @@ export const BOOKING_OFFERINGS: BookingOffering[] = [
       en: "Mothers' day retreat",
     },
     description: {
-      he: "יום שלם של נשימה, תנועה עדינה, ארוחה ומעגל — לפני תאריך יש לוודא מקום.",
+      he: "יום שלם של נשימה, תנועה עדינה, ארוחה ומעגל — לפני ההרשמה כדאי לוודא שיש מקום.",
       en: "A full day of breath, gentle movement, nourishment, and circle — confirm date with us.",
     },
     durationMin: 360,

@@ -30,7 +30,7 @@ export const blogArticleUi = {
   newsletterPlaceholder: { he: "האימייל שלך", en: "Your email" },
   newsletterSubmit: { he: "הצטרפי", en: "Join" },
   newsletterThanks: {
-    he: "תודה — נתראה בדוא״ל.",
+    he: "תודה — ניפגש בתיבת הדואר.",
     en: "Thank you — see you in your inbox.",
   },
   backToJournal: { he: "חזרה למגזין", en: "Back to journal" },

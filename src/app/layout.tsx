@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { DM_Sans, Heebo } from "next/font/google";
+import { DeployFreshness } from "@/components/layout/DeployFreshness";
 import { FloatingCTACluster } from "@/components/layout/FloatingCTACluster";
 import { Footer } from "@/components/layout/Footer";
 import { NewsletterSignupModal } from "@/components/layout/NewsletterSignupModal";
 import { Nav } from "@/components/layout/Nav";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { getDeployId, PALETTE_INLINE_CSS } from "@/lib/deploy-id";
 import { LanguageProvider, siteMeta } from "@/lib/i18n";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
@@ -58,14 +60,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const deployId = getDeployId();
   return (
     <html
       lang="he"
       dir="rtl"
       className={`${heebo.variable} ${dmSans.variable}`}
+      data-build={deployId}
       suppressHydrationWarning
     >
       <body className="antialiased">
+        <style
+          id="mz-palette"
+          dangerouslySetInnerHTML={{ __html: PALETTE_INLINE_CSS }}
+        />
+        <DeployFreshness deployId={deployId} />
         <span
           hidden
           aria-hidden

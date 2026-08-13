@@ -31,11 +31,11 @@ export const nav = {
   journey: { he: "התחילי כאן", en: "Begin" },
   journal: { he: "מגזין", en: "Journal" },
   /** Primary booking route — `/book` */
-  book: { he: "קביעה", en: "Book" },
+  book: { he: "הזמנה", en: "Book" },
   /** `/contact` — soft conversion */
   contact: { he: "קשר", en: "Contact" },
   cta: { he: "הזמיני שיעור", en: "Book a session" },
-  langToggle: { he: "EN / עב", en: "HE / EN" },
+  langToggle: { he: "English", en: "עברית" },
   /** Mobile menu — text control, not icon-first chrome */
   menu: { he: "תפריט", en: "Menu" },
   menuClose: { he: "סגור", en: "Close" },
@@ -64,11 +64,11 @@ export const layoutShell = {
   },
   newsletterSubmit: { he: "הצטרפי", en: "Join" },
   newsletterSuccess: {
-    he: "תודה — נתראה בדוא״ל.",
+    he: "תודה — ניפגש בתיבת הדואר.",
     en: "Thank you — see you in your inbox.",
   },
   newsletterPrivacy: {
-    he: "לא מעבירים לצד שלישי. ניתן לבטל בכל עת.",
+    he: "הכתובת לא מועברת לצד שלישי. אפשר לבטל בכל עת.",
     en: "Never shared. Unsubscribe anytime.",
   },
   newsletterModalClose: { he: "סגור", en: "Close" },
@@ -102,7 +102,7 @@ export const scrollChrome = {
 export const hero = {
   eyebrow: { he: "מרחב מקודש לאמהות", en: "A sacred space for mothers" },
   titleBeforeEm: { he: "את", en: "You are the" },
-  titleEm: { he: " ראשית", en: " origin" },
+  titleEm: { he: " ראשית ", en: " origin" },
   titleAccent: { he: "הכוח שלך", en: "of your own power" },
   sub: {
     he: "יוגה לאחר לידה, יוגה להריון, עיסוי תינוקות, ריטריט לאמהות עובדות ואימון NLP אישי — עם אורטל חזן.",
@@ -118,7 +118,7 @@ export const hero = {
   ] as const,
   credentialName: { he: "אורטל חזן", en: "Ortal Hazan" },
   credentialTags: {
-    he: "מדריכת יוגה ואשטנגה · עיסוי תינוקות\nמאמנת NLP מוסמכת · מעצבת פנים",
+    he: "מדריכת יוגה ואשטנגה · מומחית עיסוי תינוקות\nמאמנת NLP מוסמכת · מעצבת פנים",
     en: "Yoga & Ashtanga instructor · baby massage\nCertified NLP coach · interior designer",
   },
   imageAlt: {
@@ -137,7 +137,7 @@ export const marqueeItems: Bilingual[] = [
 ];
 
 export const trustSection = {
-  label: { he: "למה לסמוך", en: "Why women trust this space" },
+  label: { he: "אמון שנבנה לאט", en: "Why women trust this space" },
   titleLine1: { he: "ניסיון שמורגש", en: "Experience you can feel" },
   titleEm: { he: "בגוף", en: "in the body" },
   reassurance: {
@@ -169,7 +169,7 @@ export const trustSection = {
 export const transformationSection = {
   label: { he: "המעבר", en: "The shift" },
   titleLine1: { he: "ממקום של עומס", en: "From a place of load" },
-  titleEm: { he: "אל נחות", en: "toward rest" },
+  titleEm: { he: "אל נחת", en: "toward rest" },
   sub: {
     he: "הגוף והנפש מדברים באותה שפה — כשמקשיבים, משהו מתרכך.",
     en: "Body and mind share one language — when we listen, something softens.",
@@ -189,7 +189,7 @@ export const transformationSection = {
 } as const;
 
 export const articlesSection = {
-  label: { he: "מהזין את הנשמה", en: "For the soul & SEO" },
+  label: { he: "שמזין את הנפש", en: "For the soul & SEO" },
   titleLine1: { he: "מגזין", en: "Editorial" },
   titleEm: { he: "קצר ועמוק", en: "short & deep" },
   readMore: { he: "קראי עוד →", en: "Read more →" },
@@ -200,12 +200,12 @@ export const socialGallerySection = {
   titleLine1: { he: "רגעים", en: "Moments" },
   titleEm: { he: "חיים מהשטיח", en: "off the mat" },
   sub: {
-    he: "תמונות מהשיעורים, הריטריטים והמעגלים — מוזמנות להצטרף לקהילה.",
+    he: "תמונות מהשיעורים, מהריטריטים ומהמעגלים — מוזמנות להצטרף לקהילה.",
     en: "Scenes from classes, retreats, and circles — you’re welcome in this community.",
   },
   followCta: { he: "עקבי אחריי באינסטגרם", en: "Follow on Instagram" },
   followHref: siteContact.instagramUrl,
-  embedTitle: { he: "הרגע האחרון מהשטיח", en: "A moment from the mat" },
+  embedTitle: { he: "רגע מהשטיח", en: "A moment from the mat" },
   embedOpen: { he: "פתיחה באינסטגרם", en: "Open on Instagram" },
 } as const;
 
@@ -214,7 +214,7 @@ export const socialGalleryImages = socialGalleryStock;
 
 export const finalJourneySection = {
   heroLine: {
-    he: "את לא צריכה להוכיח כלום כדי להשתייך כאן.",
+    he: "את לא צריכה להוכיח דבר כדי להשתייך לכאן.",
     en: "You don’t have to prove anything to belong here.",
   },
   supporting: {
@@ -235,7 +235,7 @@ export const servicesSection = {
     he: "לא בטוחה מה נכון לך עכשיו?",
     en: "Not sure what feels right for you right now?",
   },
-  unsureCta: { he: "דף קשר רך", en: "Visit the gentle contact page" },
+  unsureCta: { he: "לדף הקשר", en: "Visit the gentle contact page" },
 } as const;
 
 export const services: ServiceCard[] = [
@@ -285,7 +285,7 @@ export const services: ServiceCard[] = [
     icon: "✨",
     title: { he: "סדנאות ומעגלים", en: "Workshops & circles" },
     description: {
-      he: "מפגשים קצרים ועמוקים — נשים, נשימה, וכלים ליומיום המורכב של אמאות.",
+      he: "מפגשים קצרים ועמוקים — נשים, נשימה, וכלים ליומיום המורכב של אמהות.",
       en: "Short, deep gatherings — women, breath, and tools for the layered everyday of motherhood.",
     },
     tag: { he: "תאריכים בניוזלטר", en: "Dates in the newsletter" },
@@ -296,7 +296,7 @@ export const services: ServiceCard[] = [
     icon: "🌿",
     title: { he: "ריטריטים", en: "Retreats" },
     description: {
-      he: "יום שלם של הזנה: יוגה, מדיטציה, ארוחה ומעגל — מקומות מצומצמים, אווירה אינטימית.",
+      he: "יום שלם של הזנה: יוגה, מדיטציה, ארוחה ומעגל — מספר מקומות מוגבל, אווירה אינטימית.",
       en: "A full day of nourishment: yoga, meditation, meal, and circle — small groups, intimate air.",
     },
     tag: { he: "הרשמה מוקדמת", en: "Early registration" },
@@ -306,7 +306,7 @@ export const services: ServiceCard[] = [
 
 export const aboutOrtal = {
   quote: {
-    he: '"מאמינה שכל אמא היא כוח טבע"',
+    he: '"אני מאמינה שכל אמא היא כוח טבע"',
     en: '"Every mother is a force of nature"',
   },
   label: { he: "הסיפור שלי", en: "Founder story" },
@@ -322,7 +322,7 @@ export const aboutOrtal = {
     en: "I arrived at this blend not from a single course — but from life: births, fatigue, moments of expansion and of pulling inward. That’s why I know there isn’t one “right” for everyone — there is a pace that fits you.",
   },
   story3: {
-    he: "השיעורים והריטריטים שלי נשענים על הקשבה, על דיוק מקצועי, ועל אווירה שמרשה לך להיות בדיוק איפה שאת.",
+    he: "השיעורים והריטריטים שלי נשענים על הקשבה, על דיוק מקצועי, ועל אווירה שמאפשרת לך להיות בדיוק איפה שאת.",
     en: "My classes and retreats lean on listening, professional precision, and an atmosphere that lets you be exactly where you are.",
   },
   creds: [
@@ -332,8 +332,8 @@ export const aboutOrtal = {
     },
     { he: "מומחית עיסוי תינוקות", en: "Baby Massage Specialist" },
     {
-      he: "מאמנת NLP מוסמכת ואדריכלית",
-      en: "Certified NLP Coach & Architect",
+      he: "מאמנת NLP מוסמכת",
+      en: "Certified NLP Coach",
     },
     {
       he: "מעצבת פנים ועיצוב אנרגטי",
@@ -348,7 +348,7 @@ export const retreat = {
   titleLine1: { he: "יום שלם רק", en: "A whole day" },
   titleEm: { he: "בשבילך", en: "just for you" },
   sub: {
-    he: "ריטריט יום מיוחד לאמהות עובדות — שילוב של יוגה, מדיטציה, ארוחת שף, מעגל שיתוף ואמצאות לחיזוק האישה — הכל ביום אחד מיוחד.",
+    he: "ריטריט יום מיוחד לאמהות עובדות — שילוב של יוגה, מדיטציה, ארוחת שף, מעגל שיתוף וכלים לחיזוק האישה — הכול ביום אחד מיוחד.",
     en: "A special day retreat for working moms — yoga, meditation, chef's lunch, women's circle and tools to strengthen inner power — all in one special day.",
   },
   items: [
@@ -410,7 +410,7 @@ export const retreat = {
 } as const;
 
 export const testimonialsSection = {
-  label: { he: "קולות אמיתיות", en: "True voices" },
+  label: { he: "עדויות אמיתיות", en: "True voices" },
   titleBeforeEm: { he: "מילים שנשארות ", en: "Words that stay " },
   titleEm: { he: "בגוף", en: "in the body" },
 } as const;
@@ -426,7 +426,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     text: {
-      he: '"הריטריט היה חוויה שאיינה ניתנת לתיאור. בכיתי, צחקתי, ויצאתי אחרת."',
+      he: '"הריטריט היה חוויה שאינה ניתנת לתיאור. בכיתי, צחקתי, ויצאתי אחרת."',
       en: '"The retreat was indescribable. I cried, laughed, and left as a different woman."',
     },
     author: { he: "שירה, עורכת דין", en: "Shira, attorney" },
@@ -481,7 +481,7 @@ export const calendarSection = {
         en: "Pregnancy Yoga — Private",
       },
       meta: {
-        he: "פניות להזמנה דרך WhatsApp",
+        he: "הרשמה בוואטסאפ",
         en: "Book via WhatsApp",
       },
       price: "₪ 400",
@@ -489,7 +489,7 @@ export const calendarSection = {
   ] as const satisfies readonly CalendarEvent[],
   ctaTitle: { he: "מוכנה להתחיל?", en: "Ready to begin?" },
   ctaSub: {
-    he: "השיעור הראשון הוא תמיד הצעד הכי קשה. ביחד, נעשה אותו פשוט.",
+    he: "השיעור הראשון הוא תמיד הצעד הכי קשה. יחד נהפוך אותו לפשוט.",
     en: "The first session is always the hardest step. Together, we make it simple.",
   },
   ctaPhoneEyebrow: {
@@ -499,7 +499,7 @@ export const calendarSection = {
   ctaEmailEyebrow: { he: "אימייל", en: "Email" },
   whatsapp: { he: "שלחי הודעה בוואטסאפ →", en: "Message on WhatsApp →" },
   instagram: { he: "צפי באינסטגרם →", en: "See on Instagram →" },
-  bookOnline: { he: "קביעה עדינה באתר →", en: "Book gently online →" },
+  bookOnline: { he: "קביעת תור באתר →", en: "Book gently online →" },
 } as const;
 
 export const marketplaceSection = {
@@ -558,14 +558,14 @@ export const footer = {
   },
   colServices: { he: "שירותים", en: "Services" },
   colCommunity: { he: "קהילה", en: "Community" },
-  colContact: { he: "צור קשר", en: "Contact" },
+  colContact: { he: "יצירת קשר", en: "Contact" },
   links: {
     services: [
       { he: "יוגה לאחר לידה", en: "Postnatal Yoga", href: "#services" },
       { he: "יוגה בהריון", en: "Pregnancy Yoga", href: "#services" },
       { he: "עיסוי תינוקות", en: "Baby Massage", href: "#services" },
       { he: "ריטריט יום", en: "Day Retreat", href: "#services" },
-      { he: "NLP אימון", en: "NLP Coaching", href: "#services" },
+      { he: "אימון NLP", en: "NLP Coaching", href: "#services" },
     ],
     community: [
       { he: "הבלוג", en: "Blog", href: "/blog" },
@@ -575,7 +575,7 @@ export const footer = {
     ],
     contact: [
       {
-        he: "דף קשר עדין",
+        he: "דף הקשר",
         en: "Gentle contact page",
         href: "/contact",
       },
@@ -607,8 +607,8 @@ export const footer = {
   ],
   bottomLeft: { he: "© 2026 MammyZone · אורטל חזן", en: "© 2026 MammyZone · Ortal Hazan" },
   bottomRight: {
-    he: "עיצוב ופיתוח · mammyzone.co.il",
-    en: "Design & Development · mammyzone.co.il",
+    he: "עיצוב ופיתוח · mammyzone.com",
+    en: "Design & Development · mammyzone.com",
   },
 } as const;
 

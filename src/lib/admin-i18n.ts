@@ -36,7 +36,7 @@ export const adminPanel = {
   },
   loginUsername: { he: "שם משתמש", en: "Username" },
   loginPassword: { he: "סיסמה", en: "Password" },
-  loginContinue: { he: "המשך", en: "Continue" },
+  loginContinue: { he: "המשיכי", en: "Continue" },
   loginSigningIn: { he: "מתחברת…", en: "Signing in…" },
   loginErrorGeneric: {
     he: "לא ניתן להתחבר. בדקי את הפרטים ונסי שוב מאוחר יותר.",

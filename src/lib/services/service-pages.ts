@@ -68,7 +68,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     slug: "yoga-after-birth",
     metaTitle: b("יוגה אחרי לידה — MammyZone", "Postnatal yoga — MammyZone"),
     metaDescription: b(
-      "שיעורי יוגה רכים אחרי לידה: נשימה, רצפה, וגבולות בגוף שעדיין מתאושש. קביעה או שיחה עדינה.",
+      "שיעורי יוגה רכים לאחר לידה: נשימה, רצפת אגן, וגבולות בגוף שעדיין מתאושש. הזמנה או שיחה עדינה.",
       "Gentle postnatal yoga: breath, pelvic floor, and boundaries while your body still recovers. Book or talk softly.",
     ),
     schemaName: b("יוגה לאחר לידה", "Postnatal yoga"),
@@ -131,13 +131,13 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     trustTitle: b("בטיחות ומקצועיות", "Safety & training"),
     trustBullets: [
       b("ליווי מקצועי עם הקשבה לרצפת אגן ולשיקום.", "Professional guidance attentive to pelvic floor and recovery."),
-      b("שפה גוף־נפש — בלי ביקורת.", "Body–mind language — without judgment."),
+      b("שפה של גוף ונפש — בלי ביקורת.", "Body–mind language — without judgment."),
       b("אפשר לשלב עם פיזיותרפיה / ייעוץ רפואי.", "Can complement physiotherapy / medical advice."),
     ],
     faqs: [
       {
         q: b("מתי אפשר להתחיל?", "When can I start?"),
-        a: b("לאחר אישור רופא וכשמרגישים מוכנות — בדרך כלל מהשבועות הראשונים ברכות.", "After medical clearance and when you feel ready — often gently from early weeks."),
+        a: b("לאחר אישור רופא וכשאת מרגישה מוכנה — בדרך כלל מהשבועות הראשונים, בעדינות.", "After medical clearance and when you feel ready — often gently from early weeks."),
       },
       {
         q: b("מה אם אני מניקה בין השיעורים?", "What if I’m nursing between classes?"),
@@ -177,12 +177,12 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     ),
     problemTitle: b("כשהכל נראה כבד", "When everything feels heavy"),
     problemBody: b(
-      "הריון מביא שאלות — מה מותר, מה מפחיד, איך לישון. שיעור טוב לא ״מתfix״ אותך — הוא נותן שפה לגוף: איפה להרפות, איפה לתמוך, איך לנשום כשהבטן גדלה.",
+      "הריון מביא שאלות — מה מותר, מה מפחיד, איך לישון. שיעור טוב לא ״מתקן״ אותך — הוא נותן שפה לגוף: איפה להרפות, איפה לתמוך, איך לנשום כשהבטן גדלה.",
       "Pregnancy brings questions — what’s allowed, what scares you, how to sleep. A good class doesn’t “fix” you — it gives the body language: where to soften, how to support, how to breathe as the belly grows.",
     ),
     benefitsTitle: b("למה זה שונה מכושר כללי", "Why this isn’t generic fitness"),
     benefits: [
-      b("התאמה לשליש — לא אותה תפריט לכולן.", "Trimester-aware sequencing — not one menu for all."),
+      b("התאמה לשליש — לא אותו תפריט לכולן.", "Trimester-aware sequencing — not one menu for all."),
       b("הדגשות לרצפת אגן, קשת כפות רגליים, וכתפיים.", "Emphasis on pelvic floor, foot arches, shoulders."),
       b("אווירה שקטה — מותר לעצור, לשתות, לשאול.", "Quiet room — pausing, water, and questions are welcome."),
     ],
@@ -216,7 +216,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     slug: "baby-massage",
     metaTitle: b("עיסוי תינוקות — MammyZone", "Baby massage — MammyZone"),
     metaDescription: b(
-      "מגע עדין לתינוק ולאםה: שגרה מרגיעה, קשר, וכלים לימים עמוסים. MammyZone.",
+      "מגע עדין לתינוק ולאמא: שגרה מרגיעה, קשר, וכלים לימים עמוסים. MammyZone.",
       "Gentle touch for baby and mother: soothing routine, bonding, tools for full days. MammyZone.",
     ),
     schemaName: b("עיסוי תינוקות", "Infant massage instruction"),
@@ -246,7 +246,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     benefits: [
       b("שגרת מגע שאפשר לחזור עליה בבית.", "A touch routine you can repeat at home."),
       b("הקשבה לתינוק שלך — לא ל״תבנית״ גנרית.", "Listening to your baby — not a generic template."),
-      b("מקום לאםה שגם היא זקוקה למילה טובה.", "Space for a mother who also needs a kind word."),
+      b("מקום לאמא שגם היא זקוקה למילה טובה.", "Space for a mother who also needs a kind word."),
     ],
     whoTitle: b("למי זה מתאים", "Who this is for"),
     whoItems: [
@@ -264,13 +264,13 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     trustTitle: b("בטיחות מגע", "Touch safety"),
     trustBullets: [
       b("ללא כפייה — אם התינוק לא במצב רוח, עוצרים.", "No forcing — if baby isn’t in the mood, we pause."),
-      b("היגiene ונוחות חדר.", "Hygiene and room comfort."),
-      b("המלצה לשאול את הייעוץ התינוקותי שלך כשיש חשש רפואי.", "Ask your pediatric clinician when there’s a medical concern."),
+      b("היגיינה ונוחות החדר.", "Hygiene and room comfort."),
+      b("כדאי לשאול את רופא הילדים כשיש חשש רפואי.", "Ask your pediatric clinician when there’s a medical concern."),
     ],
     faqs: [
       { q: b("מאיזה גיל?", "From what age?"), a: b("בדרך כלל מהשבועות הראשונים לאחר אישור — נבדוק יחד.", "Often from early weeks after clearance — we check together.") },
       { q: b("מה להביא?", "What to bring?"), a: b("חיתול, שמן מתאים אם קיים, ובגד נוח לתינוק.", "Diaper, suitable oil if you use one, comfy clothes for baby.") },
-      { q: b("קבוצה או פרטי?", "Group or private?"), a: b("שניהם אפשריים — פרטים בקביעה.", "Both possible — details when booking.") },
+      { q: b("קבוצה או פרטי?", "Group or private?"), a: b("שניהם אפשריים — הפרטים בעת ההזמנה.", "Both possible — details when booking.") },
     ],
     relatedBlogCategories: ["baby_care", "motherhood", "postpartum"],
   },
@@ -308,7 +308,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     benefits: [
       b("שאלות מדויקות שפותחות בחירה, לא ביקורת.", "Precise questions that open choice, not criticism."),
       b("כלים קצרים לימים עמוסים — גם בין משמרות.", "Short tools for full days — even between shifts."),
-      b("פריים ברור — זמן שלך, בלי ערבוב עם ייעוץ פסיכולוגי.", "Clear frame — your time, not mixed with psychotherapy."),
+      b("מסגרת ברורה — זמן שלך, בלי ערבוב עם ייעוץ פסיכולוגי.", "Clear frame — your time, not mixed with psychotherapy."),
     ],
     whoTitle: b("למי זה מתאים", "Who this is for"),
     whoItems: [
@@ -318,7 +318,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     ],
     processTitle: b("איך נראה מפגש", "What a session looks like"),
     processSteps: [
-      { title: b("מסגור", "Framing"), body: b("מה מבקשות מהמפגש — במילים פשוטות.", "What you want from the meeting — in simple words.") },
+      { title: b("מסגור", "Framing"), body: b("מה את מבקשת מהמפגש — במילים פשוטות.", "What you want from the meeting — in simple words.") },
       { title: b("חקירה רכה", "Soft inquiry"), body: b("שאלות שמאירות דפוס בלי לשבור.", "Questions that illuminate a pattern without breaking.") },
       { title: b("ניסוי קטן", "Small experiment"), body: b("משהו לנסות עד הפעם הבאה — קטן ומדיד.", "Something to try until next time — small and measurable.") },
       { title: b("סגירה", "Close"), body: b("מה נשמר בגוף, מה נכתב ביומן אם תרצי.", "What stays in the body, what goes to a journal if you wish.") },
@@ -378,7 +378,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       b("מי שמרגישה שהיא ״אמורה כבר״ ולא כן.", "Anyone who feels she “should already” and doesn’t."),
       b("גם אם עבר זמן מהלידה — עדיין רלוונטי.", "Even if time has passed — still relevant."),
     ],
-    processTitle: b("תהליל טיפוסי", "A typical arc"),
+    processTitle: b("תהליך טיפוסי", "A typical arc"),
     processSteps: [
       { title: b("שיחת התאמה", "Fit call"), body: b("מה קורה עכשיו, מה מפחיד, מה עוזר.", "What’s happening now, what scares you, what helps.") },
       { title: b("מפגשי גוף", "Body meetings"), body: b("יוגה / נשימה — בקצב שמתאים לשיקום.", "Yoga / breath — at a pace that fits recovery.") },
@@ -453,7 +453,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       b("פרטים על תאריכים בעמוד ההזמנה.", "Dates on the booking flow."),
     ],
     faqs: [
-      { q: b("איך נרשמים?", "How to register?"), a: b("דרך /book — בוחרות סדנה או ריטריט.", "Via /book — choose workshop or retreat.") },
+      { q: b("איך נרשמים?", "How to register?"), a: b("דרך עמוד ההזמנה — בוחרות סדנה או ריטריט.", "Via /book — choose workshop or retreat.") },
       { q: b("מה עם הנקה?", "Nursing?"), a: b("מותר בכל מקום — יש פינות שקטות.", "Welcome anywhere — quiet corners available.") },
       { q: b("החזרים?", "Refunds?"), a: b("מדיניות מפורטת בעת הרכישה — נשמח לעזור בפרטי.", "Policy at purchase time — we help case by case.") },
     ],

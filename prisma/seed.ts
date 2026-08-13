@@ -39,8 +39,8 @@ async function main() {
 
   await prisma.siteSetting.upsert({
     where: { key: "seo.base_url" },
-    create: { key: "seo.base_url", value: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mammyzone.co.il" },
-    update: { value: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mammyzone.co.il" },
+    create: { key: "seo.base_url", value: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mammyzone.com" },
+    update: { value: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mammyzone.com" },
   });
 }
 

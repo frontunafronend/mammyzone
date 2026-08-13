@@ -9,7 +9,7 @@ const copy = {
   bookCta: { he: "לקביעת שיעור", en: "Book a session" },
   contactTitle: { he: "עדיין רוצה לשאול לפני?", en: "Still want to ask first?" },
   contactSub: {
-    he: "דף קשר רך — טופס קצר או וואטסאפ.",
+    he: "דף קשר — טופס קצר או וואטסאפ.",
     en: "A gentle contact page — short form or WhatsApp.",
   },
   contactCta: { he: "לדף קשר", en: "Go to contact" },

@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design tokens — pastel courtyard (2026 quiet pass). next/font on <html>
-   sets --font-heebo / --font-dm-sans. Display follows body per language. */
+/* Design tokens — pastel courtyard (cream / dusty rose / sage).
+   Hash-bust 2026-08-13-mobile: keep in sync with PALETTE_INLINE_CSS. */
 :root {
   --rose: #b85070;
   --rose-light: #e8c4cf;

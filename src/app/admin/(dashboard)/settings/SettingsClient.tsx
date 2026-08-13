@@ -11,7 +11,7 @@ const PRESETS: { key: string; label: string; placeholder: string }[] = [
   { key: "site.instagram_url", label: "Instagram URL", placeholder: "https://www.instagram.com/p/DIOZcbQi4Yf/" },
   { key: "booking.default_timezone", label: "Booking default timezone", placeholder: "Asia/Jerusalem" },
   { key: "newsletter.modal_delay_seconds", label: "Newsletter modal delay (seconds)", placeholder: "25" },
-  { key: "seo.base_url", label: "SEO base URL", placeholder: "https://mammyzone.co.il" },
+  { key: "seo.base_url", label: "SEO base URL", placeholder: "https://www.mammyzone.com" },
   { key: "maintenance.enabled", label: "Maintenance mode (boolean JSON)", placeholder: "false" },
 ];
 
