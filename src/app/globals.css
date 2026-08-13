@@ -22,10 +22,10 @@
   --white: #fbf8f7;
   --clay: #7a5c8c;
   --clay-deep: #4f3a5c;
-  --font-body-en: var(--font-figtree);
+  --font-body-en: Arial, Helvetica, sans-serif;
   --font-body-he: var(--font-assistant);
   --font-display: var(--font-assistant);
-  --font-wordmark: var(--font-fraunces);
+  --font-wordmark: Arial, Helvetica, sans-serif;
   --nav-h: 86px;
   --max-w: 1340px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -94,7 +94,7 @@ body.lang-en .en {
 body.lang-en {
   font-family: var(--font-body-en);
   direction: ltr;
-  --font-display: var(--font-fraunces);
+  --font-display: Arial, Helvetica, sans-serif;
 }
 
 body.lang-en [dir="rtl"] {
@@ -381,11 +381,14 @@ body.lang-en span.he {
 }
 
 .hero-image-wrap .hero-photo,
-.hero-image-parallax .hero-photo {
+.hero-image-parallax .hero-photo,
+.hero-image-parallax .hero-video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   opacity: 0;
   animation: imgReveal 1.2s var(--ease-out) 0.3s forwards;
 }
@@ -398,6 +401,10 @@ body.lang-en span.he {
 
 .hero-photo--layer {
   transform: scale(1.02);
+  animation: imgReveal 1.2s var(--ease-out) 0.3s forwards;
+}
+
+.hero-photo--layer:not(.hero-video) {
   animation:
     imgReveal 1.2s var(--ease-out) 0.3s forwards,
     hero-drift 22s ease-in-out 1.2s infinite alternate;

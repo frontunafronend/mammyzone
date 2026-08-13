@@ -10,6 +10,8 @@ type StudioVideoProps = {
   autoPlayInView?: boolean;
   controls?: boolean;
   autoPlay?: boolean;
+  preload?: "none" | "metadata" | "auto";
+  label?: string;
 };
 
 export function StudioVideo({
@@ -19,14 +21,23 @@ export function StudioVideo({
   autoPlayInView = false,
   controls = false,
   autoPlay = false,
+  preload = "metadata",
+  label,
 }: StudioVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || !autoPlayInView) return;
+    if (!el) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
+    if (reduce) {
+      el.pause();
+      return;
+    }
+    if (autoPlay) {
+      void el.play().catch(() => {});
+    }
+    if (!autoPlayInView) return;
 
     const io = new IntersectionObserver(
       ([entry]) => {
@@ -36,11 +47,11 @@ export function StudioVideo({
           el.pause();
         }
       },
-      { threshold: 0.35 },
+      { threshold: 0.2 },
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [autoPlayInView, src]);
+  }, [autoPlay, autoPlayInView, src]);
 
   return (
     <video
@@ -51,10 +62,11 @@ export function StudioVideo({
       muted
       loop
       playsInline
-      preload="metadata"
+      preload={preload}
       controls={controls}
       autoPlay={autoPlay}
-      aria-hidden={autoPlayInView || undefined}
+      aria-label={label}
+      aria-hidden={label ? undefined : autoPlayInView || undefined}
     />
   );
 }

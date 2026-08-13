@@ -123,8 +123,8 @@ export const hero = {
     en: "Yoga & Ashtanga instructor · baby massage\nCertified NLP coach · interior designer",
   },
   imageAlt: {
-    he: "אורטל חזן בהריון — יוגה מול הים",
-    en: "Ortal Hazan in pregnancy — yoga by the sea",
+    he: "יוגה חיה מול הים",
+    en: "Living yoga by the sea",
   },
 } as const;
 

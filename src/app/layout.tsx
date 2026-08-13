@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Assistant, Figtree, Fraunces } from "next/font/google";
+import { Assistant } from "next/font/google";
 import { DeployFreshness } from "@/components/layout/DeployFreshness";
 import { FloatingCTACluster } from "@/components/layout/FloatingCTACluster";
 import { Footer } from "@/components/layout/Footer";
@@ -16,25 +16,6 @@ const assistant = Assistant({
   subsets: ["hebrew", "latin", "latin-ext"],
   variable: "--font-assistant",
   weight: "variable",
-  display: "swap",
-  adjustFontFallback: true,
-  preload: true,
-});
-
-const figtree = Figtree({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-figtree",
-  weight: "variable",
-  display: "swap",
-  adjustFontFallback: true,
-  preload: true,
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-fraunces",
-  weight: "variable",
-  style: ["normal", "italic"],
   display: "swap",
   adjustFontFallback: true,
   preload: true,
@@ -81,7 +62,7 @@ export default function RootLayout({
     <html
       lang="he"
       dir="rtl"
-      className={`${assistant.variable} ${figtree.variable} ${fraunces.variable}`}
+      className={assistant.variable}
       data-build={deployId}
       suppressHydrationWarning
     >
@@ -97,7 +78,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `<!--
 THESIS: A mother rests in a warm lilac courtyard — dusty purple, light turquoise — then books. Softer than cream-and-pink, still quiet.
-OWN-WORLD: Lilac-warm field, purple accent, turquoise secondary. Assistant + Fraunces + Figtree. Rounded pills. Quiet vine lattice. Marks instead of emoji.
+OWN-WORLD: Lilac-warm field, purple accent, turquoise secondary. Assistant + Arial. Rounded pills. Quiet vine lattice. Marks instead of emoji.
 STORY: Ortal holds body, mind, and space as one practice. Believe the pace; book or write.
 FIRST VIEWPORT: Cream copy column, sun photograph with a faint lattice, glass name plaque.
 FORM: Pastel courtyard quiet pass over grounded direction 4. Seed key a4cd0422.

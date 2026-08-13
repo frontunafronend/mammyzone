@@ -34,6 +34,11 @@ export function studioStack(...keys: StudioPhotoKey[]): string[] {
   return dedupeSources(keys.map((k) => studioPhotos[k]));
 }
 
+export const heroVideo = {
+  src: "/videos/studio-IMG_8193.mp4",
+  poster: "/photos/studio-IMG_8193.jpg",
+} as const;
+
 export const heroImageSources = studioStack(
   "pregnancyBeachSalute",
   "pregnancyBw",

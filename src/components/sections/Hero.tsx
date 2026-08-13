@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { CourtyardLattice } from "@/components/backgrounds/CourtyardLattice";
 import { heroMarks } from "@/components/icons/Marks";
-import { SafeImage } from "@/components/ui/SafeImage";
+import { StudioVideo } from "@/components/ui/StudioVideo";
 import { hero } from "@/lib/i18n";
-import { heroImageSources } from "@/lib/media/sources";
+import { heroVideo } from "@/lib/media/sources";
 import { Pill } from "@/components/ui/Pill";
 
 export function Hero() {
@@ -61,15 +61,15 @@ export function Hero() {
       </div>
 
       <div className="hero-image-wrap hero-cinematic__visual">
-        <div className="hero-image-parallax" aria-hidden>
-          <SafeImage
-            className="hero-photo hero-photo--layer"
-            sources={heroImageSources}
-            alt={`${hero.imageAlt.he} / ${hero.imageAlt.en}`}
-            width={900}
-            height={1200}
-            priority
-            sizes="(max-width: 900px) 100vw, 50vw"
+        <div className="hero-image-parallax">
+          <StudioVideo
+            className="hero-video hero-photo--layer"
+            src={heroVideo.src}
+            poster={heroVideo.poster}
+            autoPlay
+            autoPlayInView
+            preload="auto"
+            label={`${hero.imageAlt.he} / ${hero.imageAlt.en}`}
           />
         </div>
         <CourtyardLattice tone="sun" />
