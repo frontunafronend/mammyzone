@@ -2,26 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design tokens — pastel courtyard (cream / dusty rose / sage).
-   Hash-bust 2026-08-13-mobile: keep in sync with PALETTE_INLINE_CSS. */
+/* Design tokens — warm lilac field, dusty purple, light turquoise.
+   Hash-bust 2026-08-13-palette: keep in sync with PALETTE_INLINE_CSS. */
 :root {
-  --rose: #b85070;
-  --rose-light: #e8c4cf;
-  --rose-pale: #f7eef1;
-  --rose-deep: #7a2d45;
-  --sage: #7a9e8e;
-  --sage-light: #c4deda;
-  --sage-pale: #eef6f4;
-  --sand: #e8ddd0;
-  --sand-deep: #c4a882;
-  --cream: #faf7f2;
-  --cream-warm: #f3ede4;
-  --ink: #2a1f1a;
-  --ink-soft: #5c4a40;
-  --ink-muted: #9a8a80;
-  --white: #fffcf8;
-  --clay: #b85070;
-  --clay-deep: #7a2d45;
+  --rose: #7a5c8c;
+  --rose-light: #d4c6dc;
+  --rose-pale: #eee8f2;
+  --rose-deep: #4f3a5c;
+  --sage: #5eb8b2;
+  --sage-light: #c5e8e5;
+  --sage-pale: #e8f5f4;
+  --sand: #e2d6d4;
+  --sand-deep: #b89a90;
+  --cream: #f4f1f3;
+  --cream-warm: #efe8e6;
+  --ink: #2a1e24;
+  --ink-soft: #5a4752;
+  --ink-muted: #948490;
+  --white: #fbf8f7;
+  --clay: #7a5c8c;
+  --clay-deep: #4f3a5c;
   --font-body-en: var(--font-dm-sans);
   --font-body-he: var(--font-heebo);
   --font-display: var(--font-body-he);
@@ -255,13 +255,13 @@ body.lang-en span.he {
     background 0.2s,
     transform 0.15s,
     box-shadow 0.2s;
-  box-shadow: rgba(184, 80, 112, 0.25) 0 4px 20px;
+  box-shadow: rgba(122, 92, 140, 0.25) 0 4px 20px;
 }
 
 .btn-primary:hover {
   background: var(--rose-deep);
   transform: translateY(-2px);
-  box-shadow: rgba(184, 80, 112, 0.35) 0 8px 28px;
+  box-shadow: rgba(122, 92, 140, 0.35) 0 8px 28px;
 }
 
 .btn-ghost {
@@ -325,7 +325,7 @@ body.lang-en span.he {
 
 .pill-sage {
   border-color: var(--sage-light);
-  color: rgb(61, 107, 90);
+  color: #3a8a85;
   background: var(--sage-pale);
 }
 
@@ -394,9 +394,9 @@ body.lang-en span.he {
   bottom: 2.5rem;
   left: 2rem;
   z-index: 3;
-  background: rgba(250, 247, 242, 0.9);
+  background: rgba(244, 241, 243, 0.9);
   backdrop-filter: blur(16px);
-  border: 0.5px solid rgba(184, 80, 112, 0.18);
+  border: 0.5px solid rgba(122, 92, 140, 0.18);
   border-radius: 16px;
   padding: 1rem 1.4rem;
   max-width: 240px;
@@ -432,7 +432,7 @@ html[dir="rtl"] .hero-credential {
   width: clamp(320px, 45vw, 640px);
   height: clamp(320px, 45vw, 640px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(196, 222, 218, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(197, 232, 229, 0.35) 0%, transparent 70%);
   z-index: 0;
   pointer-events: none;
 }
@@ -452,15 +452,15 @@ html[dir="rtl"] .hero-credential {
     repeating-linear-gradient(
       78deg,
       transparent 0 22px,
-      rgba(184, 80, 112, 0.12) 22px 23px
+      rgba(122, 92, 140, 0.12) 22px 23px
     ),
     repeating-linear-gradient(
       -12deg,
       transparent 0 52px,
-      rgba(122, 158, 142, 0.1) 52px 54px
+      rgba(94, 184, 178, 0.1) 52px 54px
     ),
-    radial-gradient(ellipse 40% 28% at 20% 30%, rgba(232, 196, 207, 0.35), transparent 62%),
-    radial-gradient(ellipse 36% 24% at 78% 62%, rgba(196, 222, 218, 0.28), transparent 60%);
+    radial-gradient(ellipse 40% 28% at 20% 30%, rgba(212, 198, 220, 0.35), transparent 62%),
+    radial-gradient(ellipse 36% 24% at 78% 62%, rgba(197, 232, 229, 0.28), transparent 60%);
   background-size: 140px 220px, 180px 260px, 100% 100%, 100% 100%;
   animation: vine-drift 32s var(--ease-out) infinite alternate;
 }
@@ -472,9 +472,9 @@ html[dir="rtl"] .hero-credential {
     repeating-linear-gradient(
       82deg,
       transparent 0 24px,
-      rgba(184, 80, 112, 0.1) 24px 25px
+      rgba(122, 92, 140, 0.1) 24px 25px
     ),
-    radial-gradient(ellipse 50% 40% at 80% 10%, rgba(247, 238, 241, 0.8), transparent 70%);
+    radial-gradient(ellipse 50% 40% at 80% 10%, rgba(238, 232, 242, 0.8), transparent 70%);
 }
 
 @keyframes vine-drift {
@@ -745,7 +745,7 @@ section {
 
 .service-tag-sage {
   background: var(--sage-pale);
-  color: rgb(45, 90, 72);
+  color: #3a8a85;
   border-color: var(--sage-light);
 }
 
@@ -882,7 +882,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
   border-radius: 16px;
   padding: 1.2rem 1.6rem;
   max-width: 200px;
-  box-shadow: rgba(184, 80, 112, 0.3) 0 8px 32px;
+  box-shadow: rgba(122, 92, 140, 0.3) 0 8px 32px;
 }
 
 .ortal-quote-badge p {
@@ -941,7 +941,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184, 80, 112, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(122, 92, 140, 0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1003,7 +1003,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 
 .retreat-item:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(184, 80, 112, 0.35);
+  border-color: rgba(122, 92, 140, 0.35);
 }
 
 .retreat-item-icon {
@@ -1044,7 +1044,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 }
 
 .retreat-card:hover {
-  border-color: rgba(184, 80, 112, 0.3);
+  border-color: rgba(122, 92, 140, 0.3);
 }
 
 .retreat-card-icon {
@@ -1069,8 +1069,8 @@ body.lang-en .service-card.featured:hover .service-arrow {
   flex-direction: row;
   align-items: center;
   gap: 1.4rem;
-  background: rgba(184, 80, 112, 0.15);
-  border-color: rgba(184, 80, 112, 0.3);
+  background: rgba(122, 92, 140, 0.15);
+  border-color: rgba(122, 92, 140, 0.3);
 }
 
 .retreat-card.large .retreat-card-title {
@@ -1348,7 +1348,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
   letter-spacing: 0.06em;
   padding: 3px 10px;
   background: var(--sage-pale);
-  color: rgb(45, 90, 72);
+  color: #3a8a85;
   border-radius: 999px;
 }
 
@@ -1717,7 +1717,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 }
 
 .nav-shell--scrolled {
-  background: rgba(250, 247, 242, 0.82);
+  background: rgba(244, 241, 243, 0.82);
   box-shadow: 0 1px 0 rgba(42, 31, 26, 0.06), 0 12px 40px rgba(42, 31, 26, 0.04);
   border-bottom: 1px solid rgba(42, 31, 26, 0.06);
   backdrop-filter: blur(24px) saturate(1.15);
@@ -1725,7 +1725,7 @@ body.lang-en .service-card.featured:hover .service-arrow {
 }
 
 .nav-shell:not(.nav-shell--scrolled) {
-  background: rgba(250, 247, 242, 0.72);
+  background: rgba(244, 241, 243, 0.72);
   border-bottom: 1px solid rgba(42, 31, 26, 0.04);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -1841,8 +1841,8 @@ body.lang-en .service-card.featured:hover .service-arrow {
   background: linear-gradient(
     165deg,
     rgba(255, 252, 248, 0.97) 0%,
-    rgba(250, 247, 242, 0.99) 45%,
-    rgba(238, 246, 244, 0.55) 100%
+    rgba(244, 241, 243, 0.99) 45%,
+    rgba(232, 245, 244, 0.55) 100%
   );
   backdrop-filter: blur(28px) saturate(1.1);
   -webkit-backdrop-filter: blur(28px) saturate(1.1);
@@ -1912,7 +1912,7 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
   font-size: 0.88rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  box-shadow: 0 8px 32px rgba(184, 80, 112, 0.25);
+  box-shadow: 0 8px 32px rgba(122, 92, 140, 0.25);
   transition:
     background-color 0.3s ease,
     transform 0.35s var(--ease-out),
@@ -1970,24 +1970,24 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
 
 .floating-cta__btn:hover {
   transform: translateY(-2px);
-  border-color: rgba(184, 80, 112, 0.35);
+  border-color: rgba(122, 92, 140, 0.35);
   color: var(--rose-deep);
   box-shadow: 0 8px 28px rgba(42, 31, 26, 0.08);
 }
 
 .floating-cta__btn--wa {
-  background: linear-gradient(135deg, rgba(184, 80, 112, 0.12), rgba(255, 252, 248, 0.98));
-  border-color: rgba(184, 80, 112, 0.25);
+  background: linear-gradient(135deg, rgba(122, 92, 140, 0.12), rgba(255, 252, 248, 0.98));
+  border-color: rgba(122, 92, 140, 0.25);
   color: var(--rose-deep);
 }
 
 .floating-cta__btn--contact {
-  border-color: rgba(122, 158, 142, 0.35);
+  border-color: rgba(94, 184, 178, 0.35);
   color: var(--sage);
 }
 
 .floating-cta__btn--ig {
-  border-color: rgba(184, 80, 112, 0.28);
+  border-color: rgba(122, 92, 140, 0.28);
   color: var(--rose-deep);
 }
 
@@ -2111,7 +2111,7 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
 
 .footer-newsletter__input:hover,
 .footer-newsletter__input:focus-visible {
-  border-color: rgba(232, 196, 207, 0.5);
+  border-color: rgba(212, 198, 220, 0.5);
   background: rgba(255, 255, 255, 0.09);
 }
 
@@ -2157,7 +2157,7 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
   font-weight: 400;
   font-style: italic;
   line-height: 1.55;
-  color: rgba(232, 196, 207, 0.85);
+  color: rgba(212, 198, 220, 0.85);
   max-width: 42ch;
   margin: 0 auto;
 }
@@ -2171,7 +2171,7 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
 }
 
 .footer-contact-block a {
-  color: rgba(232, 196, 207, 0.9);
+  color: rgba(212, 198, 220, 0.9);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.25s ease;
@@ -2236,9 +2236,9 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
   pointer-events: none;
   background: linear-gradient(
     120deg,
-    rgba(250, 247, 242, 0.05) 0%,
+    rgba(244, 241, 243, 0.05) 0%,
     transparent 38%,
-    rgba(238, 246, 244, 0.12) 100%
+    rgba(232, 245, 244, 0.12) 100%
   );
 }
 
@@ -2250,7 +2250,7 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
   background: radial-gradient(
     ellipse 90% 70% at 70% 40%,
     transparent 40%,
-    rgba(250, 247, 242, 0.35) 100%
+    rgba(244, 241, 243, 0.35) 100%
   );
 }
 
@@ -2395,8 +2395,8 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
 }
 
 .transform-panel--after {
-  background: linear-gradient(145deg, rgba(184, 80, 112, 0.22), rgba(255, 252, 248, 0.06));
-  border-color: rgba(232, 196, 207, 0.25);
+  background: linear-gradient(145deg, rgba(122, 92, 140, 0.22), rgba(255, 252, 248, 0.06));
+  border-color: rgba(212, 198, 220, 0.25);
 }
 
 .transform-panel__title {
@@ -2425,7 +2425,7 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
 }
 
 .transform-list--after li {
-  border-inline-start-color: rgba(232, 196, 207, 0.45);
+  border-inline-start-color: rgba(212, 198, 220, 0.45);
   color: rgba(255, 252, 248, 0.92);
 }
 
@@ -2435,7 +2435,7 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  color: rgba(232, 196, 207, 0.7);
+  color: rgba(212, 198, 220, 0.7);
   min-width: 2.5rem;
 }
 
@@ -2445,7 +2445,7 @@ body.lang-en .mobile-menu-panel__links a:focus-visible {
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(232, 196, 207, 0.35),
+    rgba(212, 198, 220, 0.35),
     transparent
   );
   min-height: 2rem;
@@ -2646,7 +2646,7 @@ html[dir="rtl"] .transform-bridge__glyph {
   height: min(82vh, 720px);
   border: 0;
   border-radius: 18px;
-  background: var(--cream, #faf7f2);
+  background: var(--cream, #f4f1f3);
   box-shadow: 0 20px 56px rgba(62, 48, 42, 0.08);
 }
 
@@ -2659,7 +2659,7 @@ html[dir="rtl"] .transform-bridge__glyph {
   letter-spacing: 0.06em;
   color: var(--rose-deep);
   text-decoration: none;
-  border-bottom: 1px solid rgba(184, 80, 112, 0.35);
+  border-bottom: 1px solid rgba(122, 92, 140, 0.35);
 }
 
 .ig-embed__open:hover {
@@ -2670,7 +2670,7 @@ html[dir="rtl"] .transform-bridge__glyph {
   padding: clamp(4.5rem, 12vw, 8rem) 0;
   background: radial-gradient(
       ellipse 80% 60% at 20% 0%,
-      rgba(184, 80, 112, 0.18),
+      rgba(122, 92, 140, 0.18),
       transparent 55%
     ),
     linear-gradient(165deg, #2a1f1a 0%, #1f1714 50%, #2a1f1a 100%);
@@ -2702,7 +2702,7 @@ html[dir="rtl"] .transform-bridge__glyph {
   font-weight: 300;
   line-height: 1.65;
   max-width: 48ch;
-  color: rgba(232, 196, 207, 0.85);
+  color: rgba(212, 198, 220, 0.85);
 }
 
 .final-journey__planner {
@@ -2877,13 +2877,13 @@ html[dir="rtl"] .transform-bridge__glyph {
 }
 
 .testimonial-card--lux:hover .testimonial-card__inner {
-  border-color: rgba(184, 80, 112, 0.25);
+  border-color: rgba(122, 92, 140, 0.25);
   transform: translateY(-4px);
   box-shadow: 0 24px 50px rgba(42, 31, 26, 0.07);
 }
 
 .testimonial-card--lux-accent .testimonial-card__inner {
-  background: linear-gradient(160deg, var(--rose) 0%, #7a2d45 100%);
+  background: linear-gradient(160deg, var(--rose) 0%, var(--rose-deep) 100%);
   border-color: transparent;
   color: var(--white);
 }
@@ -2959,7 +2959,7 @@ html[dir="rtl"] .transform-bridge__glyph {
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(232, 196, 207, 0.35),
+      rgba(212, 198, 220, 0.35),
       transparent
     );
   }
@@ -3230,7 +3230,7 @@ html[dir="rtl"] .transform-bridge__glyph {
   padding: 2rem 1.75rem;
   border-radius: 20px;
   background: linear-gradient(135deg, var(--rose-pale), var(--sage-pale));
-  border: 0.5px solid rgba(184, 80, 112, 0.2);
+  border: 0.5px solid rgba(122, 92, 140, 0.2);
   text-align: center;
 }
 
@@ -3864,7 +3864,7 @@ html[dir="rtl"] .transform-bridge__glyph {
 }
 
 .service-lp-internal__link:hover {
-  border-color: rgba(184, 80, 112, 0.45);
+  border-color: rgba(122, 92, 140, 0.45);
   color: var(--rose-deep);
   box-shadow: 0 8px 28px rgba(62, 48, 42, 0.06);
 }
@@ -3892,7 +3892,7 @@ html[dir="rtl"] .transform-bridge__glyph {
 }
 
 .service-lp-cta-card--book {
-  background: linear-gradient(145deg, rgba(184, 80, 112, 0.12), rgba(255, 252, 248, 0.95));
+  background: linear-gradient(145deg, rgba(122, 92, 140, 0.12), rgba(255, 252, 248, 0.95));
 }
 
 .service-lp-cta-card--contact {
@@ -4031,7 +4031,7 @@ html[dir="rtl"] .transform-bridge__glyph {
 }
 
 .contact-card:hover {
-  border-color: rgba(184, 80, 112, 0.35);
+  border-color: rgba(122, 92, 140, 0.35);
   box-shadow: 0 20px 56px rgba(62, 48, 42, 0.08);
 }
 
@@ -4162,7 +4162,7 @@ html[dir="rtl"] .transform-bridge__glyph {
 .contact-field__textarea:focus-visible {
   outline: none;
   border-color: var(--rose);
-  box-shadow: 0 0 0 3px rgba(184, 80, 112, 0.15);
+  box-shadow: 0 0 0 3px rgba(122, 92, 140, 0.15);
 }
 
 .contact-method-row {
@@ -4291,7 +4291,7 @@ html[dir="rtl"] .transform-bridge__glyph {
   padding: clamp(2rem, 5vw, 3rem);
   border-radius: 22px;
   border: 0.5px solid var(--sand);
-  background: linear-gradient(145deg, rgba(255, 240, 244, 0.5), rgba(255, 252, 248, 0.95));
+  background: linear-gradient(145deg, rgba(238, 232, 242, 0.5), rgba(255, 252, 248, 0.95));
 }
 
 .contact-final-cta__title {
@@ -4377,14 +4377,14 @@ html[dir="rtl"] .transform-bridge__glyph {
 }
 
 .book-step-pill--done {
-  border-color: rgba(184, 80, 112, 0.35);
+  border-color: rgba(122, 92, 140, 0.35);
   color: var(--ink-soft);
 }
 
 .book-step-pill--current {
   border-color: var(--rose);
   color: var(--rose-deep);
-  background: rgba(255, 240, 244, 0.65);
+  background: rgba(238, 232, 242, 0.65);
 }
 
 .book-step-pill__n {
@@ -4530,7 +4530,7 @@ html[dir="rtl"] .transform-bridge__glyph {
 }
 
 .book-offer-card:hover {
-  border-color: rgba(184, 80, 112, 0.45);
+  border-color: rgba(122, 92, 140, 0.45);
   box-shadow: 0 12px 32px rgba(122, 45, 69, 0.08);
   transform: translateY(-2px);
 }
@@ -4646,8 +4646,8 @@ html[dir="rtl"] .transform-bridge__glyph {
 }
 
 .book-cal__day:not(:disabled):not(.book-cal__day--empty):hover {
-  border-color: rgba(184, 80, 112, 0.4);
-  background: rgba(255, 240, 244, 0.5);
+  border-color: rgba(122, 92, 140, 0.4);
+  background: rgba(238, 232, 242, 0.5);
 }
 
 .book-cal__day--selected {
@@ -4682,7 +4682,7 @@ html[dir="rtl"] .transform-bridge__glyph {
 
 .book-slot-btn:hover {
   border-color: var(--rose);
-  background: rgba(255, 240, 244, 0.6);
+  background: rgba(238, 232, 242, 0.6);
 }
 
 .book-empty {
@@ -4698,7 +4698,7 @@ html[dir="rtl"] .transform-bridge__glyph {
   padding: 1rem 1.1rem;
   border-radius: 14px;
   background: rgba(255, 248, 250, 0.65);
-  border: 0.5px solid rgba(184, 80, 112, 0.15);
+  border: 0.5px solid rgba(122, 92, 140, 0.15);
 }
 
 .book-summary__k {
@@ -4773,7 +4773,7 @@ html[dir="rtl"] .transform-bridge__glyph {
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 14px;
-  border: 0.5px dashed rgba(184, 80, 112, 0.35);
+  border: 0.5px dashed rgba(122, 92, 140, 0.35);
   background: rgba(255, 255, 255, 0.5);
 }
 
@@ -4821,8 +4821,8 @@ html[dir="rtl"] .transform-bridge__glyph {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: rgba(120, 160, 120, 0.2);
-  color: rgb(55, 95, 65);
+  background: rgba(94, 184, 178, 0.22);
+  color: #3a8a85;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -4934,7 +4934,7 @@ html[dir="rtl"] .transform-bridge__glyph {
   justify-content: center;
   border: none;
   border-radius: 999px;
-  background: rgba(243, 237, 228, 0.65);
+  background: rgba(239, 232, 230, 0.65);
   font-size: 1.35rem;
   line-height: 1;
   color: var(--ink-soft);

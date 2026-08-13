@@ -80,8 +80,8 @@ export default function RootLayout({
           aria-hidden
           dangerouslySetInnerHTML={{
             __html: `<!--
-THESIS: A mother rests in a pastel courtyard — cream limestone, dusty rose, sage — then books. Soft like the previous studio, clearer in structure.
-OWN-WORLD: Cream field, rose accent, sage secondary. Heebo + DM Sans. Rounded pills. Quiet vine lattice. Marks instead of emoji.
+THESIS: A mother rests in a warm lilac courtyard — dusty purple, light turquoise — then books. Softer than cream-and-pink, still quiet.
+OWN-WORLD: Lilac-warm field, purple accent, turquoise secondary. Heebo + DM Sans. Rounded pills. Quiet vine lattice. Marks instead of emoji.
 STORY: Ortal holds body, mind, and space as one practice. Believe the pace; book or write.
 FIRST VIEWPORT: Cream copy column, sun photograph with a faint lattice, glass name plaque.
 FORM: Pastel courtyard quiet pass over grounded direction 4. Seed key a4cd0422.

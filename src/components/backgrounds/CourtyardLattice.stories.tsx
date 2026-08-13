@@ -12,7 +12,7 @@ type Story = StoryObj<typeof CourtyardLattice>;
 export const NoonSun: Story = {
   args: { tone: "sun" },
   render: (args) => (
-    <div style={{ position: "relative", width: 480, height: 320, background: "#d6d0c2" }}>
+    <div style={{ position: "relative", width: 480, height: 320, background: "#e2d6d4" }}>
       <CourtyardLattice {...args} />
     </div>
   ),
@@ -21,7 +21,7 @@ export const NoonSun: Story = {
 export const PergolaShade: Story = {
   args: { tone: "shade" },
   render: (args) => (
-    <div style={{ position: "relative", width: 480, height: 320, background: "#141b2c" }}>
+    <div style={{ position: "relative", width: 480, height: 320, background: "#2a1e24" }}>
       <CourtyardLattice {...args} />
     </div>
   ),

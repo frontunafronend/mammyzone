@@ -7,9 +7,9 @@ const preview: Preview = {
     backgrounds: {
       default: "cream",
       values: [
-        { name: "cream", value: "#faf7f2" },
-        { name: "paper", value: "#fffcf8" },
-        { name: "ink", value: "#2a1f1a" },
+        { name: "cream", value: "#f4f1f3" },
+        { name: "paper", value: "#fbf8f7" },
+        { name: "ink", value: "#2a1e24" },
       ],
     },
   },

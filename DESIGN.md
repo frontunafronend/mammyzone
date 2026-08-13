@@ -4,17 +4,17 @@
 
 ## World
 
-Pastel courtyard. Cream limestone, dusty rose, sage mist. Soft and harmonic like the previous studio, with the 2026 structure kept (clearer nav, marks, service rooms, quiet lattice).
+Pastel courtyard, retuned. Warm lilac field, dusty purple, light turquoise. Less pink, less cream — a little more warmth.
 
 ## Palette
 
-- Cream field: `--cream` `#FAF7F2`, `--cream-warm` `#F3EDE4`, paper `--white` `#FFFCF8`
-- Ink: `--ink` `#2A1F1A`, `--ink-soft` `#5C4A40`
-- Rose: `--rose` `#B85070`, `--rose-light` `#E8C4CF`, `--rose-pale` `#F7EEF1`
-- Sage: `--sage` `#7A9E8E`, `--sage-pale` `#EEF6F4`
-- Sand: `--sand` `#E8DDD0`
+- Field: `--cream` `#F4F1F3`, `--cream-warm` `#EFE8E6`, paper `--white` `#FBF8F7`
+- Ink: `--ink` `#2A1E24`, `--ink-soft` `#5A4752`
+- Purple: `--rose` `#7A5C8C`, `--rose-light` `#D4C6DC`, `--rose-pale` `#EEE8F2`
+- Turquoise: `--sage` `#5EB8B2`, `--sage-pale` `#E8F5F4`
+- Sand: `--sand` `#E2D6D4`
 
-Color is quiet: cream owns the page; rose is the action; sage is secondary.
+Color is quiet: the field is a warm lilac stone; purple is the action; turquoise is secondary.
 
 ## Type
 

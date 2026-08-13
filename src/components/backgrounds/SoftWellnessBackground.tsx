@@ -39,22 +39,22 @@ export function SoftWellnessBackground({
         className="absolute inset-0"
         style={{
           background: isDark
-            ? `radial-gradient(ellipse 90% 72% at 18% 0%, rgba(184, 80, 112, 0.16), transparent 58%),
-               radial-gradient(ellipse 75% 55% at 100% 100%, rgba(122, 158, 142, 0.12), transparent 50%)`
-            : `radial-gradient(ellipse 74% 56% at 90% 6%, rgba(238, 246, 244, 0.88), transparent 56%),
-               radial-gradient(ellipse 70% 54% at 6% 94%, rgba(247, 238, 241, 0.92), transparent 52%),
-               radial-gradient(ellipse 50% 42% at 48% 50%, rgba(250, 247, 242, 0.35), transparent 72%)`,
+            ? `radial-gradient(ellipse 90% 72% at 18% 0%, rgba(122, 92, 140, 0.16), transparent 58%),
+               radial-gradient(ellipse 75% 55% at 100% 100%, rgba(94, 184, 178, 0.14), transparent 50%)`
+            : `radial-gradient(ellipse 74% 56% at 90% 6%, rgba(232, 245, 244, 0.9), transparent 56%),
+               radial-gradient(ellipse 70% 54% at 6% 94%, rgba(238, 232, 242, 0.88), transparent 52%),
+               radial-gradient(ellipse 50% 42% at 48% 50%, rgba(244, 241, 243, 0.4), transparent 72%)`,
         }}
       />
 
       <div
         className={`absolute -start-[20%] top-[6%] h-[min(52vw,500px)] w-[min(52vw,500px)] rounded-full blur-3xl ${
-          isDark ? "bg-[rgba(122,158,142,0.16)]" : "bg-[rgba(196,222,218,0.38)]"
+          isDark ? "bg-[rgba(94,184,178,0.18)]" : "bg-[rgba(197,232,229,0.45)]"
         } opacity-90`}
       />
       <div
         className={`absolute -end-[16%] bottom-[4%] h-[min(46vw,420px)] w-[min(46vw,420px)] rounded-full blur-3xl ${
-          isDark ? "bg-[rgba(184,80,112,0.14)]" : "bg-[rgba(232,196,207,0.42)]"
+          isDark ? "bg-[rgba(122,92,140,0.16)]" : "bg-[rgba(212,198,220,0.4)]"
         } opacity-85`}
       />
 
@@ -68,7 +68,7 @@ export function SoftWellnessBackground({
       {showBotanical ? (
         <svg
           className={`absolute inset-0 h-full w-full ${
-            isDark ? "text-[rgba(232,196,207,0.55)] opacity-[0.055]" : "text-[var(--rose)] opacity-[0.034]"
+            isDark ? "text-[rgba(212,198,220,0.55)] opacity-[0.055]" : "text-[var(--rose)] opacity-[0.034]"
           }`}
           xmlns="http://www.w3.org/2000/svg"
         >

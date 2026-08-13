@@ -22,7 +22,7 @@ export const Set: Story = {
         display: "flex",
         gap: 24,
         fontSize: 40,
-        color: "#c2185b",
+        color: "#7a5c8c",
       }}
     >
       <MarkMat />
