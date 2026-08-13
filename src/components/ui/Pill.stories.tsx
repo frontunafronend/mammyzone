@@ -19,7 +19,7 @@ export const Vine: Story = {
       </>
     ),
   },
-  parameters: { backgrounds: { default: "shade" } },
+  parameters: { backgrounds: { default: "cream" } },
 };
 
 export const Leaf: Story = {
@@ -32,5 +32,5 @@ export const Leaf: Story = {
       </>
     ),
   },
-  parameters: { backgrounds: { default: "shade" } },
+  parameters: { backgrounds: { default: "cream" } },
 };

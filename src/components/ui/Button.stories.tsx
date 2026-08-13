@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "@/components/ui/Button";
 
 const meta: Meta<typeof Button> = {
-  title: "Courtyard/Button",
+  title: "Pastel/Button",
   component: Button,
   args: { children: "הזמיני שיעור" },
 };
@@ -10,7 +10,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const ClayPrimary: Story = {
+export const RosePrimary: Story = {
   args: { variant: "primary" },
 };
 
@@ -18,7 +18,7 @@ export const Ghost: Story = {
   args: { variant: "ghost", children: "קראי עליי" },
 };
 
-export const OnShade: Story = {
+export const OnInk: Story = {
   args: { variant: "white", children: "Begin" },
-  parameters: { backgrounds: { default: "shade" } },
+  parameters: { backgrounds: { default: "ink" } },
 };

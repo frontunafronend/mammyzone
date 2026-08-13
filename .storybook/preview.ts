@@ -5,11 +5,11 @@ const preview: Preview = {
   parameters: {
     layout: "centered",
     backgrounds: {
-      default: "limestone",
+      default: "cream",
       values: [
-        { name: "limestone", value: "#d6d0c2" },
-        { name: "shade", value: "#141b2c" },
-        { name: "glare", value: "#fffef8" },
+        { name: "cream", value: "#faf7f2" },
+        { name: "paper", value: "#fffcf8" },
+        { name: "ink", value: "#2a1f1a" },
       ],
     },
   },

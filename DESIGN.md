@@ -4,37 +4,36 @@
 
 ## World
 
-Mediterranean courtyard at noon. The visitor sits in indigo pergola shade and looks into hard limestone light. Bougainvillea is living color; terracotta is clay, not paint. Seed `a4cd0422`, grounded direction 4.
+Pastel courtyard. Cream limestone, dusty rose, sage mist. Soft and harmonic like the previous studio, with the 2026 structure kept (clearer nav, marks, service rooms, quiet lattice).
 
 ## Palette
 
-- Limestone field: `--cream` `#d6d0c2`, `--cream-warm` `#e4dece`, glare `--white` `#fffef8`
-- Indigo shade: `--ink` `#141b2c`, `--ink-soft` `#3d4a63`
-- Bougainvillea: `--rose` `#c2185b`, `--rose-light` `#e84a86`
-- Leaf: `--sage` `#1b6b45`
-- Clay: `--clay` `#c45c28`
+- Cream field: `--cream` `#FAF7F2`, `--cream-warm` `#F3EDE4`, paper `--white` `#FFFCF8`
+- Ink: `--ink` `#2A1F1A`, `--ink-soft` `#5C4A40`
+- Rose: `--rose` `#B85070`, `--rose-light` `#E8C4CF`, `--rose-pale` `#F7EEF1`
+- Sage: `--sage` `#7A9E8E`, `--sage-pale` `#EEF6F4`
+- Sand: `--sand` `#E8DDD0`
 
-Color is regional: shade columns and night footer own indigo; sun sections own limestone.
+Color is quiet: cream owns the page; rose is the action; sage is secondary.
 
 ## Type
 
-- Hebrew display: Karantina (`--font-karantina`) — wall lettering
-- English display and English body: Archivo
-- Hebrew body: Heebo
-- No uppercase kickers above headings
+- Hebrew: Heebo (display and body)
+- English: DM Sans
+- Headings may italicize rose emphasis; no uppercase kickers above titles
 
 ## Components
 
-- Primary action: clay rectangle, 2px corners
-- Ghost: underline, not a pill
-- Marks: single-stroke SVG set in `src/components/icons/Marks.tsx`
-- Lattice: `CourtyardLattice` — noon vine shadow; the authored motion
-- Nav: shade bar, five destinations + Book
-- Offerings: limestone rooms, not numbered emoji cards
+- Primary action: rose pill
+- Ghost: underline
+- Marks: SVG set in `src/components/icons/Marks.tsx`
+- Lattice: very faint vine light
+- Nav: cream glass, five destinations + Book
+- Offerings: rooms linking to real landings
 
 ## Motion
 
-Focal: vine-lattice drift over the hero sun photograph (`vine-drift`, ~32s, paused when `prefers-reduced-motion`). Supporting: short fade-up on hero copy, clay button lift, route enter. Not a per-section fade catalog.
+Quiet lattice drift on the hero photograph. Short fade-up on hero copy. `prefers-reduced-motion` honored.
 
 ## Surfaces
 

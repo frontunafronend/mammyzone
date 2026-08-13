@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Heebo, Karantina } from "next/font/google";
+import { DM_Sans, Heebo } from "next/font/google";
 import { FloatingCTACluster } from "@/components/layout/FloatingCTACluster";
 import { Footer } from "@/components/layout/Footer";
 import { NewsletterSignupModal } from "@/components/layout/NewsletterSignupModal";
@@ -19,18 +19,11 @@ const heebo = Heebo({
   preload: true,
 });
 
-const archivo = Archivo({
+const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-archivo",
-  display: "swap",
-  adjustFontFallback: true,
-  preload: true,
-});
-
-const karantina = Karantina({
-  subsets: ["hebrew", "latin"],
-  weight: ["400", "700"],
-  variable: "--font-karantina",
+  variable: "--font-dm-sans",
+  weight: "variable",
+  style: ["normal", "italic"],
   display: "swap",
   adjustFontFallback: true,
   preload: true,
@@ -69,7 +62,7 @@ export default function RootLayout({
     <html
       lang="he"
       dir="rtl"
-      className={`${heebo.variable} ${archivo.variable} ${karantina.variable}`}
+      className={`${heebo.variable} ${dmSans.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased">
@@ -78,11 +71,11 @@ export default function RootLayout({
           aria-hidden
           dangerouslySetInnerHTML={{
             __html: `<!--
-THESIS: Sit in the courtyard shade and look into noon — a mother rests under the vine, then books. Refuses the cream/blush wellness split-hero.
-OWN-WORLD: Limestone field, indigo pergola shade, bougainvillea magenta, terracotta clay. Karantina wall type in Hebrew, Archivo in English, Heebo body. Rooms not cards; lattice light is the material.
+THESIS: A mother rests in a pastel courtyard — cream limestone, dusty rose, sage — then books. Soft like the previous studio, clearer in structure.
+OWN-WORLD: Cream field, rose accent, sage secondary. Heebo + DM Sans. Rounded pills. Quiet vine lattice. Marks instead of emoji.
 STORY: Ortal holds body, mind, and space as one practice. Believe the pace; book or write.
-FIRST VIEWPORT: Indigo shade column with wall-scale title and clay CTA; noon photograph under a drifting vine lattice; terracotta name plaque on the sun side.
-FORM: Mediterranean courtyard at noon. Grounded list index 4. Seed key a4cd0422.
+FIRST VIEWPORT: Cream copy column, sun photograph with a faint lattice, glass name plaque.
+FORM: Pastel courtyard quiet pass over grounded direction 4. Seed key a4cd0422.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->`,
           }}
