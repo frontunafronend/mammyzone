@@ -26,6 +26,16 @@ export const studioPhotos = {
   beachDowndog: "/photos/beach-downdog.jpg",
   parkAirplaneWide: "/photos/park-airplane-wide.jpg",
   parkAirplane: "/photos/park-airplane.jpg",
+  classDeckSalute: "/photos/class-deck-salute.jpg",
+  classDeckDowndog: "/photos/class-deck-downdog.jpg",
+  classDeckUpdog: "/photos/class-deck-updog.jpg",
+  bayUpdog: "/photos/bay-updog.jpg",
+  lobbyStrollerBalance: "/photos/lobby-stroller-balance.jpg",
+  babyClassStanding: "/photos/baby-class-standing.jpg",
+  babyClassCircle: "/photos/baby-class-circle.jpg",
+  babyClassSeated: "/photos/baby-class-seated.jpg",
+  toddlerYogaSmile: "/photos/toddler-yoga-smile.jpg",
+  toddlerYogaFold: "/photos/toddler-yoga-fold.jpg",
 } as const;
 
 export type StudioPhotoKey = keyof typeof studioPhotos;
@@ -77,11 +87,18 @@ export const workshopFireSources = [
   unsplashPhoto("1545205597-3d9d02c29597", 1600),
 ];
 
+export const workshopClassSources = studioStack(
+  "classDeckSalute",
+  "classDeckDowndog",
+  "classDeckUpdog",
+);
+
 export const postnatalYogaSources = studioStack(
   "yogaCoastSeated",
   "yogaCoastPlank",
   "beachDowndog",
   "beachUpdog",
+  "bayUpdog",
 );
 
 export const prenatalYogaSources = studioStack("pregnancyBw", "pregnancyPool");

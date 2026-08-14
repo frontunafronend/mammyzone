@@ -102,9 +102,9 @@ export const scrollChrome = {
 
 export const hero = {
   brandKicker: "Ortal MammyZone",
-  eyebrow: { he: "בית לאמהות", en: "A home for mothers" },
+  eyebrow: { he: "מרחב מקודש לאמהות", en: "A sacred space for mothers" },
   titleBeforeEm: { he: "", en: "A " },
-  titleEm: { he: "בית לאמהות", en: "home for mothers" },
+  titleEm: { he: "מרחב מקודש לאמהות", en: "sacred space for mothers" },
   titleAccent: { he: "", en: "" },
   sub: {
     he: "יוגה אשטנגה, יוגה להריון, עיסוי תינוקות ובייבי יוגה, יוגה לאחר לידה, ריטריטים לאמהות עובדות, ומאסטרית NLP מוסמכת.",

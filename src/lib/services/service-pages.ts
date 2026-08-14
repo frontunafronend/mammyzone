@@ -4,7 +4,7 @@ import {
   nlpEmpowerSources,
   postnatalYogaSources,
   prenatalYogaSources,
-  retreatSpaceSources,
+  workshopClassSources,
   workshopFireSources,
 } from "@/lib/media/sources";
 import type { Bilingual } from "@/types";
@@ -409,8 +409,8 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
       b("מעגל נשים סביב האש — סדנה ומעגל", "A women's circle around the fire — workshop and gathering"),
     ),
     midVisual: serviceVisual(
-      retreatSpaceSources,
-      b("דק וחלונות אל הטבע — מקום ליוגה", "A deck and windows onto nature — a place for yoga"),
+      workshopClassSources,
+      b("שיעור יוגה משותף על הדק", "A shared yoga class on the deck"),
     ),
     problemTitle: b("כשהבית צפוף והלב צריך קהילה", "When home feels tight and the heart needs community"),
     problemBody: b(

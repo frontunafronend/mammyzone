@@ -42,6 +42,11 @@ function still(
  */
 export const studioGalleryItems: readonly StudioGalleryItem[] = [
   photo("beach-updog", studioPhotos.beachUpdog, b("אשטנגה — כלב מביט מעלה על החול", "Ashtanga — upward-facing dog on the sand"), "yoga", { shape: "wide", featured: true }),
+  photo("bay-updog", studioPhotos.bayUpdog, b("אשטנגה — כלב מביט מעלה מול המפרץ", "Ashtanga — upward-facing dog facing the bay"), "yoga", { featured: true }),
+  photo("class-deck-salute", studioPhotos.classDeckSalute, b("שיעור יוגה על הדק — ידיים לשמיים", "A yoga class on the deck — arms to the sky"), "yoga", { shape: "portrait" }),
+  photo("class-deck-downdog", studioPhotos.classDeckDowndog, b("שיעור יוגה על הדק — כלב מביט למטה", "A yoga class on the deck — downward-facing dog"), "yoga", { shape: "portrait" }),
+  photo("class-deck-updog", studioPhotos.classDeckUpdog, b("שיעור יוגה על הדק — כלב מביט מעלה", "A yoga class on the deck — upward-facing dog"), "yoga", { shape: "portrait" }),
+  photo("lobby-stroller-balance", studioPhotos.lobbyStrollerBalance, b("שיווי משקל ליד העגלה", "Balance beside the stroller"), "yoga", { shape: "wide" }),
   photo("beach-downdog", studioPhotos.beachDowndog, b("כלב מביט למטה על החול", "Downward-facing dog on the sand"), "yoga"),
   still("8193", b("קוברה על החול", "Cobra on the sand"), "yoga", { shape: "wide", featured: true }),
   still("8201", b("כלב מביט למטה עם רגל פתוחה על החול", "Three-legged downward dog on the sand"), "yoga", { shape: "wide" }),
@@ -64,6 +69,11 @@ export const studioGalleryItems: readonly StudioGalleryItem[] = [
   still("8220", b("רגע עם העגלה מול החוף", "A moment with the stroller facing the beach"), "yoga"),
   still("8234", b("מתיחה רכה על הטיילת", "A gentle stretch on the promenade"), "yoga"),
   photo("promenade-stretch", studioPhotos.promenadeStretch, b("מתיחה על הטיילת", "A stretch on the promenade"), "yoga"),
+  photo("baby-class-standing", studioPhotos.babyClassStanding, b("מפגש בייבי יוגה — חיבוק במעגל", "A baby yoga gathering — holding in a circle"), "baby-massage"),
+  photo("baby-class-circle", studioPhotos.babyClassCircle, b("מעגל הורים ותינוקות", "A circle of parents and babies"), "baby-massage"),
+  photo("baby-class-seated", studioPhotos.babyClassSeated, b("מפגש עיסוי תינוקות בישיבה", "A seated infant-massage gathering"), "baby-massage", { shape: "wide" }),
+  photo("toddler-yoga-smile", studioPhotos.toddlerYogaSmile, b("בייבי יוגה עם פעוטה", "Baby yoga with a toddler"), "baby-massage", { shape: "portrait", featured: true }),
+  photo("toddler-yoga-fold", studioPhotos.toddlerYogaFold, b("כפיפה קדימה יחד עם פעוטה", "A forward fold together with a toddler"), "baby-massage", { shape: "wide" }),
   photo("baby-massage-smile", studioPhotos.babyMassageSmile, b("עיסוי תינוקות — חיוך", "Baby massage — a smile"), "baby-massage", { featured: true }),
   photo("baby-massage-head", studioPhotos.babyMassageHead, b("מגע עדין לראש", "Gentle touch for the head"), "baby-massage"),
   photo("baby-massage-arms", studioPhotos.babyMassageArms, b("עיסוי ידיים לתינוק", "Baby arm massage"), "baby-massage"),
