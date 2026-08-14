@@ -74,11 +74,11 @@ export function authorAvatarSources(primaryUrl: string | undefined | null): stri
   ]);
 }
 
-/** Unsplash — wooden yoga hall with mats, cushions, and a view of nature. */
+/** Unsplash — bright gathering space with a nature view and a table for food and drink. */
 export const retreatSpaceSources = [
-  unsplashPhoto("1764661441867-473a59a765bc", 1600),
+  unsplashPhoto("1758243488341-f1e09bba6a6c", 1600),
+  unsplashPhoto("1633505412556-82c0921e8f4a", 1600),
   unsplashPhoto("1778694276998-4cfd1f84bfe1", 1600),
-  unsplashPhoto("1506126613408-eca07ce68773", 1600),
 ];
 
 /** Unsplash — a clear daylight sitting circle with yoga bolsters. */
