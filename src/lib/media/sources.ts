@@ -74,17 +74,17 @@ export function authorAvatarSources(primaryUrl: string | undefined | null): stri
   ]);
 }
 
-/** Unsplash — large yoga room with mats, windows onto greenery, and a deck. */
+/** Unsplash — wooden yoga hall with mats, cushions, and a view of nature. */
 export const retreatSpaceSources = [
-  unsplashPhoto("1761971975962-9cc397e2ba2a", 1600),
+  unsplashPhoto("1764661441867-473a59a765bc", 1600),
+  unsplashPhoto("1778694276998-4cfd1f84bfe1", 1600),
   unsplashPhoto("1506126613408-eca07ce68773", 1600),
-  unsplashPhoto("1687783615476-f4c12358ca9d", 1600),
 ];
 
-/** Unsplash — circle around a fire, then a women's gathering as fallback. */
+/** Unsplash — a clear daylight sitting circle with yoga bolsters. */
 export const workshopFireSources = [
-  unsplashPhoto("1478131143081-80f7f84ca84d", 1600),
-  unsplashPhoto("1545205597-3d9d02c29597", 1600),
+  unsplashPhoto("1643682661119-28da0685be2c", 1600),
+  unsplashPhoto("1643682661044-f0c34205dd65", 1600),
 ];
 
 export const workshopClassSources = studioStack(

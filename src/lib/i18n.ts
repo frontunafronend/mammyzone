@@ -444,8 +444,8 @@ export const retreat = {
     icon: "📍",
   },
   photoAlt: {
-    he: "דק וחלונות אל הטבע — מקום ליוגה",
-    en: "A deck and windows onto nature — a place for yoga",
+    he: "אולם יוגה מעץ עם כריות ונוף לטבע",
+    en: "A wooden yoga hall with cushions and a view of nature",
   },
   cta: {
     he: "הרשמי לריטריט הקרוב →",

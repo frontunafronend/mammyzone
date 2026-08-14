@@ -406,7 +406,7 @@ const SERVICE_PAGES: Record<ServicePageSlug, ServicePageDefinition> = {
     ),
     heroVisual: serviceVisual(
       workshopFireSources,
-      b("מעגל נשים סביב האש — סדנה ומעגל", "A women's circle around the fire — workshop and gathering"),
+      b("מעגל ישיבה בהיר — סדנה ומעגל אימהות", "A clear sitting circle — a workshop and mothers' gathering"),
     ),
     midVisual: serviceVisual(
       workshopClassSources,
